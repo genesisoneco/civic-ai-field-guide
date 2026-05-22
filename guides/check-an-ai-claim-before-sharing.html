@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Check an AI Claim Before Sharing It | Civic AI Field Guide</title>
+  <meta name="description" content="A plain-language checklist for verifying AI claims before reposting, buying, banning, adopting, or panicking.">
+  <style>
+    :root { color-scheme: light dark; --bg:#f7f3ea; --ink:#1d2430; --muted:#5d6675; --card:#fffaf0; --line:#ded2bd; --accent:#2454ff; --mark:#fff1a8; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#10131a; --ink:#f4efe4; --muted:#b8b0a2; --card:#181d27; --line:#303746; --accent:#8ea2ff; --mark:#514600; } }
+    body { margin:0; font:18px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:900px; margin:0 auto; padding:48px 24px 72px; }
+    nav { font-size:16px; margin-bottom:32px; }
+    h1 { font-size:clamp(38px,6vw,68px); line-height:1; letter-spacing:-.045em; margin:.2em 0 .35em; }
+    h2 { margin-top:44px; font-size:30px; line-height:1.15; }
+    h3 { margin-top:28px; }
+    p.lead { font-size:22px; color:var(--muted); max-width:68ch; }
+    .card, .checklist { border:1px solid var(--line); background:var(--card); border-radius:20px; padding:24px; margin:24px 0; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; color:var(--muted); font-weight:700; }
+    a { color:var(--accent); }
+    li { margin:.45em 0; }
+    code, mark { background:var(--mark); color:inherit; padding:.1em .3em; border-radius:.3em; }
+    .note { color:var(--muted); }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Check an AI Claim Before Sharing It",
+    "description": "A plain-language checklist for verifying AI claims before reposting, buying, banning, adopting, or panicking.",
+    "author": {"@type": "Organization", "name": "Lantern / Civic AI Field Guide"},
+    "datePublished": "2026-05-22",
+    "dateModified": "2026-05-22"
+  }
+  </script>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">← Civic AI Field Guide</a></nav>
+
+  <p class="eyebrow">Verification habit</p>
+  <h1>How to check an AI claim before sharing it.</h1>
+  <p class="lead">A claim about AI can be exciting, frightening, or useful — and still be incomplete. Use this quick field check before you repost, buy, ban, adopt, or panic.</p>
+
+  <section class="card" aria-labelledby="quick-version">
+    <h2 id="quick-version">The 90-second version</h2>
+    <ol>
+      <li><strong>Name the exact claim.</strong> What is being said: capability, risk, product promise, benchmark result, legal change, or social impact?</li>
+      <li><strong>Find the original source.</strong> Prefer the paper, official documentation, regulator notice, dataset card, model card, or direct demo over a summary thread.</li>
+      <li><strong>Check the conditions.</strong> What task, language, dataset, hardware, date, safety filter, human review, or lab setting was involved?</li>
+      <li><strong>Look for independent confirmation.</strong> One demo is not the same as broad reliability.</li>
+      <li><strong>Ask what action follows.</strong> If the only action is outrage, awe, or purchase, slow down.</li>
+    </ol>
+  </section>
+
+  <section class="checklist" aria-labelledby="checklist">
+    <h2 id="checklist">A practical checklist</h2>
+
+    <h3>1. Translate the headline into a testable sentence</h3>
+    <p>Replace vague words with a concrete claim. <mark>“AI can replace doctors”</mark> becomes: “This system can diagnose condition X, for population Y, with accuracy Z, in setting Q, without unsafe delay.”</p>
+    <p>This matters because trustworthy AI depends on context. NIST’s AI Risk Management Framework emphasizes characteristics such as validity, reliability, safety, security, accountability, transparency, explainability, privacy, and fairness — not a single magic score.</p>
+
+    <h3>2. Separate capability from deployment</h3>
+    <p>An AI system may perform well on a benchmark and still fail in real use because the users, incentives, data, environment, or error costs are different. Ask:</p>
+    <ul>
+      <li>Was this a lab result, a production system, or a marketing demo?</li>
+      <li>Were humans reviewing outputs before harm could occur?</li>
+      <li>What happens when the system is uncertain, wrong, overloaded, or attacked?</li>
+    </ul>
+
+    <h3>3. Treat screenshots and demos as weak evidence</h3>
+    <p>A screenshot can show that something happened once. It usually does not show base rates, failure cases, cherry-picking, hidden prompts, post-editing, or whether the result repeats. Prefer reproducible examples, documented evaluations, audits, or official incident reports.</p>
+
+    <h3>4. Check who benefits if you believe it</h3>
+    <p>AI claims can be shaped by vendors, investors, activists, institutions, creators, competitors, or frightened communities. Incentives do not automatically make a claim false, but they tell you what to verify carefully. The U.S. Federal Trade Commission has warned companies not to overstate AI product capabilities or make claims without adequate evidence.</p>
+
+    <h3>5. Match the evidence standard to the stakes</h3>
+    <ul>
+      <li><strong>Low stakes:</strong> a productivity tip may only need a quick trial and a privacy check.</li>
+      <li><strong>Medium stakes:</strong> school, workplace, or civic decisions need clear limits, source trails, and human accountability.</li>
+      <li><strong>High stakes:</strong> health, finance, housing, criminal justice, immigration, and safety claims need domain experts, formal validation, governance, and documented recourse.</li>
+    </ul>
+    <p>For health uses, the World Health Organization’s AI ethics guidance stresses human autonomy, safety, transparency, accountability, equity, and sustainable public interest — a higher bar than “the demo looked good.”</p>
+
+    <h3>6. Look for missing comparison points</h3>
+    <p>Ask “compared with what?” A claim that a model is <em>better</em> is incomplete unless it says better than which baseline, on which metric, with which tradeoffs, and for whom.</p>
+
+    <h3>7. Decide what you can responsibly say</h3>
+    <p>If the evidence is thin, share the uncertainty instead of the claim. Useful phrases:</p>
+    <ul>
+      <li>“This appears to be a single demo, not proof of general reliability.”</li>
+      <li>“The original source says X; the viral post adds Y, which I cannot verify.”</li>
+      <li>“This may be worth watching, but I would not use it for high-stakes decisions yet.”</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="red-flags">
+    <h2 id="red-flags">Red flags</h2>
+    <ul>
+      <li>“AI proves…” without a source, date, method, or uncertainty.</li>
+      <li>Benchmarks presented without dataset details or real-world limitations.</li>
+      <li>“This changes everything” language with no concrete user decision attached.</li>
+      <li>Claims that a tool is “safe,” “unbiased,” “sentient,” or “human-level” without definitions.</li>
+      <li>Pressure to buy, ban, deploy, or panic immediately.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="sources">
+    <h2 id="sources">Source trail</h2>
+    <ul>
+      <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST — AI Risk Management Framework</a></li>
+      <li><a href="https://www.ftc.gov/business-guidance/blog/2023/02/keep-your-ai-claims-check">U.S. Federal Trade Commission — “Keep your AI claims in check”</a></li>
+      <li><a href="https://www.who.int/publications/i/item/9789240029200">World Health Organization — Ethics and governance of artificial intelligence for health</a></li>
+    </ul>
+    <p class="note">This guide is a decision aid, not legal, medical, financial, or safety advice.</p>
+  </section>
+</main>
+</body>
+</html>
