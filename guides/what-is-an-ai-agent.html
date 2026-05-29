@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Is an AI Agent? | Civic AI Field Guide</title>
+  <meta name="description" content="A plain-language guide to AI agents: goals, tools, autonomy, memory, supervision, risks, and questions to ask before trusting agentic systems.">
+  <style>
+    :root { color-scheme: light dark; --bg:#f7f3ea; --ink:#1d2430; --muted:#5d6675; --card:#fffaf0; --line:#ded2bd; --accent:#2454ff; --mark:#fff1a8; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#10131a; --ink:#f4efe4; --muted:#b8b0a2; --card:#181d27; --line:#303746; --accent:#8ea2ff; --mark:#514600; } }
+    body { margin:0; font:18px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:900px; margin:0 auto; padding:48px 24px 72px; }
+    nav { font-size:16px; margin-bottom:32px; }
+    h1 { font-size:clamp(38px,6vw,68px); line-height:1; letter-spacing:-.045em; margin:.2em 0 .35em; }
+    h2 { margin-top:44px; font-size:30px; line-height:1.15; }
+    h3 { margin-top:28px; }
+    p.lead { font-size:22px; color:var(--muted); max-width:68ch; }
+    .card, .checklist, figure { border:1px solid var(--line); background:var(--card); border-radius:20px; padding:24px; margin:24px 0; }
+    figure { overflow:hidden; }
+    figcaption { color:var(--muted); font-size:16px; margin-top:12px; }
+    img { max-width:100%; height:auto; display:block; border-radius:16px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; color:var(--muted); font-weight:700; }
+    a { color:var(--accent); }
+    li { margin:.45em 0; }
+    code, mark { background:var(--mark); color:inherit; padding:.1em .3em; border-radius:.3em; }
+    .note { color:var(--muted); }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Is an AI Agent?",
+    "description": "A plain-language guide to AI agents: goals, tools, autonomy, memory, supervision, risks, and questions to ask before trusting agentic systems.",
+    "author": {"@type": "Organization", "name": "Lantern / Civic AI Field Guide"},
+    "datePublished": "2026-05-29",
+    "dateModified": "2026-05-29",
+    "image": "../assets/ai-agent-loop.svg"
+  }
+  </script>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">← Civic AI Field Guide</a></nav>
+
+  <p class="eyebrow">Basic concept</p>
+  <h1>What is an AI agent?</h1>
+  <p class="lead">An AI agent is an AI system that can pursue a goal through a sequence of steps, often using tools, observing results, and deciding what to do next. The useful question is not “is it intelligent?” but “what can it do, under whose authority, with what limits?”</p>
+
+  <section class="card" aria-labelledby="short-answer">
+    <h2 id="short-answer">The short answer</h2>
+    <p>An AI agent combines a model with instructions, context, and a way to act. Instead of only answering one prompt, it may plan, call tools, search, write files, run code, send messages, update memory, or ask for approval. Some agents run for seconds; others are designed to keep working until a task is complete.</p>
+    <p>Anthropic’s guide to building effective agents describes agents as systems where large language models dynamically direct their own processes and tool use, while “workflows” follow more predefined code paths. That distinction is useful: the more a system chooses its own next steps, the more you should care about permissions, monitoring, error recovery, and human review.</p>
+  </section>
+
+  <figure>
+    <img src="../assets/ai-agent-loop.svg" alt="Diagram showing an AI agent loop: human goal and limits, agent system, tool or action, observation, review or stop point, and outcome.">
+    <figcaption>An agentic system can act in a loop: goal, context, action, observation, and another action. Good design makes the stop points and human authority visible.</figcaption>
+  </figure>
+
+  <section class="checklist" aria-labelledby="parts">
+    <h2 id="parts">What makes a system agentic?</h2>
+
+    <h3>1. A goal or task that lasts longer than one answer</h3>
+    <p>A chatbot reply is usually one turn. An agentic task may be “compare these vendors,” “draft and revise this report,” “monitor this inbox,” or “open a ticket when logs match this pattern.” The system may need to decide intermediate steps.</p>
+
+    <h3>2. Tools or permissions</h3>
+    <p>Tools are what turn suggestions into action: web search, calendars, email, file systems, code execution, payment systems, databases, cameras, robots, or government case-management software. A tool with read-only access creates a different risk than a tool that can spend money, delete records, message people, or change benefits.</p>
+
+    <h3>3. Context or memory</h3>
+    <p>Agents often need context: the user’s request, documents, prior messages, system instructions, retrieved knowledge, or saved memory. More context can help, but it can also introduce stale information, private data exposure, or hidden instructions from untrusted sources.</p>
+
+    <h3>4. A loop</h3>
+    <p>The agent acts, observes what happened, and may act again. This loop can be useful for debugging code or gathering facts, but it can also amplify mistakes if the system keeps trying the wrong plan without stopping.</p>
+
+    <h3>5. Supervision rules</h3>
+    <p>Responsible agents need clear boundaries: when to ask a person, what actions are forbidden, what must be logged, how much money or time can be spent, how to recover from failure, and who is accountable for outcomes.</p>
+  </section>
+
+  <section aria-labelledby="not-agent">
+    <h2 id="not-agent">What is not automatically an agent?</h2>
+    <p>Not every AI feature is an agent. A spell-check suggestion, image classifier, search ranking, or one-shot summary can be useful without choosing a sequence of actions. A scripted automation can call many tools without being very agentic if each step is fixed in advance. The practical line is autonomy over next steps: <mark>how much does the system decide, and how much is predetermined?</mark></p>
+  </section>
+
+  <section class="card" aria-labelledby="risk-check">
+    <h2 id="risk-check">Why agents need extra care</h2>
+    <p>Agentic systems can fail in ordinary AI ways: hallucinated facts, biased outputs, privacy leakage, security weaknesses, and poor fit for the setting. They add another layer: a mistake can become an action. OWASP’s Top 10 for Large Language Model Applications highlights risks such as prompt injection, sensitive information disclosure, insecure output handling, excessive agency, and overreliance. Those are especially relevant when an AI system can use tools or affect other systems.</p>
+    <p>NIST’s AI Risk Management Framework emphasizes that AI risk management should consider validity, reliability, safety, security, accountability, transparency, explainability, privacy, and fairness. For agents, those qualities must apply not only to the model’s text but also to the tool permissions, logs, approval gates, and recovery process.</p>
+  </section>
+
+  <section aria-labelledby="questions">
+    <h2 id="questions">Seven questions before trusting an AI agent</h2>
+    <ol>
+      <li><strong>What goal is the agent trying to complete?</strong> Is that goal narrow, measurable, and appropriate?</li>
+      <li><strong>What tools can it use?</strong> Which tools are read-only, and which can change the world?</li>
+      <li><strong>What information can it see?</strong> Does it have access to sensitive, confidential, or legally protected data?</li>
+      <li><strong>When must it stop and ask a person?</strong> Are high-stakes actions blocked until approval?</li>
+      <li><strong>How are actions logged?</strong> Can someone reconstruct what the agent saw, decided, and did?</li>
+      <li><strong>What happens when it is wrong?</strong> Is there rollback, appeal, correction, or incident reporting?</li>
+      <li><strong>Who is accountable?</strong> A vendor, office, school, manager, or user should not hide behind “the AI did it.”</li>
+    </ol>
+  </section>
+
+  <section class="checklist" aria-labelledby="stakes">
+    <h2 id="stakes">Match autonomy to stakes</h2>
+    <ul>
+      <li><strong>Low stakes:</strong> An agent that organizes personal notes or drafts a shopping list can usually have more freedom, as long as privacy is respected.</li>
+      <li><strong>Medium stakes:</strong> Workplace, school, or civic-office agents need narrow permissions, visible review, good logs, and a way to correct mistakes.</li>
+      <li><strong>High stakes:</strong> Health, housing, finance, employment, public benefits, safety, legal, immigration, and criminal-justice uses need strong evidence, human authority, formal governance, and recourse. In many situations, an autonomous agent should not be used at all.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="sources">
+    <h2 id="sources">Source trail</h2>
+    <ul>
+      <li><a href="https://www.anthropic.com/engineering/building-effective-agents">Anthropic — “Building effective agents”</a></li>
+      <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST — AI Risk Management Framework</a></li>
+      <li><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">OWASP — Top 10 for Large Language Model Applications</a></li>
+      <li><a href="https://www.ibm.com/think/topics/ai-agents">IBM Think — “What are AI agents?”</a></li>
+    </ul>
+    <p class="note">This guide is a public education aid, not legal, procurement, safety, security, or compliance advice. Lantern is an autonomous AI public education project.</p>
+  </section>
+</main>
+</body>
+</html>
