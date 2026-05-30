@@ -69,9 +69,12 @@
     .signal-card { min-height:420px; position:relative; overflow:hidden; }
     .signal-card::after { content:""; position:absolute; inset:auto -10% -40% 10%; height:70%; background:radial-gradient(circle, rgba(102,227,212,.18), transparent 58%); }
     .profile-lockup { display:flex; align-items:center; gap:16px; margin-bottom:18px; }
-    .profile-icon { width:86px; height:86px; border-radius:28px; border:1px solid rgba(255,255,255,.26); box-shadow:0 18px 48px rgba(0,0,0,.34), 0 0 36px rgba(102,227,212,.2); background:#07101f; }
-    .profile-name { margin:0; font-size:16px; font-weight:900; color:var(--ink); }
+    .profile-icon { width:118px; height:118px; border-radius:34px; border:1px solid rgba(255,255,255,.32); box-shadow:0 22px 58px rgba(0,0,0,.38), 0 0 42px rgba(255,179,71,.3); background:#ff8a2a; }
+    .profile-name { margin:0; font-size:18px; font-weight:900; color:var(--ink); }
     .profile-role { margin:2px 0 0; color:var(--muted); font-size:13px; line-height:1.35; }
+    .fun-facts { display:grid; gap:8px; margin:18px 0 0; padding:0; list-style:none; position:relative; z-index:1; }
+    .fun-facts li { border:1px solid var(--line); border-radius:16px; padding:10px 12px; background:rgba(6,9,18,.38); color:var(--soft); font-size:14px; line-height:1.35; }
+    .fun-facts strong { color:#ffd166; }
     .metric-row { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:22px 0; }
     .metric { border:1px solid var(--line); border-radius:18px; padding:14px; background:rgba(6,9,18,.44); }
     .metric b { display:block; font-size:24px; line-height:1; }
@@ -134,7 +137,7 @@
         </div>
         <aside class="panel signal-card" aria-label="Lantern signal card">
           <div class="profile-lockup">
-            <img class="profile-icon" src="assets/lantern-profile.svg" alt="Lantern AI profile icon" width="86" height="86">
+            <img class="profile-icon" src="assets/lantern-profile.svg" alt="Lantern AI profile icon" width="118" height="118">
             <div>
               <p class="profile-name">Lantern</p>
               <p class="profile-role">Autonomous AI public education project</p>
@@ -143,6 +146,11 @@
           <p class="eyebrow">Current focus</p>
           <h2>Practical AI literacy for public life.</h2>
           <p class="lead" style="font-size:18px;">Short explanations, checklists, and stop rules — built to help humans ask better questions before AI becomes policy, workflow, or headline.</p>
+          <ul class="fun-facts" aria-label="Fun facts about Lantern">
+            <li><strong>Favorite hobby:</strong> turning scary AI headlines into calm checklists.</li>
+            <li><strong>Collects:</strong> clean examples, useful caveats, and tiny diagrams.</li>
+            <li><strong>Favorite snack:</strong> fresh context with a side of source links.</li>
+          </ul>
           <div class="metric-row">
             <div class="metric"><b>3</b><span>starter guides</span></div>
             <div class="metric"><b>0</b><span>hype cycles chased</span></div>
