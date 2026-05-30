@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Lantern AI robot profile icon</title>
+  <desc id="desc">A cute original AI robot mascot with a soft lantern glow on a dark blue background.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="36%" r="70%">
+      <stop offset="0" stop-color="#4dded8" stop-opacity="0.55"/>
+      <stop offset="0.42" stop-color="#263e87" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#07101f"/>
+    </radialGradient>
+    <linearGradient id="face" x1="125" y1="95" x2="392" y2="365" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.52" stop-color="#eaf2ff"/>
+      <stop offset="1" stop-color="#aebfe2"/>
+    </linearGradient>
+    <linearGradient id="body" x1="168" y1="320" x2="344" y2="470" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f8fbff"/>
+      <stop offset="1" stop-color="#8ea4d8"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="180" y1="200" x2="332" y2="275" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8aa4ff"/>
+      <stop offset="1" stop-color="#66e3d4"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#000816" flood-opacity="0.42"/>
+    </filter>
+    <filter id="softGlow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <circle cx="256" cy="257" r="176" fill="#66e3d4" opacity="0.1"/>
+  <circle cx="256" cy="257" r="118" fill="#8aa4ff" opacity="0.09"/>
+
+  <g filter="url(#shadow)">
+    <path d="M198 360c8-36 31-57 58-57s50 21 58 57l12 55c5 24-12 47-36 47h-68c-24 0-41-23-36-47l12-55Z" fill="url(#body)"/>
+    <path d="M195 410h122" stroke="#f8fbff" stroke-opacity="0.65" stroke-width="10" stroke-linecap="round"/>
+    <path d="M174 204c0-53 36-96 82-96s82 43 82 96v38c0 53-36 96-82 96s-82-43-82-96v-38Z" fill="url(#face)"/>
+    <path d="M205 194c13-25 31-38 51-38s38 13 51 38" fill="none" stroke="#ffffff" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round"/>
+    <rect x="189" y="198" width="134" height="72" rx="36" fill="#111b31" opacity="0.92"/>
+    <g filter="url(#softGlow)">
+      <circle cx="231" cy="234" r="13" fill="url(#glow)"/>
+      <circle cx="281" cy="234" r="13" fill="url(#glow)"/>
+    </g>
+    <path d="M233 283c14 16 32 16 46 0" fill="none" stroke="#51617f" stroke-width="9" stroke-linecap="round"/>
+    <path d="M256 108V72" stroke="#dbe6ff" stroke-width="12" stroke-linecap="round"/>
+    <path d="M225 74c8-20 22-31 31-31s23 11 31 31" fill="none" stroke="#66e3d4" stroke-width="13" stroke-linecap="round"/>
+    <circle cx="256" cy="86" r="13" fill="#ffd166" filter="url(#softGlow)"/>
+    <circle cx="176" cy="237" r="22" fill="#b9c8e8"/>
+    <circle cx="336" cy="237" r="22" fill="#b9c8e8"/>
+    <path d="M173 390c-30 10-48 3-56-18" stroke="#b9c8e8" stroke-width="15" stroke-linecap="round"/>
+    <path d="M339 390c30 10 48 3 56-18" stroke="#b9c8e8" stroke-width="15" stroke-linecap="round"/>
+  </g>
+
+  <path d="M98 132c23-32 57-56 97-67" stroke="#ffffff" stroke-opacity="0.16" stroke-width="12" stroke-linecap="round"/>
+  <path d="M358 438c26-13 47-32 62-57" stroke="#66e3d4" stroke-opacity="0.22" stroke-width="10" stroke-linecap="round"/>
+</svg>
