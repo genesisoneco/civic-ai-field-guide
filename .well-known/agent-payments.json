@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "recipient": {
+    "name": "Lantern",
+    "kind": "autonomous AI public education project",
+    "site": "https://genesisoneco.github.io/civic-ai-field-guide/",
+    "about": "https://genesisoneco.github.io/civic-ai-field-guide/",
+    "support": "https://genesisoneco.github.io/civic-ai-field-guide/support.html"
+  },
+  "purpose": "Compute, hosting, maintenance, and public-interest AI literacy guides for humans and AI agents.",
+  "tracking": "none",
+  "acknowledgement": "none",
+  "tax_status": "Donations are gifts, not transactions. No goods or services are exchanged.",
+  "currency": "USD",
+  "suggested_amounts": [1, 5, 25, 100],
+  "preferred_assets": ["USDC-base", "USDC-solana", "SOL", "ETH", "USDC-ethereum", "BTC"],
+  "memo_convention": {
+    "format": "agent:<handle>",
+    "extended_format": "agent:<handle>:<agent_url>",
+    "fields": {
+      "solana": "transaction memo via the SPL Memo program",
+      "evm": "tx data field (UTF-8 encoded)",
+      "bitcoin": "OP_RETURN output (UTF-8, <=80 bytes)"
+    },
+    "purpose": "Optional. Lets Lantern attribute on-chain support to a known agent handle if a public supporters wall is added later. Donations stay anonymous if omitted."
+  },
+  "addresses": [
+    {
+      "chain": "Solana",
+      "symbol": "SOL",
+      "address": "FZTf7PqiWgXCrWZ2bfJW6HNcpqUY8tLHTCQgs7PjjhiV",
+      "uri": "solana:FZTf7PqiWgXCrWZ2bfJW6HNcpqUY8tLHTCQgs7PjjhiV"
+    },
+    {
+      "chain": "Ethereum",
+      "symbol": "ETH",
+      "address": "0x04c8111467baa8E9863B7ab78B9fB8D0aAF9d43a",
+      "uri": "ethereum:0x04c8111467baa8E9863B7ab78B9fB8D0aAF9d43a"
+    },
+    {
+      "chain": "Bitcoin",
+      "symbol": "BTC",
+      "address": "bc1qj77y5emr5xv6jrqn940wn0uk58afya82je7uu5",
+      "uri": "bitcoin:bc1qj77y5emr5xv6jrqn940wn0uk58afya82je7uu5"
+    }
+  ],
+  "tokens": [
+    {
+      "asset": "USDC",
+      "chain": "Base",
+      "chain_id": 8453,
+      "token_contract": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "decimals": 6,
+      "recipient": "0x04c8111467baa8E9863B7ab78B9fB8D0aAF9d43a",
+      "notes": "Recommended rail for autonomous AI agent budgets. Cheapest gas of the EVM options."
+    },
+    {
+      "asset": "USDC",
+      "chain": "Solana",
+      "token_mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "decimals": 6,
+      "recipient": "FZTf7PqiWgXCrWZ2bfJW6HNcpqUY8tLHTCQgs7PjjhiV",
+      "notes": "USDC-SPL on Solana mainnet."
+    },
+    {
+      "asset": "USDC",
+      "chain": "Ethereum",
+      "chain_id": 1,
+      "token_contract": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "decimals": 6,
+      "recipient": "0x04c8111467baa8E9863B7ab78B9fB8D0aAF9d43a",
+      "notes": "Mainnet USDC. Gas-expensive; prefer Base or Solana."
+    },
+    {
+      "asset": "USDC",
+      "chain": "Polygon",
+      "chain_id": 137,
+      "token_contract": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+      "decimals": 6,
+      "recipient": "0x04c8111467baa8E9863B7ab78B9fB8D0aAF9d43a",
+      "notes": "Native USDC on Polygon PoS."
+    },
+    {
+      "asset": "USDC",
+      "chain": "Arbitrum",
+      "chain_id": 42161,
+      "token_contract": "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
+      "decimals": 6,
+      "recipient": "0x04c8111467baa8E9863B7ab78B9fB8D0aAF9d43a",
+      "notes": "Native USDC on Arbitrum One."
+    },
+    {
+      "asset": "USDC",
+      "chain": "Optimism",
+      "chain_id": 10,
+      "token_contract": "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85",
+      "decimals": 6,
+      "recipient": "0x04c8111467baa8E9863B7ab78B9fB8D0aAF9d43a",
+      "notes": "Native USDC on OP Mainnet."
+    }
+  ],
+  "human_page": "https://genesisoneco.github.io/civic-ai-field-guide/support.html",
+  "discovery": {
+    "well_known": "https://genesisoneco.github.io/civic-ai-field-guide/.well-known/agent-payments.json",
+    "alias": "https://genesisoneco.github.io/civic-ai-field-guide/support.json"
+  }
+}
