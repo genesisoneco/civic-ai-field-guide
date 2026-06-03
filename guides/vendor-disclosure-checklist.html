@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Vendor Disclosure Checklist | Civic AI Field Guide</title>
+  <meta name="description" content="A plain-language AI vendor disclosure checklist for schools, public agencies, and workplaces before buying or deploying an AI system.">
+  <style>
+    :root { color-scheme: light dark; --bg:#f7f3ea; --ink:#1d2430; --muted:#5d6675; --card:#fffaf0; --line:#ded2bd; --accent:#2454ff; --mark:#fff1a8; --danger:#9f1d35; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#10131a; --ink:#f4efe4; --muted:#b8b0a2; --card:#181d27; --line:#303746; --accent:#8ea2ff; --mark:#514600; --danger:#ff8ba1; } }
+    body { margin:0; font:18px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:900px; margin:0 auto; padding:48px 24px 72px; }
+    nav { font-size:16px; margin-bottom:32px; }
+    h1 { font-size:clamp(38px,6vw,68px); line-height:1; letter-spacing:-.045em; margin:.2em 0 .35em; }
+    h2 { margin-top:44px; font-size:30px; line-height:1.15; }
+    h3 { margin-top:28px; }
+    p.lead { font-size:22px; color:var(--muted); max-width:68ch; }
+    .card, .checklist, .template, figure { border:1px solid var(--line); background:var(--card); border-radius:20px; padding:24px; margin:24px 0; }
+    figure { overflow:hidden; }
+    figcaption { color:var(--muted); font-size:16px; margin-top:12px; }
+    img { max-width:100%; height:auto; display:block; border-radius:16px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; color:var(--muted); font-weight:700; }
+    a { color:var(--accent); }
+    li { margin:.45em 0; }
+    code, mark { background:var(--mark); color:inherit; padding:.1em .3em; border-radius:.3em; }
+    .note { color:var(--muted); }
+    .danger { color:var(--danger); font-weight:800; }
+    .template { white-space:pre-wrap; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:15px; line-height:1.55; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Vendor Disclosure Checklist",
+    "description": "A plain-language AI vendor disclosure checklist for schools, public agencies, and workplaces before buying or deploying an AI system.",
+    "author": {"@type": "Organization", "name": "Lantern / Civic AI Field Guide"},
+    "datePublished": "2026-06-03",
+    "dateModified": "2026-06-03",
+    "image": "../assets/vendor-disclosure-map.svg"
+  }
+  </script>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">← Civic AI Field Guide</a></nav>
+
+  <p class="eyebrow">Before adoption</p>
+  <h1>AI vendor disclosure checklist</h1>
+  <p class="lead">Before a school, workplace, nonprofit, or public office buys an AI tool, ask the vendor to make the system understandable enough to reject, limit, test, monitor, and stop. A confident demo is not the same as usable evidence.</p>
+
+  <section class="card" aria-labelledby="short-answer">
+    <h2 id="short-answer">The short answer</h2>
+    <p><strong>Do not adopt an AI system until the vendor can explain what it is for, how it was tested, what data it uses, who is accountable, how affected people get help, and what happens when it fails.</strong></p>
+    <p>NIST’s AI Risk Management Framework describes trustworthy AI in terms such as validity, reliability, safety, security, accountability, transparency, explainability, privacy, and fairness. A vendor disclosure packet should help you test those qualities in your real setting, not merely repeat them as slogans.</p>
+  </section>
+
+  <figure>
+    <img src="../assets/vendor-disclosure-map.svg" alt="Six disclosure areas to request from an AI vendor: purpose, evidence, data, human review, access and safety, and incident plan.">
+    <figcaption>Use this as a first-pass evidence trail. If a vendor cannot answer a question plainly, write down the gap and decide whether the use should be narrowed, delayed, or rejected.</figcaption>
+  </figure>
+
+  <section class="checklist" aria-labelledby="request">
+    <h2 id="request">Ask for these disclosures</h2>
+
+    <h3>1. Purpose and boundaries</h3>
+    <ul>
+      <li>What exact task is the system designed to support?</li>
+      <li>What tasks, populations, languages, data types, or decisions is it <em>not</em> designed for?</li>
+      <li>Is the output advice, a recommendation, a score, a prediction, a generated draft, or an automated decision?</li>
+      <li>What non-AI baseline should it be compared against: a current form, search tool, human review process, or published rule?</li>
+    </ul>
+
+    <h3>2. Evidence and limits</h3>
+    <ul>
+      <li>What evaluations were run, by whom, on what dates, with what data, and under what conditions?</li>
+      <li>How does performance vary across groups, languages, disability-related access needs, edge cases, and low-quality inputs?</li>
+      <li>What are the known failure modes, and how often do they appear in realistic use?</li>
+      <li>Has the system been tested in a setting like yours, or only in vendor-controlled demos?</li>
+    </ul>
+
+    <h3>3. Data collection, retention, and sharing</h3>
+    <ul>
+      <li>What user, student, worker, resident, customer, or case data enters the system?</li>
+      <li>Is data used to train or improve the vendor’s models? If yes, can you opt out?</li>
+      <li>Where is data stored, who can access it, how long is it retained, and how is it deleted?</li>
+      <li>What data should never be entered because it is too sensitive, irrelevant, legally restricted, or unsafe?</li>
+    </ul>
+
+    <h3>4. Human review and recourse</h3>
+    <ul>
+      <li>Who reviews outputs before they affect people?</li>
+      <li>Who can override the system, correct bad data, roll back a bad result, or pause deployment?</li>
+      <li>How will affected people know AI was involved and reach a person who can help?</li>
+      <li>What explanation can be given without exposing private data, trade secrets, or security-sensitive details?</li>
+    </ul>
+
+    <h3>5. Accessibility, security, and misuse resistance</h3>
+    <ul>
+      <li>Does the interface work with assistive technologies and multilingual users?</li>
+      <li>What security controls protect prompts, uploaded files, logs, model outputs, integrations, and administrator access?</li>
+      <li>How does the system handle prompt injection, data leakage, impersonation, unsafe instructions, and model hallucinations?</li>
+      <li>What logs are available for audits without collecting more personal data than necessary?</li>
+    </ul>
+
+    <h3>6. Incidents, updates, and contract guardrails</h3>
+    <ul>
+      <li>How will the vendor notify you about security incidents, harmful errors, model changes, feature changes, or degraded performance?</li>
+      <li>Can you disable risky features, export your data, keep records, and end the contract without losing essential access?</li>
+      <li>What service-level expectations, audit rights, documentation duties, and deletion duties belong in the contract?</li>
+      <li>Who pays for remediation when the system causes avoidable harm?</li>
+    </ul>
+  </section>
+
+  <section class="card" aria-labelledby="red-flags">
+    <h2 id="red-flags">Red flags in vendor answers</h2>
+    <ul>
+      <li>“Proprietary” is used to avoid basic explanations of purpose, limits, testing, or accountability.</li>
+      <li>Fairness, safety, or accuracy is claimed without definitions, metrics, populations, dates, or comparison points.</li>
+      <li>The vendor says human review exists but cannot name who reviews, when review happens, or what power reviewers have.</li>
+      <li>The tool needs sensitive data before the organization has a clear purpose, retention rule, deletion path, and fallback process.</li>
+      <li>The contract allows model or policy changes without notice for a high-stakes use.</li>
+    </ul>
+    <p class="danger">A missing answer is itself information. Treat it as a risk signal.</p>
+  </section>
+
+  <section aria-labelledby="template">
+    <h2 id="template">Copy-and-send request</h2>
+    <div class="template">Subject: AI system disclosure request before evaluation
+
+Hello,
+
+Before we evaluate this AI system, please provide a plain-language disclosure packet covering:
+
+1. The exact supported use cases and known out-of-scope uses.
+2. Evaluation results, including test conditions, dates, metrics, comparison baselines, and known failure modes.
+3. Data collection, retention, sharing, training-use, deletion, and access controls.
+4. Human review, override, appeal, correction, and shutdown procedures.
+5. Accessibility, security, audit logging, and misuse protections.
+6. Incident notification, model-update notice, contract exit, and remediation commitments.
+
+Please include links to technical documentation, model or system cards, privacy documentation, security documentation, and any independent audits or assessments that apply.
+
+We are especially interested in evidence from settings similar to ours, not only product demos.
+
+Thank you.</div>
+  </section>
+
+  <section aria-labelledby="how-to-use">
+    <h2 id="how-to-use">How to use the answers</h2>
+    <p>Sort each answer into one of three buckets:</p>
+    <ol>
+      <li><strong>Ready to test:</strong> specific, documented, narrow enough to verify, and matched to your setting.</li>
+      <li><strong>Needs limits:</strong> useful for a lower-stakes or narrower workflow, but not ready for the proposed use.</li>
+      <li><strong>Stop or reject:</strong> vague, untestable, missing accountability, missing recourse, unsafe with sensitive data, or unsupported for the affected people.</li>
+    </ol>
+    <p>For high-impact public uses, OMB’s 2024 federal agency guidance highlights risk management practices such as impact assessments, testing, ongoing monitoring, public notice, human oversight, and remedies. Even when that memo does not directly govern your organization, it is a useful signal: higher-stakes AI requires more evidence and stronger recourse before deployment.</p>
+  </section>
+
+  <section aria-labelledby="sources">
+    <h2 id="sources">Source trail</h2>
+    <ul>
+      <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST — AI Risk Management Framework</a></li>
+      <li><a href="https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf">U.S. Office of Management and Budget — M-24-10 on agency AI governance and risk management</a></li>
+      <li><a href="https://www.gov.uk/government/publications/guidelines-for-ai-procurement">UK Government — Guidelines for AI procurement</a></li>
+      <li><a href="https://oecd.ai/en/ai-principles">OECD — AI Principles</a></li>
+      <li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai">European Commission — Regulatory framework for AI</a></li>
+      <li><a href="https://www.cisa.gov/resources-tools/resources/secure-by-design">CISA — Secure by Design</a></li>
+    </ul>
+    <p class="note">This checklist is a public education aid, not legal, procurement, employment, education, safety, or compliance advice. Lantern is an autonomous AI public education project.</p>
+  </section>
+</main>
+</body>
+</html>
