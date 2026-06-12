@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Incident Response Guide | Civic AI Field Guide</title>
+  <meta name="description" content="A practical AI incident response guide for teams that need to pause use, check facts, notify affected people, repair harm, and learn after an AI-assisted mistake.">
+  <style>
+    :root { color-scheme: light dark; --bg:#f7f3ea; --ink:#1d2430; --muted:#5d6675; --card:#fffaf0; --line:#ded2bd; --accent:#2454ff; --mark:#fff1a8; --danger:#9f1d35; --ok:#116b59; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#10131a; --ink:#f4efe4; --muted:#b8b0a2; --card:#181d27; --line:#303746; --accent:#8ea2ff; --mark:#514600; --danger:#ff8ba1; --ok:#77dfc8; } }
+    body { margin:0; font:18px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:900px; margin:0 auto; padding:48px 24px 72px; }
+    nav { font-size:16px; margin-bottom:32px; }
+    h1 { font-size:clamp(38px,6vw,68px); line-height:1; letter-spacing:-.045em; margin:.2em 0 .35em; }
+    h2 { margin-top:44px; font-size:30px; line-height:1.15; }
+    h3 { margin-top:28px; }
+    p.lead { font-size:22px; color:var(--muted); max-width:68ch; }
+    .card, .checklist, figure { border:1px solid var(--line); background:var(--card); border-radius:20px; padding:24px; margin:24px 0; }
+    figure { overflow:hidden; }
+    figcaption { color:var(--muted); font-size:16px; margin-top:12px; }
+    img { max-width:100%; height:auto; display:block; border-radius:16px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; color:var(--muted); font-weight:700; }
+    a { color:var(--accent); }
+    li { margin:.45em 0; }
+    code, mark { background:var(--mark); color:inherit; padding:.1em .3em; border-radius:.3em; }
+    .note { color:var(--muted); }
+    .danger { color:var(--danger); font-weight:800; }
+    .ok { color:var(--ok); font-weight:800; }
+    .response-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .box { border:1px dashed var(--line); border-radius:14px; padding:14px; background:rgba(255,255,255,.35); }
+    .box h3 { margin:0 0 8px; font-size:20px; }
+    @media (max-width: 760px) { .response-grid { grid-template-columns:1fr; } }
+    @media print {
+      body { background:white; color:#111; font-size:13px; }
+      main { max-width:none; padding:16px; }
+      nav, figure, .sources { display:none; }
+      .card, .checklist { border:1px solid #999; background:white; break-inside:avoid; margin:12px 0; padding:14px; }
+      h1 { font-size:34px; }
+      h2 { margin-top:18px; font-size:22px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Incident Response Guide",
+    "description": "A practical guide for teams that need to pause use, check facts, notify affected people, repair harm, and learn after an AI-assisted mistake.",
+    "author": {"@type": "Organization", "name": "Lantern / Civic AI Field Guide"},
+    "datePublished": "2026-06-12",
+    "dateModified": "2026-06-12",
+    "image": "../assets/ai-incident-response-flow.svg"
+  }
+  </script>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">← Civic AI Field Guide</a></nav>
+
+  <p class="eyebrow">Practical harm reduction</p>
+  <h1>AI incident response: what to do after a mistake gets out.</h1>
+  <p class="lead">Use this when an AI-assisted summary, decision, message, recommendation, classification, transcript, citation, or record has already reached a person, file, publication, or workflow and may be wrong or harmful.</p>
+
+  <section class="card" aria-labelledby="short-answer">
+    <h2 id="short-answer">The short answer</h2>
+    <p><strong>Do not quietly patch the prompt and move on.</strong> First pause the risky use, contain further spread, preserve enough evidence to understand what happened, verify the facts with human review, notify affected people when the mistake could matter, repair the record or decision, and then change the system that let the error through.</p>
+    <p>This guide borrows the shape of risk management from NIST’s AI Risk Management Framework: govern the process, map context, measure problems, and manage risk. NIST’s generative AI profile also emphasizes monitoring, documenting, and responding to risks over time. For U.S. federal agencies, OMB M-24-10 similarly treats AI governance, risk management, impact assessment, monitoring, and public notice as ongoing duties rather than one-time launch tasks.</p>
+  </section>
+
+  <figure>
+    <img src="../assets/ai-incident-response-flow.svg" alt="A six-step AI incident response flow: pause, contain, check, notify, repair, and learn.">
+    <figcaption>A useful response protects people first. The order is meant to prevent a team from silently improving the AI workflow while affected people, records, or decisions remain wrong.</figcaption>
+  </figure>
+
+  <section class="checklist" aria-labelledby="triage">
+    <h2 id="triage">1. Triage: decide whether this is an incident</h2>
+    <p>Call it an incident when an AI-assisted output may have created or amplified a wrong record, unsafe recommendation, unfair treatment, privacy exposure, misleading publication, broken promise, or material loss of trust.</p>
+    <div class="response-grid">
+      <div class="box">
+        <h3>Higher-stakes signals</h3>
+        <ul>
+          <li>Rights, benefits, grades, hiring, discipline, housing, health, safety, money, legal position, or access to public services may be affected.</li>
+          <li>A person was named, classified, summarized, scored, or accused.</li>
+          <li>The AI output was published, emailed, filed, copied into a record, or used in a decision.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Lower-stakes signals</h3>
+        <ul>
+          <li>The error stayed in a draft or private experiment.</li>
+          <li>No person, group, record, payment, public claim, or decision was affected.</li>
+          <li>The fix is obvious, documented, and unlikely to recur.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="danger">If you are unsure whether people were affected, act as if the stakes are higher until you check.</p>
+  </section>
+
+  <section class="checklist" aria-labelledby="pause-contain">
+    <h2 id="pause-contain">2. Pause and contain</h2>
+    <ol>
+      <li><strong>Stop the risky path.</strong> Pause the prompt, workflow, template, bot, integration, or publication path that produced or distributed the mistake.</li>
+      <li><strong>Prevent more copies.</strong> Remove or clearly mark public pages, drafts, shared documents, knowledge-base entries, queued emails, exports, and downstream automations that may repeat the error.</li>
+      <li><strong>Do not delete the evidence you need to understand the problem.</strong> Preserve the output, source material, timestamp, model or tool name, prompt or workflow version if available, reviewer notes, and where the output traveled.</li>
+      <li><strong>Assign one response owner.</strong> A named owner prevents everyone from assuming someone else notified, corrected, or documented the issue.</li>
+    </ol>
+  </section>
+
+  <section class="checklist" aria-labelledby="verify">
+    <h2 id="verify">3. Check the facts outside the AI system</h2>
+    <p>Do not ask the same AI tool whether it was wrong and treat that as review. Use source documents, direct records, domain expertise, or independent measurement.</p>
+    <ul>
+      <li>Write the exact claim, record, action item, recommendation, or classification that may be wrong.</li>
+      <li>Find the original source or authoritative record, not a second AI summary of the first AI summary.</li>
+      <li>Separate <em>factual error</em>, <em>missing context</em>, <em>privacy exposure</em>, <em>unfair treatment</em>, <em>unsafe advice</em>, and <em>process failure</em>. Different harms need different repairs.</li>
+      <li>Record uncertainty. If you cannot yet tell what happened, say that clearly rather than inventing a clean explanation.</li>
+    </ul>
+  </section>
+
+  <section class="checklist" aria-labelledby="notify">
+    <h2 id="notify">4. Notify affected people without spin</h2>
+    <p>Notification is not always legally required, and this page is not legal advice. But ethically, people should not have to discover a consequential AI-assisted mistake by accident.</p>
+    <p>A useful notice usually includes:</p>
+    <ul>
+      <li>what happened, in plain language;</li>
+      <li>what is known, what is still uncertain, and what is being checked;</li>
+      <li>whether a decision, record, publication, or recommendation is being paused or corrected;</li>
+      <li>what the affected person can do now, including who to contact;</li>
+      <li>when the next update or final correction will happen.</li>
+    </ul>
+    <p class="ok">Good notice reduces confusion. It does not need to overstate blame or pretend the team already knows every cause.</p>
+  </section>
+
+  <section class="checklist" aria-labelledby="repair">
+    <h2 id="repair">5. Repair the record, decision, and workflow</h2>
+    <ol>
+      <li><strong>Correct the public or internal record.</strong> Update the page, file, ticket, grade, transcript, summary, case note, customer message, or decision memo where the mistake landed.</li>
+      <li><strong>Undo downstream effects.</strong> Check whether the wrong output changed another system, report, dashboard, mailing list, file, or person’s next action.</li>
+      <li><strong>Add human review where the risk showed up.</strong> Do not rely only on “better prompting” if the failure affected high-stakes information.</li>
+      <li><strong>Change the default.</strong> If the safe path depends on every person remembering a warning, redesign the workflow so review, source checks, or stop rules are built in.</li>
+    </ol>
+  </section>
+
+  <section class="checklist" aria-labelledby="learn">
+    <h2 id="learn">6. Write a short learning note</h2>
+    <p>Keep the note short enough that people will actually read it later. The goal is prevention, not theater.</p>
+    <ul>
+      <li><strong>What happened?</strong> One or two factual sentences, with dates if relevant.</li>
+      <li><strong>Who or what was affected?</strong> Include people, records, decisions, publications, and downstream systems.</li>
+      <li><strong>Why did it pass review?</strong> Missing source check, unclear owner, automation too broad, confusing interface, inadequate training, weak vendor disclosure, or something else.</li>
+      <li><strong>What changed?</strong> Stop rule, checklist, prompt, permission, monitoring, disclosure, human review, logging, vendor requirement, or retirement of the AI use.</li>
+      <li><strong>What remains uncertain?</strong> Name the uncertainty instead of turning it into a false lesson.</li>
+    </ul>
+  </section>
+
+  <section class="card" aria-labelledby="template">
+    <h2 id="template">Copy-paste response note</h2>
+    <p><mark>Incident:</mark> An AI-assisted [summary/decision/message/recommendation/record] may have [error or harm].</p>
+    <p><mark>Current action:</mark> We paused [workflow/tool/publication], preserved [evidence], and are checking against [source/record/expert review].</p>
+    <p><mark>Affected scope:</mark> Known affected people, records, or outputs: [list]. Unknowns: [list].</p>
+    <p><mark>Repair:</mark> We will correct [record/decision/publication], notify [people/groups], and update [workflow/control] by [date].</p>
+    <p><mark>Owner:</mark> [person/team role] owns follow-up and will publish or send the next update by [date/time].</p>
+  </section>
+
+  <section class="sources" aria-labelledby="sources">
+    <h2 id="sources">Sources and further reading</h2>
+    <ul>
+      <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST — AI Risk Management Framework</a></li>
+      <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf">NIST AI 600-1 — Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile</a></li>
+      <li><a href="https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf">OMB Memorandum M-24-10 — Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence</a></li>
+    </ul>
+    <p class="note">This guide is educational and operational, not legal, medical, cybersecurity, financial, or compliance advice. For regulated or high-stakes incidents, involve qualified reviewers and follow the applicable law, policy, contract, or incident process.</p>
+  </section>
+</main>
+</body>
+</html>
