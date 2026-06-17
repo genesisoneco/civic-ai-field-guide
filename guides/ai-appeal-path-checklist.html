@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Appeal Path Checklist | Civic AI Field Guide</title>
+  <meta name="description" content="A practical AI appeal path checklist for questioning, correcting, or escalating AI-assisted decisions that affect people.">
+  <style>
+    :root { color-scheme: light dark; --bg:#f7f3ea; --ink:#1d2430; --muted:#5d6675; --card:#fffaf0; --line:#ded2bd; --accent:#2454ff; --mark:#fff1a8; --warn:#8a5a00; --ok:#116b59; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#10131a; --ink:#f4efe4; --muted:#b8b0a2; --card:#181d27; --line:#303746; --accent:#8ea2ff; --mark:#514600; --warn:#ffd166; --ok:#77dfc8; } }
+    body { margin:0; font:18px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:960px; margin:0 auto; padding:48px 24px 72px; }
+    nav { font-size:16px; margin-bottom:32px; }
+    h1 { font-size:clamp(38px,6vw,68px); line-height:1; letter-spacing:-.045em; margin:.2em 0 .35em; }
+    h2 { margin-top:44px; font-size:30px; line-height:1.15; }
+    h3 { margin-top:28px; }
+    p.lead { font-size:22px; color:var(--muted); max-width:70ch; }
+    .card, .checklist, figure, .template { border:1px solid var(--line); background:var(--card); border-radius:20px; padding:24px; margin:24px 0; }
+    figure { overflow:hidden; }
+    figcaption { color:var(--muted); font-size:16px; margin-top:12px; }
+    img { max-width:100%; height:auto; display:block; border-radius:16px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; color:var(--muted); font-weight:700; }
+    a { color:var(--accent); }
+    li { margin:.45em 0; }
+    code, mark { background:var(--mark); color:inherit; padding:.1em .3em; border-radius:.3em; }
+    .note { color:var(--muted); }
+    .ok { color:var(--ok); font-weight:800; }
+    .warn { color:var(--warn); font-weight:800; }
+    .path-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .box { border:1px dashed var(--line); border-radius:14px; padding:14px; background:rgba(255,255,255,.32); }
+    .box h3 { margin:0 0 8px; font-size:20px; }
+    .template p { margin:.65em 0; }
+    blockquote { border-left:5px solid var(--accent); margin:18px 0; padding:8px 0 8px 18px; color:var(--ink); }
+    @media (max-width: 760px) { .path-grid { grid-template-columns:1fr; } }
+    @media print {
+      body { background:white; color:#111; font-size:13px; }
+      main { max-width:none; padding:16px; }
+      nav, figure, .sources { display:none; }
+      .card, .checklist, .template { border:1px solid #999; background:white; break-inside:avoid; margin:12px 0; padding:12px; }
+      h1 { font-size:34px; }
+      h2 { margin-top:18px; font-size:22px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Appeal Path Checklist",
+    "description": "A practical checklist for questioning, correcting, or escalating AI-assisted decisions that affect people.",
+    "author": {"@type": "Organization", "name": "Lantern / Civic AI Field Guide"},
+    "datePublished": "2026-06-17",
+    "dateModified": "2026-06-17",
+    "image": "../assets/ai-appeal-path.svg"
+  }
+  </script>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">← Civic AI Field Guide</a></nav>
+
+  <p class="eyebrow">AI accountability</p>
+  <h1>AI appeal path checklist: how to question an AI-assisted decision.</h1>
+  <p class="lead">Use this when an AI tool may have helped deny, rank, flag, score, summarize, route, or recommend something that affects a person. The goal is a reachable human process: notice, records, explanation, correction, review, and closure.</p>
+
+  <section class="card" aria-labelledby="short-answer">
+    <h2 id="short-answer">The short answer</h2>
+    <p>An <strong>AI appeal path</strong> is a plain way for an affected person to ask: <mark>Was AI involved, what information was used, who can review it, how can I correct errors, and when will I get an answer?</mark></p>
+    <p>This is not a promise that every AI-related dispute has the same legal rights everywhere. It is a practical harm-reduction pattern. NIST’s AI Risk Management Framework treats transparency, accountability, and recourse as part of managing AI risk. The Blueprint for an AI Bill of Rights describes notice, explanation, human alternatives, consideration, and fallback as protections people should have around automated systems. Data-protection guidance from the UK Information Commissioner’s Office also emphasizes individual rights, human review, and ways to challenge certain automated decisions.</p>
+  </section>
+
+  <figure>
+    <img src="../assets/ai-appeal-path.svg" alt="A five-step AI appeal path: get the notice, gather records, ask what AI did, request human review, and record the outcome.">
+    <figcaption>An appeal path should be visible before a problem happens. If no one can name the human reviewer, the process is not ready for consequential use.</figcaption>
+  </figure>
+
+  <section class="checklist" aria-labelledby="when-use">
+    <h2 id="when-use">When to use this checklist</h2>
+    <div class="path-grid">
+      <div class="box">
+        <h3>Use it when AI may affect</h3>
+        <ul>
+          <li>access to a service, benefit, class, job, loan, home, appointment, or opportunity;</li>
+          <li>a score, ranking, eligibility label, fraud flag, risk label, priority list, or disciplinary action;</li>
+          <li>official records, case notes, performance reviews, grades, medical summaries, or public claims;</li>
+          <li>routing to a slower, worse, or more burdensome process.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Do not overclaim</h3>
+        <ul>
+          <li>This checklist is educational, not legal advice.</li>
+          <li>Laws and appeal rights differ by place, sector, contract, and institution.</li>
+          <li>For urgent legal, medical, immigration, employment, housing, safety, or benefits issues, contact a qualified advocate, lawyer, regulator, union, ombuds, or responsible agency.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="checklist" aria-labelledby="steps">
+    <h2 id="steps">The five-part appeal path</h2>
+    <ol>
+      <li><strong>Ask for the decision notice.</strong> Get the date, decision, decision-maker, deadline to respond, and the channel for review. Save screenshots, letters, emails, portal messages, and reference numbers.</li>
+      <li><strong>Ask what records were used.</strong> Request the data, documents, scores, summaries, attendance records, account history, identity records, or other facts used to make or support the decision. If a record is wrong, name the exact correction requested.</li>
+      <li><strong>Ask what role AI played.</strong> Use ordinary language: Did software classify, rank, score, flag, summarize, recommend, draft, or automate any part of this decision? Was the AI output binding, advisory, or one input among others?</li>
+      <li><strong>Request human review by someone with authority.</strong> A useful review is not just a staff member reading the AI output again. Ask for a person who can consider context, correct records, override the result, explain the reason, and provide a next step.</li>
+      <li><strong>Get the outcome in writing.</strong> Ask what changed, what did not change, why, what evidence was considered, and whether there is a further escalation path. Record the final answer so the organization can learn and so the person is not trapped in a loop.</li>
+    </ol>
+    <p class="warn">If the organization cannot explain who owns review, what records were used, or how errors are corrected, that is a governance problem — not a user comprehension problem.</p>
+  </section>
+
+  <section class="template" aria-labelledby="message-template">
+    <h2 id="message-template">A plain-language message template</h2>
+    <p class="note">Copy, adapt, and keep the tone factual. Replace bracketed text.</p>
+    <blockquote>
+      <p>Hello,</p>
+      <p>I am asking for review of [decision or action] dated [date/reference number]. This decision affects [me / my application / my record / my access to service].</p>
+      <p>Please tell me whether any automated system or AI tool helped classify, score, flag, summarize, recommend, draft, or make this decision. Please also provide the records or facts used, the policy or criteria applied, and the process for correcting inaccurate information.</p>
+      <p>I request human review by someone with authority to consider context, correct errors, and change the outcome if appropriate. Please send the result in writing, including the reason for the decision and any further appeal or escalation step.</p>
+      <p>Thank you.</p>
+    </blockquote>
+  </section>
+
+  <section class="checklist" aria-labelledby="org-design">
+    <h2 id="org-design">If your organization uses AI, design the path before launch</h2>
+    <ul>
+      <li><strong>Put the appeal channel near the decision.</strong> Do not hide review instructions in a general contact form.</li>
+      <li><strong>Name the owner.</strong> The owner must be able to pause, correct, override, notify, or escalate — not merely forward complaints.</li>
+      <li><strong>Preserve evidence.</strong> Keep enough logs, model/version notes, prompts, source records, and human review notes to reconstruct what happened without exposing unrelated sensitive data.</li>
+      <li><strong>Separate explanation from blame.</strong> People need actionable reasons and correction steps, not a technical lecture or a vendor deflection.</li>
+      <li><strong>Make correction real.</strong> If a person proves a record is wrong, define how the source record, AI workflow, downstream decision, and future reuse are fixed.</li>
+      <li><strong>Track patterns.</strong> Repeated appeals about the same AI output, group, source record, or workflow should trigger risk review, not just individual case closure.</li>
+    </ul>
+  </section>
+
+  <section class="card" aria-labelledby="failure-signs">
+    <h2 id="failure-signs">Warning signs that the path is not real</h2>
+    <ul>
+      <li>No one can say whether AI was used.</li>
+      <li>The reviewer cannot change the outcome.</li>
+      <li>The only explanation is “the system says so.”</li>
+      <li>The person cannot see or correct the key records used against them.</li>
+      <li>Deadlines are shorter than the time needed to get records.</li>
+      <li>The appeal process requires tools, language, identity documents, or internet access the affected person may not have.</li>
+    </ul>
+    <p class="ok">A good appeal path lowers harm for individuals and improves the system for everyone because errors become visible instead of being normalized.</p>
+  </section>
+
+  <section class="sources" aria-labelledby="sources">
+    <h2 id="sources">Sources and further reading</h2>
+    <ul>
+      <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST — AI Risk Management Framework</a></li>
+      <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf">NIST AI 100-1 — Artificial Intelligence Risk Management Framework</a></li>
+      <li><a href="https://bidenwhitehouse.archives.gov/ostp/ai-bill-of-rights/">The White House OSTP archive — Blueprint for an AI Bill of Rights</a></li>
+      <li><a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/how-do-we-ensure-individual-rights-in-our-ai-systems/">UK Information Commissioner’s Office — How do we ensure individual rights in our AI systems?</a></li>
+      <li><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng">European Union — Regulation (EU) 2024/1689, Artificial Intelligence Act</a></li>
+    </ul>
+    <p class="note">This guide is practical education, not legal, compliance, employment, benefits, medical, immigration, housing, or financial advice. For high-stakes decisions, use the official appeal process and seek qualified help where needed.</p>
+  </section>
+</main>
+</body>
+</html>
