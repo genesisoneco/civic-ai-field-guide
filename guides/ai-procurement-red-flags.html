@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Procurement Red Flags | Civic AI Field Guide</title>
+  <meta name="description" content="A plain-language checklist for spotting risky AI vendor claims before buying, renewing, or expanding an AI product.">
+  <style>
+    :root { color-scheme: light dark; --bg:#f7f3ea; --ink:#1d2430; --muted:#5d6675; --card:#fffaf0; --line:#ded2bd; --accent:#2454ff; --mark:#fff1a8; --warn:#8a3d00; --ok:#116b59; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#10131a; --ink:#f4efe4; --muted:#b8b0a2; --card:#181d27; --line:#303746; --accent:#8ea2ff; --mark:#514600; --warn:#ffb86b; --ok:#77dfc8; } }
+    body { margin:0; font:18px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:960px; margin:0 auto; padding:48px 24px 72px; }
+    nav { font-size:16px; margin-bottom:32px; }
+    h1 { font-size:clamp(38px,6vw,68px); line-height:1; letter-spacing:-.045em; margin:.2em 0 .35em; }
+    h2 { margin-top:44px; font-size:30px; line-height:1.15; }
+    h3 { margin-top:28px; }
+    p.lead { font-size:22px; color:var(--muted); max-width:70ch; }
+    .card, .checklist, figure, .template { border:1px solid var(--line); background:var(--card); border-radius:20px; padding:24px; margin:24px 0; }
+    figure { overflow:hidden; }
+    figcaption { color:var(--muted); font-size:16px; margin-top:12px; }
+    img { max-width:100%; height:auto; display:block; border-radius:16px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; color:var(--muted); font-weight:700; }
+    a { color:var(--accent); }
+    li { margin:.45em 0; }
+    code, mark { background:var(--mark); color:inherit; padding:.1em .3em; border-radius:.3em; }
+    .note { color:var(--muted); }
+    .ok { color:var(--ok); font-weight:800; }
+    .warn { color:var(--warn); font-weight:800; }
+    .flag-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .box { border:1px dashed var(--line); border-radius:14px; padding:14px; background:rgba(255,255,255,.32); }
+    .box h3 { margin:0 0 8px; font-size:20px; }
+    .template p { margin:.65em 0; }
+    blockquote { border-left:5px solid var(--accent); margin:18px 0; padding:8px 0 8px 18px; color:var(--ink); }
+    @media (max-width: 760px) { .flag-grid { grid-template-columns:1fr; } }
+    @media print {
+      body { background:white; color:#111; font-size:13px; }
+      main { max-width:none; padding:16px; }
+      nav, figure, .sources { display:none; }
+      .card, .checklist, .template { border:1px solid #999; background:white; break-inside:avoid; margin:12px 0; padding:12px; }
+      h1 { font-size:34px; }
+      h2 { margin-top:18px; font-size:22px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Procurement Red Flags",
+    "description": "A plain-language checklist for spotting risky AI vendor claims before buying, renewing, or expanding an AI product.",
+    "author": {"@type": "Organization", "name": "Lantern / Civic AI Field Guide"},
+    "datePublished": "2026-06-22",
+    "dateModified": "2026-06-22",
+    "image": "../assets/ai-procurement-red-flags.svg"
+  }
+  </script>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">← Civic AI Field Guide</a></nav>
+
+  <p class="eyebrow">AI procurement</p>
+  <h1>AI procurement red flags: pause before the product becomes infrastructure.</h1>
+  <p class="lead">Use this before buying, renewing, piloting, or expanding an AI product. The goal is not to block every tool. It is to notice warning signs early enough that a school, workplace, agency, nonprofit, or small team can ask for evidence, narrow the use, add safeguards, or walk away.</p>
+
+  <section class="card" aria-labelledby="short-answer">
+    <h2 id="short-answer">The short answer</h2>
+    <p>An <strong>AI procurement red flag</strong> is a sign that the vendor or buyer cannot yet explain <mark>what the system does, how it was tested, what data it uses, who is accountable, how people can challenge harm, and when the tool should not be used</mark>.</p>
+    <p>NIST’s AI Risk Management Framework emphasizes valid and reliable systems, risk monitoring, transparency, accountability, and attention to harmful bias. The OECD AI Principles emphasize human-centered values, transparency, robustness, security, safety, and accountability. Procurement should turn those values into evidence before a contract or renewal makes the tool hard to remove.</p>
+  </section>
+
+  <figure>
+    <img src="../assets/ai-procurement-red-flags.svg" alt="A procurement checkpoint diagram showing vendor claims, evidence, data, safeguards, recourse, and stop rules before an AI contract.">
+    <figcaption>A strong AI purchase decision asks for evidence before commitment. A weak decision lets impressive demos, vague accuracy claims, or convenience pressure become default infrastructure.</figcaption>
+  </figure>
+
+  <section class="checklist" aria-labelledby="when-use">
+    <h2 id="when-use">When to use this checklist</h2>
+    <div class="flag-grid">
+      <div class="box">
+        <h3>Use it before commitment</h3>
+        <ul>
+          <li>an AI vendor demo looks impressive but the real workflow is not tested;</li>
+          <li>a contract, pilot, renewal, or integration would make the tool hard to leave;</li>
+          <li>the system will affect access, eligibility, safety, learning, employment, benefits, healthcare, housing, finance, policing, or public services;</li>
+          <li>staff are being asked to trust model outputs without clear review duties.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Do not treat it as legal clearance</h3>
+        <ul>
+          <li>This page is practical education, not legal, security, accessibility, or procurement advice.</li>
+          <li>High-stakes uses need qualified legal, privacy, security, disability-rights, domain, labor, and affected-community review.</li>
+          <li>A vendor answer is not enough by itself; ask for documents, test results, contract terms, and accountable owners.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="checklist" aria-labelledby="red-flags">
+    <h2 id="red-flags">Ten red flags to investigate before buying AI</h2>
+    <ol>
+      <li><strong>“AI-powered” is the main explanation.</strong> If the vendor cannot explain the actual task, model role, inputs, outputs, human review points, and limits in plain language, pause.</li>
+      <li><strong>Accuracy is advertised without context.</strong> Ask what was measured, on whose data, under what conditions, compared with what baseline, and how performance changes for relevant groups, languages, disabilities, edge cases, or low-quality inputs.</li>
+      <li><strong>No meaningful evaluation evidence is available.</strong> A demo, case study, or benchmark is not the same as evidence that the tool works in your setting. Ask for validation methods, failure examples, update history, and independent or customer-side testing rights.</li>
+      <li><strong>Training, customer, or user data terms are vague.</strong> Ask what data is collected, retained, shared, used for model improvement, deleted, logged, audited, or transferred. If the answer depends on hidden settings or future policy changes, treat that as contract risk.</li>
+      <li><strong>The vendor shifts all accountability to users.</strong> A useful product should define vendor responsibilities, customer responsibilities, audit access, support, incident response, accessibility fixes, security reporting, and escalation paths.</li>
+      <li><strong>There is no appeal, correction, or human-supported route.</strong> If an AI score, flag, summary, recommendation, or chatbot can affect a person, there should be a practical way to ask what happened, correct records, challenge the result, and reach a human.</li>
+      <li><strong>Accessibility is untested or treated as cosmetic.</strong> Ask how the complete workflow works with screen readers, keyboard navigation, captions, plain language, magnification, speech input, translation needs, low bandwidth, and non-AI alternatives.</li>
+      <li><strong>Security claims are broad but controls are unclear.</strong> Ask for current security documentation, vulnerability handling, access controls, logging, encryption, data location, subprocessors, and how the vendor handles prompt injection, data leakage, and misuse.</li>
+      <li><strong>The contract blocks inspection or exit.</strong> Watch for terms that prevent evaluation, restrict criticism, hide material changes, lock up your data, make cancellation difficult, or prevent you from notifying affected people after a serious failure.</li>
+      <li><strong>No stop rules are named.</strong> Before launch, define what evidence would delay deployment, limit use, require human review, notify people, roll back the tool, or end the contract.</li>
+    </ol>
+    <p class="warn">If the vendor cannot answer basic questions about purpose, evidence, data, safeguards, recourse, accessibility, security, and exit, do not let urgency turn uncertainty into infrastructure.</p>
+  </section>
+
+  <section class="template" aria-labelledby="vendor-questions">
+    <h2 id="vendor-questions">A short vendor question script</h2>
+    <p class="note">Use this in writing so answers can become procurement evidence, not meeting fog.</p>
+    <blockquote>
+      <p>What exact decision, recommendation, workflow, or content task does your AI perform for our use case, and what should it not be used for?</p>
+      <p>What evaluation evidence shows it works for people like ours, data like ours, languages like ours, and edge cases like ours? Please include failure modes, not only success metrics.</p>
+      <p>What customer, user, uploaded, generated, and log data do you collect, retain, use for training or improvement, share with subprocessors, and delete on request or contract end?</p>
+      <p>How can an affected person understand, correct, appeal, or bypass an AI-assisted result? What equivalent non-AI or human-supported route exists?</p>
+      <p>What contract terms guarantee audit access, accessibility remediation, security reporting, incident notice, data export, model-change notice, and exit without penalty?</p>
+    </blockquote>
+  </section>
+
+  <section class="card" aria-labelledby="green-signs">
+    <h2 id="green-signs">Green signs that lower risk</h2>
+    <ul>
+      <li><span class="ok">Clear scope:</span> the product names what it does, what it does not do, and who remains responsible.</li>
+      <li><span class="ok">Local testing rights:</span> the buyer can test on realistic examples before launch and after major changes.</li>
+      <li><span class="ok">Evidence over promises:</span> the vendor shares methods, limits, failure cases, and update notes in plain language.</li>
+      <li><span class="ok">People can contest harm:</span> recourse, correction, accessibility support, and human escalation are built into the workflow.</li>
+      <li><span class="ok">Exit is possible:</span> data export, deletion, cancellation, and fallback operations are documented before dependence grows.</li>
+    </ul>
+  </section>
+
+  <section class="sources" aria-labelledby="sources">
+    <h2 id="sources">Sources and further reading</h2>
+    <ul>
+      <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST — AI Risk Management Framework</a></li>
+      <li><a href="https://www.nist.gov/itl/ai-risk-management-framework/ai-rmf-playbook">NIST — AI RMF Playbook</a></li>
+      <li><a href="https://oecd.ai/en/ai-principles">OECD.AI — OECD AI Principles overview</a></li>
+      <li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai">European Commission — AI Act regulatory framework overview</a></li>
+      <li><a href="https://www.gov.uk/government/publications/guidelines-for-ai-procurement/guidelines-for-ai-procurement">UK Government — Guidelines for AI procurement</a></li>
+      <li><a href="https://www.iso.org/standard/81230.html">ISO/IEC 42001:2023 — AI management system standard overview</a></li>
+      <li><a href="https://www.w3.org/TR/WCAG22/">W3C — Web Content Accessibility Guidelines (WCAG) 2.2</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
