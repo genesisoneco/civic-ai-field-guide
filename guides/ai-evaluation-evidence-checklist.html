@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Evaluation Evidence Checklist | Civic AI Field Guide</title>
+  <meta name="description" content="A practical checklist for asking what test results, failure cases, monitoring, and local validation should exist before relying on an AI system.">
+  <style>
+    :root { color-scheme: light dark; --bg:#f7f3ea; --ink:#1d2430; --muted:#5d6675; --card:#fffaf0; --line:#ded2bd; --accent:#2454ff; --mark:#fff1a8; --warn:#8a3d00; --ok:#116b59; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#10131a; --ink:#f4efe4; --muted:#b8b0a2; --card:#181d27; --line:#303746; --accent:#8ea2ff; --mark:#514600; --warn:#ffb86b; --ok:#77dfc8; } }
+    body { margin:0; font:18px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:960px; margin:0 auto; padding:48px 24px 72px; }
+    nav { font-size:16px; margin-bottom:32px; }
+    h1 { font-size:clamp(38px,6vw,68px); line-height:1; letter-spacing:-.045em; margin:.2em 0 .35em; }
+    h2 { margin-top:44px; font-size:30px; line-height:1.15; }
+    h3 { margin-top:28px; }
+    p.lead { font-size:22px; color:var(--muted); max-width:70ch; }
+    .card, .checklist, figure, .template { border:1px solid var(--line); background:var(--card); border-radius:20px; padding:24px; margin:24px 0; }
+    figure { overflow:hidden; }
+    figcaption { color:var(--muted); font-size:16px; margin-top:12px; }
+    img { max-width:100%; height:auto; display:block; border-radius:16px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; color:var(--muted); font-weight:700; }
+    a { color:var(--accent); }
+    li { margin:.45em 0; }
+    code, mark { background:var(--mark); color:inherit; padding:.1em .3em; border-radius:.3em; }
+    .note { color:var(--muted); }
+    .ok { color:var(--ok); font-weight:800; }
+    .warn { color:var(--warn); font-weight:800; }
+    .evidence-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .box { border:1px dashed var(--line); border-radius:14px; padding:14px; background:rgba(255,255,255,.32); }
+    .box h3 { margin:0 0 8px; font-size:20px; }
+    .template p { margin:.65em 0; }
+    blockquote { border-left:5px solid var(--accent); margin:18px 0; padding:8px 0 8px 18px; color:var(--ink); }
+    table { width:100%; border-collapse:collapse; margin:18px 0; font-size:16px; }
+    th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+    th { background:rgba(36,84,255,.08); }
+    @media (max-width: 760px) { .evidence-grid { grid-template-columns:1fr; } table { font-size:14px; } }
+    @media print {
+      body { background:white; color:#111; font-size:13px; }
+      main { max-width:none; padding:16px; }
+      nav, figure, .sources { display:none; }
+      .card, .checklist, .template { border:1px solid #999; background:white; break-inside:avoid; margin:12px 0; padding:12px; }
+      h1 { font-size:34px; }
+      h2 { margin-top:18px; font-size:22px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Evaluation Evidence Checklist",
+    "description": "A practical checklist for asking what test results, failure cases, monitoring, and local validation should exist before relying on an AI system.",
+    "author": {"@type": "Organization", "name": "Lantern / Civic AI Field Guide"},
+    "datePublished": "2026-06-26",
+    "dateModified": "2026-06-26",
+    "image": "../assets/ai-evaluation-evidence-checklist.svg"
+  }
+  </script>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">← Civic AI Field Guide</a></nav>
+
+  <p class="eyebrow">AI evaluation</p>
+  <h1>AI evaluation evidence checklist: ask for proof before reliance.</h1>
+  <p class="lead">Use this when a school, workplace, nonprofit, public office, or small team is deciding whether an AI system is ready to help with real work. The goal is not perfect certainty. The goal is to avoid treating a demo, benchmark, or vendor promise as evidence that the tool works safely in your setting.</p>
+
+  <section class="card" aria-labelledby="short-answer">
+    <h2 id="short-answer">The short answer</h2>
+    <p>An <strong>AI evaluation evidence checklist</strong> asks: <mark>What was tested, on whose examples, against what baseline, with what failures, under what monitoring, and with what stop rules?</mark></p>
+    <p>NIST’s AI Risk Management Framework describes trustworthy AI characteristics such as validity and reliability, safety, security, resilience, accountability, transparency, explainability, interpretability, privacy enhancement, and fairness with harmful bias managed. The OECD AI Principles similarly emphasize robust, secure, safe, transparent, and accountable AI. A practical evaluation turns those broad values into evidence people can inspect before relying on a system.</p>
+  </section>
+
+  <figure>
+    <img src="../assets/ai-evaluation-evidence-checklist.svg" alt="A six-step AI evaluation evidence path from purpose to realistic tests, results, failures, monitoring, and a decision to rely, limit, retest, or stop.">
+    <figcaption>Evidence should match the actual use. A model can do well on a public benchmark and still fail on your forms, accents, languages, policies, edge cases, accessibility needs, or local decision rules.</figcaption>
+  </figure>
+
+  <section class="checklist" aria-labelledby="when-use">
+    <h2 id="when-use">When to use this checklist</h2>
+    <div class="evidence-grid">
+      <div class="box">
+        <h3>Use it before trust becomes habit</h3>
+        <ul>
+          <li>a chatbot, classifier, summarizer, scoring tool, tutor, agent, or recommendation system will shape real decisions;</li>
+          <li>a vendor claims high accuracy but does not show methods, limits, or failure examples;</li>
+          <li>staff are asked to rely on AI output in records, advice, eligibility, safety, hiring, learning, benefits, healthcare, finance, housing, or public services;</li>
+          <li>a pilot is about to become normal workflow or infrastructure.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Do not treat it as a lab protocol</h3>
+        <ul>
+          <li>This page is practical education, not legal, statistical, security, medical, employment, procurement, or compliance advice.</li>
+          <li>High-stakes systems need qualified domain, legal, privacy, security, accessibility, labor, and affected-community review.</li>
+          <li>If the system affects rights, opportunities, safety, or essential services, “seems useful” is not enough evidence.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="checklist" aria-labelledby="checks">
+    <h2 id="checks">Seven evidence checks before relying on AI</h2>
+    <ol>
+      <li><strong>Define the exact purpose.</strong> Name the task, user, context, input, output, human reviewer, decision boundary, and things the tool must not do. Evaluation evidence is weak if the use case is vague.</li>
+      <li><strong>Compare against a realistic baseline.</strong> Ask whether the AI improves on the current process, a simpler tool, a checklist, human review, or doing nothing. A high score is less meaningful without a relevant comparison.</li>
+      <li><strong>Test on local examples.</strong> Use representative samples from the actual setting, including messy forms, low-quality audio, uncommon names, multilingual text, accessibility needs, edge cases, and cases where the right answer is “do not answer.” Protect privacy while testing.</li>
+      <li><strong>Measure errors by consequence.</strong> Accuracy alone can hide harm. Separate false positives, false negatives, hallucinated facts, missed warnings, privacy leaks, inaccessible outputs, security failures, and errors affecting specific groups.</li>
+      <li><strong>Inspect failure cases.</strong> Ask for examples where the AI failed, why it failed, whether the failure is detectable, how people recover, and whether a human can override the output before harm occurs.</li>
+      <li><strong>Check monitoring and change control.</strong> AI systems can change when models, prompts, data, integrations, policies, or user behavior change. Define who watches performance, incidents, bias, accessibility, security, and drift after launch.</li>
+      <li><strong>Name decision rules before launch.</strong> Decide what evidence permits limited use, wider use, retesting, rollback, human-only routing, affected-person notice, or stopping the tool. Do not invent the standard after a problem appears.</li>
+    </ol>
+    <p class="warn">If nobody can show realistic tests, failure cases, monitoring, and stop rules, the safest decision is usually to narrow the use until evidence catches up.</p>
+  </section>
+
+  <section class="card" aria-labelledby="bundle">
+    <h2 id="bundle">A minimum evidence bundle to request</h2>
+    <table>
+      <thead>
+        <tr><th>Evidence</th><th>What to ask for</th><th>Why it matters</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Scope statement</td><td>Intended uses, prohibited uses, users, data types, and human review points.</td><td>Prevents a narrow tool from silently expanding into a broader decision system.</td></tr>
+        <tr><td>Evaluation method</td><td>Test set description, baseline, metrics, sample size, limits, and who performed the evaluation.</td><td>Shows whether the numbers match the real task.</td></tr>
+        <tr><td>Disaggregated results</td><td>Performance across relevant languages, groups, disabilities, locations, document types, devices, or other local conditions.</td><td>Average performance can hide unequal failure.</td></tr>
+        <tr><td>Failure examples</td><td>Known failure modes, severe errors, near misses, incident history, and mitigation plans.</td><td>Fluent AI output can make serious errors look routine.</td></tr>
+        <tr><td>Human recourse</td><td>How people can understand, correct, appeal, bypass, or escalate an AI-assisted result.</td><td>Evaluation is incomplete if harmed people have no usable path to repair.</td></tr>
+        <tr><td>Monitoring plan</td><td>Owners, review cadence, logging, privacy controls, model-change notice, retesting triggers, and rollback rules.</td><td>One-time testing cannot prove future performance.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="template" aria-labelledby="meeting-script">
+    <h2 id="meeting-script">A short meeting script</h2>
+    <p class="note">Use this before approving, buying, expanding, or normalizing an AI system.</p>
+    <blockquote>
+      <p>What exact task are we asking this AI system to perform, and what decisions must remain human-only?</p>
+      <p>What evidence shows it works on examples like ours, for people like ours, under conditions like ours? What baseline did it beat?</p>
+      <p>Show us the failure cases: false positives, false negatives, hallucinations, accessibility barriers, privacy issues, security risks, group-level differences, and severe edge cases.</p>
+      <p>Who monitors the system after launch, who can stop it, and what evidence would make us limit, retest, roll back, or notify affected people?</p>
+    </blockquote>
+  </section>
+
+  <section class="card" aria-labelledby="warning-signs">
+    <h2 id="warning-signs">Warning signs that evidence is too thin</h2>
+    <ul>
+      <li>The strongest evidence is a polished demo, testimonial, or generic benchmark unrelated to your use case.</li>
+      <li>The vendor or team reports one accuracy number but cannot explain the test data, baseline, confidence, or error types.</li>
+      <li>No one has tested with realistic local data, accessibility needs, low-quality inputs, adversarial prompts, or people affected by the outcome.</li>
+      <li>Failures are framed as user mistakes even when the workflow encourages overreliance.</li>
+      <li>The system can affect people, but there is no clear path to explanation, correction, appeal, or human support.</li>
+      <li>Monitoring is described as “we will keep an eye on it” without owners, logs, review dates, or stop rules.</li>
+    </ul>
+    <p class="ok">Good evaluation evidence does not need to be flashy. It needs to be specific, inspectable, relevant, and connected to decisions people can actually make.</p>
+  </section>
+
+  <section class="sources" aria-labelledby="sources">
+    <h2 id="sources">Sources and further reading</h2>
+    <ul>
+      <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST — AI Risk Management Framework</a></li>
+      <li><a href="https://www.nist.gov/itl/ai-risk-management-framework/ai-rmf-playbook">NIST — AI RMF Playbook</a></li>
+      <li><a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10">NIST — Artificial Intelligence Risk Management Framework (AI RMF 1.0)</a></li>
+      <li><a href="https://oecd.ai/en/ai-principles">OECD.AI — OECD AI Principles overview</a></li>
+      <li><a href="https://www.w3.org/WAI/test-evaluate/">W3C WAI — Evaluating Web Accessibility Overview</a></li>
+      <li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai">European Commission — AI Act regulatory framework overview</a></li>
+      <li><a href="https://www.gov.uk/government/collections/algorithmic-transparency-recording-standard-hub">UK Government — Algorithmic Transparency Recording Standard Hub</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
