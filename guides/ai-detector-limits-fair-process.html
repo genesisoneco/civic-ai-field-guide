@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Detector Limits and Fair Process | Civic AI Field Guide</title>
+  <meta name="description" content="A plain-language guide to why AI writing detectors need caution and how schools or teams can handle suspected AI use without shortcut accusations.">
+  <style>
+    :root { color-scheme: light dark; --bg:#f7f3ea; --ink:#1d2430; --muted:#5d6675; --card:#fffaf0; --line:#ded2bd; --accent:#2454ff; --mark:#fff1a8; --warn:#8a3d00; --ok:#116b59; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#10131a; --ink:#f4efe4; --muted:#b8b0a2; --card:#181d27; --line:#303746; --accent:#8ea2ff; --mark:#514600; --warn:#ffb86b; --ok:#77dfc8; } }
+    body { margin:0; font:18px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:960px; margin:0 auto; padding:48px 24px 72px; }
+    nav { font-size:16px; margin-bottom:32px; }
+    h1 { font-size:clamp(38px,6vw,68px); line-height:1; letter-spacing:-.045em; margin:.2em 0 .35em; }
+    h2 { margin-top:44px; font-size:30px; line-height:1.15; }
+    h3 { margin-top:28px; }
+    p.lead { font-size:22px; color:var(--muted); max-width:70ch; }
+    .card, .checklist, figure, .template { border:1px solid var(--line); background:var(--card); border-radius:20px; padding:24px; margin:24px 0; }
+    figure { overflow:hidden; }
+    figcaption { color:var(--muted); font-size:16px; margin-top:12px; }
+    img { max-width:100%; height:auto; display:block; border-radius:16px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; color:var(--muted); font-weight:700; }
+    a { color:var(--accent); }
+    li { margin:.45em 0; }
+    code, mark { background:var(--mark); color:inherit; padding:.1em .3em; border-radius:.3em; }
+    .note { color:var(--muted); }
+    .ok { color:var(--ok); font-weight:800; }
+    .warn { color:var(--warn); font-weight:800; }
+    .grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .box { border:1px dashed var(--line); border-radius:14px; padding:14px; background:rgba(255,255,255,.32); }
+    .box h3 { margin:0 0 8px; font-size:20px; }
+    .template p { margin:.65em 0; }
+    blockquote { border-left:5px solid var(--accent); margin:18px 0; padding:8px 0 8px 18px; color:var(--ink); }
+    table { width:100%; border-collapse:collapse; margin:18px 0; font-size:16px; }
+    th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+    th { background:rgba(36,84,255,.08); }
+    @media (max-width: 760px) { .grid { grid-template-columns:1fr; } table { font-size:14px; } }
+    @media print {
+      body { background:white; color:#111; font-size:13px; }
+      main { max-width:none; padding:16px; }
+      nav, figure, .sources { display:none; }
+      .card, .checklist, .template { border:1px solid #999; background:white; break-inside:avoid; margin:12px 0; padding:12px; }
+      h1 { font-size:34px; }
+      h2 { margin-top:18px; font-size:22px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Detector Limits and Fair Process",
+    "description": "A plain-language guide to why AI writing detectors need caution and how schools or teams can handle suspected AI use without shortcut accusations.",
+    "author": {"@type": "Organization", "name": "Lantern / Civic AI Field Guide"},
+    "datePublished": "2026-06-29",
+    "dateModified": "2026-06-29",
+    "image": "../assets/ai-detector-fair-process.svg"
+  }
+  </script>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">← Civic AI Field Guide</a></nav>
+
+  <p class="eyebrow">AI literacy</p>
+  <h1>AI detector limits and fair process.</h1>
+  <p class="lead">Use this when a school, workplace, publication, or community is worried that someone submitted AI-generated writing. The goal is not to ignore academic integrity or quality standards. The goal is to avoid treating an uncertain detector score as proof.</p>
+
+  <section class="card" aria-labelledby="short-answer">
+    <h2 id="short-answer">The short answer</h2>
+    <p>An <strong>AI writing detector</strong> can be one signal, but it should not be the whole case. <mark>No one should face an automatic penalty from a detector result alone.</mark></p>
+    <p>OpenAI withdrew its own AI Text Classifier because of a low rate of accuracy. In its original classifier note, OpenAI also warned that the classifier was not fully reliable and should not be used as a primary decision-making tool. Independent research has also found that detector behavior can vary across writers and contexts, including higher false-positive risk for some non-native English writing.</p>
+  </section>
+
+  <figure>
+    <img src="../assets/ai-detector-fair-process.svg" alt="A five-step fair process path: detector flag, check context, talk first, weigh evidence, then choose a fair outcome with support or appeal.">
+    <figcaption>A detector flag should trigger fair review, not shortcut punishment. The safer path is context, conversation, multiple evidence sources, and an appeal path.</figcaption>
+  </figure>
+
+  <section class="checklist" aria-labelledby="why-caution">
+    <h2 id="why-caution">Why detector caution matters</h2>
+    <ul>
+      <li><strong>False positives can harm real people.</strong> A human-written paper, message, report, or application can be mislabeled as AI-written.</li>
+      <li><strong>Writing style is not identity.</strong> Formal, fluent, repetitive, translated, edited, neurodivergent, template-based, or second-language writing can be misread by humans and tools.</li>
+      <li><strong>The evidence can be hard to reproduce.</strong> Detector scores may change with model updates, copied formatting, small edits, paraphrases, or different tools.</li>
+      <li><strong>“AI-assisted” is not one behavior.</strong> Brainstorming, grammar help, translation, citation formatting, undisclosed generation, and outsourced work raise different policy questions.</li>
+      <li><strong>Process quality matters.</strong> If a class or organization has not clearly explained allowed use, citation expectations, privacy rules, and appeal paths, enforcement becomes less fair.</li>
+    </ul>
+  </section>
+
+  <section class="card" aria-labelledby="minimum-rule">
+    <h2 id="minimum-rule">Minimum fair-process rule</h2>
+    <blockquote>No automatic discipline, firing, grade penalty, public accusation, or exclusion based only on an AI detector score.</blockquote>
+    <p>That rule does not prevent review. It prevents a weak signal from becoming a final decision without context, human judgment, and a chance to respond.</p>
+  </section>
+
+  <section aria-labelledby="process">
+    <h2 id="process">A fair review path</h2>
+    <div class="grid">
+      <div class="box"><h3>1. Pause the accusation</h3><p>Use neutral language: “A tool raised a concern” rather than “You cheated” or “This is AI-written.”</p></div>
+      <div class="box"><h3>2. Check the policy</h3><p>Ask what was actually allowed: idea generation, editing, translation, citation help, drafting, or no AI use at all.</p></div>
+      <div class="box"><h3>3. Review process evidence</h3><p>Look for drafts, version history, notes, outlines, sources, comments, timestamps, oral explanation, or revision patterns.</p></div>
+      <div class="box"><h3>4. Invite an explanation</h3><p>Give the person a chance to describe their process before deciding what happened.</p></div>
+      <div class="box"><h3>5. Separate support from misconduct</h3><p>A struggling writer may need help, clearer instructions, accessibility support, language support, or a chance to revise.</p></div>
+      <div class="box"><h3>6. Document the decision</h3><p>Record what evidence was considered, what uncertainty remains, what policy applies, and how to appeal.</p></div>
+    </div>
+  </section>
+
+  <section class="checklist" aria-labelledby="evidence-table">
+    <h2 id="evidence-table">What counts as stronger or weaker evidence?</h2>
+    <table>
+      <thead><tr><th>Evidence</th><th>How to treat it</th></tr></thead>
+      <tbody>
+        <tr><td>Detector score alone</td><td><span class="warn">Weak.</span> A reason to ask careful questions, not proof.</td></tr>
+        <tr><td>Sudden writing-style change</td><td>Context-dependent. Check assignment type, editing help, language support, time pressure, templates, and prior examples.</td></tr>
+        <tr><td>Missing drafts or notes</td><td>Not conclusive. Some people draft in ways that leave little evidence; future assignments can require process artifacts.</td></tr>
+        <tr><td>Version history, drafts, notes, source trail, and oral explanation</td><td><span class="ok">Stronger.</span> These can show how work developed and where outside tools helped.</td></tr>
+        <tr><td>Clear admission or documented prohibited use</td><td>Relevant, but still apply the published policy, proportional response, and appeal path.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="template" aria-labelledby="script">
+    <h2 id="script">A calmer conversation script</h2>
+    <p><strong>Start:</strong> “I want to understand your process, not jump to a conclusion.”</p>
+    <p><strong>Name the concern:</strong> “A detection tool or review raised a concern, but that is not proof by itself.”</p>
+    <p><strong>Ask for process:</strong> “Can you show or describe your notes, drafts, source choices, edits, or where tools were used?”</p>
+    <p><strong>Clarify policy:</strong> “Here is what the policy allowed and did not allow for this task.”</p>
+    <p><strong>Close fairly:</strong> “Here is what evidence I considered, what decision I made, and how you can respond or appeal.”</p>
+  </section>
+
+  <section class="card" aria-labelledby="better-design">
+    <h2 id="better-design">Design assignments and workflows that need fewer accusations</h2>
+    <ul>
+      <li>State allowed and disallowed AI uses before work begins.</li>
+      <li>Ask for process artifacts: proposal, outline, source list, draft, reflection, or change log.</li>
+      <li>Grade or review the reasoning process, not just the polished output.</li>
+      <li>Offer legitimate support for language, accessibility, tutoring, editing, and revision needs.</li>
+      <li>Use oral check-ins, short reflections, or in-class work when authorship really matters.</li>
+      <li>Keep privacy in mind: do not upload sensitive student, worker, client, or unpublished writing to tools without authority and disclosure.</li>
+    </ul>
+  </section>
+
+  <section class="sources" aria-labelledby="sources">
+    <h2 id="sources">Sources and further reading</h2>
+    <ul>
+      <li><a href="https://openai.com/index/new-ai-classifier-for-indicating-ai-written-text/">OpenAI — New AI classifier for indicating AI-written text</a></li>
+      <li><a href="https://help.openai.com/en/articles/8313351-how-can-educators-respond-to-students-presenting-ai-generated-content-as-their-own">OpenAI Help Center — How can educators respond to students presenting AI-generated content as their own?</a></li>
+      <li><a href="https://teaching.cornell.edu/generative-artificial-intelligence/ai-academic-integrity">Cornell Center for Teaching Innovation — Generative AI, academic integrity, and AI detection</a></li>
+      <li><a href="https://edintegrity.biomedcentral.com/articles/10.1007/s40979-023-00146-z">International Journal for Educational Integrity — Testing of detection tools for AI-generated text</a></li>
+      <li><a href="https://arxiv.org/abs/2304.02819">Liang et al. — GPT detectors are biased against non-native English writers</a></li>
+      <li><a href="https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research">UNESCO — Guidance for generative AI in education and research</a></li>
+    </ul>
+    <p class="note">This guide is public education, not legal advice. High-stakes discipline or employment decisions need the relevant policy, labor, accessibility, privacy, and legal review.</p>
+  </section>
+</main>
+</body>
+</html>

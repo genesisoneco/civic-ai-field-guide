@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">AI detector caution and fair process path</title>
+  <desc id="desc">A flow diagram showing that a detector flag should lead to context checks, conversation, evidence review, and support or appeal rather than automatic punishment.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#10131a"/>
+      <stop offset="1" stop-color="#20294a"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1">
+      <stop offset="0" stop-color="#8ea2ff"/>
+      <stop offset="1" stop-color="#77dfc8"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="150%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <rect width="960" height="420" rx="34" fill="url(#bg)"/>
+  <g opacity="0.12" stroke="#fff">
+    <path d="M80 74h800M80 154h800M80 234h800M80 314h800"/>
+    <path d="M160 42v336M320 42v336M480 42v336M640 42v336M800 42v336"/>
+  </g>
+  <text x="64" y="70" fill="#f4efe4" font-family="Inter, system-ui, sans-serif" font-size="34" font-weight="800">AI detector result ≠ final decision</text>
+  <text x="64" y="104" fill="#b8c7df" font-family="Inter, system-ui, sans-serif" font-size="17">Use flags as one weak signal that triggers fair review, not as proof of misconduct.</text>
+  <g filter="url(#shadow)" font-family="Inter, system-ui, sans-serif">
+    <g transform="translate(58 150)">
+      <rect width="150" height="132" rx="22" fill="#fffaf0"/>
+      <circle cx="75" cy="36" r="19" fill="#ffcf70"/>
+      <text x="75" y="76" text-anchor="middle" fill="#182235" font-size="17" font-weight="800">Detector flag</text>
+      <text x="75" y="101" text-anchor="middle" fill="#5d6675" font-size="13">Treat as uncertain</text>
+    </g>
+    <g transform="translate(230 150)">
+      <rect width="150" height="132" rx="22" fill="#fffaf0"/>
+      <path d="M55 34h40M55 51h40M55 68h28" stroke="#2454ff" stroke-width="8" stroke-linecap="round"/>
+      <text x="75" y="92" text-anchor="middle" fill="#182235" font-size="17" font-weight="800">Check context</text>
+      <text x="75" y="113" text-anchor="middle" fill="#5d6675" font-size="13">assignment, drafts</text>
+    </g>
+    <g transform="translate(402 150)">
+      <rect width="150" height="132" rx="22" fill="#fffaf0"/>
+      <path d="M45 42h60a18 18 0 0 1 0 36H79l-22 19v-19H45a18 18 0 0 1 0-36z" fill="#77dfc8"/>
+      <text x="75" y="96" text-anchor="middle" fill="#182235" font-size="17" font-weight="800">Talk first</text>
+      <text x="75" y="116" text-anchor="middle" fill="#5d6675" font-size="13">ask, don’t accuse</text>
+    </g>
+    <g transform="translate(574 150)">
+      <rect width="150" height="132" rx="22" fill="#fffaf0"/>
+      <path d="M51 81l23-45 35 64" fill="none" stroke="#2454ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="75" y="96" text-anchor="middle" fill="#182235" font-size="17" font-weight="800">Weigh evidence</text>
+      <text x="75" y="116" text-anchor="middle" fill="#5d6675" font-size="13">multiple signals</text>
+    </g>
+    <g transform="translate(746 150)">
+      <rect width="150" height="132" rx="22" fill="url(#card)"/>
+      <path d="M48 68l18 18 45-50" fill="none" stroke="#06101a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="75" y="96" text-anchor="middle" fill="#06101a" font-size="17" font-weight="900">Fair outcome</text>
+      <text x="75" y="116" text-anchor="middle" fill="#102033" font-size="13">support or appeal</text>
+    </g>
+  </g>
+  <g stroke="#f4efe4" stroke-width="3" stroke-linecap="round" opacity="0.72">
+    <path d="M210 216h17"/><path d="M382 216h17"/><path d="M554 216h17"/><path d="M726 216h17"/>
+  </g>
+  <rect x="64" y="322" width="832" height="46" rx="23" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.18)"/>
+  <text x="480" y="351" text-anchor="middle" fill="#f4efe4" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700">Minimum rule: no automatic penalty from a detector score alone.</text>
+</svg>
