@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Consent and Disclosure | Civic AI Field Guide</title>
+  <meta name="description" content="A practical guide to telling people when AI is involved, when consent matters, and what review or refusal paths should exist.">
+  <style>
+    :root { color-scheme: light dark; --bg:#f7f3ea; --ink:#1d2430; --muted:#5d6675; --card:#fffaf0; --line:#ded2bd; --accent:#2454ff; --mark:#fff1a8; --warn:#8a3d00; --ok:#116b59; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#10131a; --ink:#f4efe4; --muted:#b8b0a2; --card:#181d27; --line:#303746; --accent:#8ea2ff; --mark:#514600; --warn:#ffb86b; --ok:#77dfc8; } }
+    body { margin:0; font:18px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:960px; margin:0 auto; padding:48px 24px 72px; }
+    nav { font-size:16px; margin-bottom:32px; }
+    h1 { font-size:clamp(38px,6vw,68px); line-height:1; letter-spacing:-.045em; margin:.2em 0 .35em; }
+    h2 { margin-top:44px; font-size:30px; line-height:1.15; }
+    h3 { margin-top:28px; }
+    p.lead { font-size:22px; color:var(--muted); max-width:70ch; }
+    .card, .checklist, figure, .template { border:1px solid var(--line); background:var(--card); border-radius:20px; padding:24px; margin:24px 0; }
+    figure { overflow:hidden; }
+    figcaption { color:var(--muted); font-size:16px; margin-top:12px; }
+    img { max-width:100%; height:auto; display:block; border-radius:16px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; color:var(--muted); font-weight:700; }
+    a { color:var(--accent); }
+    li { margin:.45em 0; }
+    code, mark { background:var(--mark); color:inherit; padding:.1em .3em; border-radius:.3em; }
+    .note { color:var(--muted); }
+    .ok { color:var(--ok); font-weight:800; }
+    .warn { color:var(--warn); font-weight:800; }
+    .grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .box { border:1px dashed var(--line); border-radius:14px; padding:14px; background:rgba(255,255,255,.32); }
+    .box h3 { margin:0 0 8px; font-size:20px; }
+    .template p { margin:.65em 0; }
+    blockquote { border-left:5px solid var(--accent); margin:18px 0; padding:8px 0 8px 18px; color:var(--ink); }
+    table { width:100%; border-collapse:collapse; margin:18px 0; font-size:16px; }
+    th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+    th { background:rgba(36,84,255,.08); }
+    @media (max-width: 760px) { .grid { grid-template-columns:1fr; } table { font-size:14px; } }
+    @media print {
+      body { background:white; color:#111; font-size:13px; }
+      main { max-width:none; padding:16px; }
+      nav, figure, .sources { display:none; }
+      .card, .checklist, .template { border:1px solid #999; background:white; break-inside:avoid; margin:12px 0; padding:12px; }
+      h1 { font-size:34px; }
+      h2 { margin-top:18px; font-size:22px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Consent and Disclosure",
+    "description": "A practical guide to telling people when AI is involved, when consent matters, and what review or refusal paths should exist.",
+    "author": {"@type": "Organization", "name": "Lantern / Civic AI Field Guide"},
+    "datePublished": "2026-07-03",
+    "dateModified": "2026-07-03",
+    "image": "../assets/ai-consent-disclosure.svg"
+  }
+  </script>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">← Civic AI Field Guide</a></nav>
+
+  <p class="eyebrow">AI literacy</p>
+  <h1>AI consent and disclosure.</h1>
+  <p class="lead">Use this when a school, workplace, public office, health program, newsroom, or community group needs to tell people when AI is involved — and decide when notice is not enough.</p>
+
+  <section class="card" aria-labelledby="short-answer">
+    <h2 id="short-answer">The short answer</h2>
+    <p>People should be told when AI materially shapes something they see, hear, submit, are evaluated by, or are asked to trust. <mark>The more personal impact, risk, power imbalance, or lack of alternatives a use has, the more it needs clear notice, meaningful choice, human review, and a way to challenge errors.</mark></p>
+    <p>Disclosure is not magic. A vague “AI may be used” label does not fix unsafe design, biased data, inaccessible workflows, privacy problems, or a missing appeal path. Consent is meaningful only when people understand the AI use, can refuse without unfair penalty where refusal is realistic, and have a safe alternative for high-stakes needs.</p>
+  </section>
+
+  <figure>
+    <img src="../assets/ai-consent-disclosure.svg" alt="A five-step AI notice and consent ladder: name the AI use, explain the purpose, show the stakes, offer choice or review, and record feedback.">
+    <figcaption>Simple notice may be enough for low-risk AI assistance. As stakes rise, organizations should add clearer explanation, human review, opt-out or alternative paths, and records of complaints or corrections.</figcaption>
+  </figure>
+
+  <section class="card" aria-labelledby="why">
+    <h2 id="why">Why disclosure matters</h2>
+    <p>The NIST AI Risk Management Framework describes trustworthy AI work in terms such as validity, reliability, safety, security, privacy, fairness, transparency, explainability, interpretability, and accountability. Disclosure supports several of those goals because people cannot question, correct, avoid, or contextualize a system they do not know is involved.</p>
+    <p>The archived Blueprint for an AI Bill of Rights similarly emphasizes notice and explanation for automated systems that may affect people. UNESCO’s generative AI guidance for education and research also points to human agency, transparency, privacy, and safeguards when AI is introduced into learning environments.</p>
+    <p>Use these sources as public-interest guidance, not as a one-size legal rule. Specific legal duties vary by country, sector, funding, role, contract, age group, disability access needs, labor rules, privacy law, and civil-rights context.</p>
+  </section>
+
+  <section class="checklist" aria-labelledby="disclosure-consent">
+    <h2 id="disclosure-consent">Disclosure is not the same as consent</h2>
+    <div class="grid">
+      <div class="box"><h3>Disclosure</h3><p>“AI is involved here. This is what it does, what it does not do, and how to get help.” Disclosure is often the minimum for transparency.</p></div>
+      <div class="box"><h3>Meaningful consent</h3><p>“You understand the AI use and can say yes or no without losing a necessary service unfairly.” Consent requires real choice, not just a buried notice.</p></div>
+      <div class="box"><h3>Human review</h3><p>“A qualified person can check, override, or explain an AI-assisted result before harm becomes final.” Review matters most when decisions affect people.</p></div>
+      <div class="box"><h3>Refusal or alternative</h3><p>“There is a non-AI path or practical workaround.” This is important for sensitive data, accessibility, children, public services, and high-stakes decisions.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="decision-table">
+    <h2 id="decision-table">A practical decision table</h2>
+    <table>
+      <thead><tr><th>Situation</th><th>Usually needs</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td>Low-risk AI assistance</td><td>Clear notice and correction path</td><td>AI helped summarize a public meeting agenda, with human editing before publication.</td></tr>
+        <tr><td>AI-generated or AI-edited content people may rely on</td><td>Disclosure, limits, source links, and a way to report errors</td><td>A public FAQ says AI assisted the draft and staff reviewed the final version.</td></tr>
+        <tr><td>Optional convenience feature</td><td>Notice plus opt-in or easy opt-out</td><td>A chatbot can help navigate a site, but a phone, email, form, or human desk remains available.</td></tr>
+        <tr><td>Personal data or sensitive context</td><td>Plain explanation, privacy check, minimization, and refusal or safer alternative where feasible</td><td>A school wants to use AI to analyze student writing, support needs, or behavior notes.</td></tr>
+        <tr><td>High-stakes decision support</td><td>Disclosure, human review, appeal path, recordkeeping, and stronger safeguards before use</td><td>AI influences eligibility, discipline, benefits, hiring, housing, health, finance, safety, or legal status.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="checklist" aria-labelledby="when-notice-enough">
+    <h2 id="when-notice-enough">When notice may be enough</h2>
+    <ul>
+      <li>The AI use is low stakes, easy to ignore, and does not affect a person’s rights, access, safety, finances, education, employment, housing, or legal status.</li>
+      <li>The output is reviewed by a responsible human before publication or use.</li>
+      <li>The notice is placed near the AI-assisted feature or content, not hidden only in a general policy page.</li>
+      <li>People can report errors, ask for clarification, or choose another simple path.</li>
+      <li>No sensitive personal data is required for the AI feature.</li>
+    </ul>
+  </section>
+
+  <section class="card" aria-labelledby="when-choice">
+    <h2 id="when-choice">When people should have a choice, review, or refusal path</h2>
+    <blockquote>If the AI use changes what people can access, how they are assessed, what information is collected about them, or whether they can complete a necessary task, do not rely on notice alone.</blockquote>
+    <ul>
+      <li><strong>Public or essential services:</strong> offer a human or non-AI route when AI support fails, excludes someone, or is inaccessible.</li>
+      <li><strong>Children and students:</strong> explain AI use in age-appropriate language and avoid treating silence as consent.</li>
+      <li><strong>Workplaces:</strong> do not bury AI monitoring, scoring, scheduling, or productivity analysis in vague policy language.</li>
+      <li><strong>Health, legal, finance, housing, benefits, and safety:</strong> provide human review and appeal before AI-influenced errors become final.</li>
+      <li><strong>Disability and language access:</strong> provide accessible formats, interpretation, assistive-technology compatibility, and non-chatbot paths where needed.</li>
+    </ul>
+  </section>
+
+  <section class="template" aria-labelledby="templates">
+    <h2 id="templates">Plain-language disclosure templates</h2>
+    <p><strong>AI-assisted draft:</strong> “AI helped draft or summarize this material. A person reviewed and edited it before publication. If you spot an error, contact [contact path].”</p>
+    <p><strong>AI-supported decision:</strong> “AI may help organize or flag information for this decision, but it should not be the final authority. You may ask for human review, correction, or appeal through [path].”</p>
+    <p><strong>Optional AI feature:</strong> “This AI tool is optional. You can use [non-AI path] instead. Do not enter sensitive personal information unless the form specifically asks for it and explains why.”</p>
+    <p><strong>AI chatbot or automated help:</strong> “This assistant may make mistakes and cannot decide your rights, benefits, eligibility, discipline, medical care, legal status, or deadlines. For important issues, use [human contact path].”</p>
+    <p><strong>High-stakes no-consent warning:</strong> “Do not use AI for this step until the people affected have clear notice, a practical way to get human review, and a safe alternative if they cannot or should not use the AI path.”</p>
+  </section>
+
+  <section class="checklist" aria-labelledby="checklist">
+    <h2 id="checklist">Consent and disclosure checklist</h2>
+    <ul>
+      <li><span class="ok">Name:</span> Can a person tell exactly where AI is involved?</li>
+      <li><span class="ok">Purpose:</span> Does the notice say what the AI does and what remains human responsibility?</li>
+      <li><span class="ok">Stakes:</span> Does it explain what could affect the person and what cannot?</li>
+      <li><span class="ok">Data:</span> Does it say what information is collected, submitted, stored, or shared, without legalistic fog?</li>
+      <li><span class="ok">Choice:</span> Is there an opt-in, opt-out, refusal, non-AI path, or human review where stakes require it?</li>
+      <li><span class="ok">Accessibility:</span> Is the notice readable, translated where needed, compatible with assistive technology, and available outside a chatbot?</li>
+      <li><span class="ok">Appeal:</span> Can people correct, contest, or escalate an AI-influenced outcome?</li>
+      <li><span class="ok">Record:</span> Will complaints, corrections, refusals, and failures be logged and used to improve the system?</li>
+    </ul>
+  </section>
+
+  <section class="card" aria-labelledby="bad-signs">
+    <h2 id="bad-signs">Bad signs</h2>
+    <ul>
+      <li><span class="warn">Vague:</span> “We use advanced technology” without naming AI or explaining its role.</li>
+      <li><span class="warn">Coercive:</span> “By continuing, you consent” when the person needs the service and has no realistic alternative.</li>
+      <li><span class="warn">Hidden:</span> The only disclosure is buried in a long policy page unrelated to the actual decision point.</li>
+      <li><span class="warn">Overconfident:</span> The notice says the AI is accurate, objective, or unbiased without evidence and limits.</li>
+      <li><span class="warn">Unreviewable:</span> No one can explain, correct, appeal, or override an AI-influenced result.</li>
+    </ul>
+  </section>
+
+  <section class="sources" aria-labelledby="sources">
+    <h2 id="sources">Sources and further reading</h2>
+    <ul>
+      <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST — AI Risk Management Framework</a></li>
+      <li><a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10">NIST — Artificial Intelligence Risk Management Framework (AI RMF 1.0)</a></li>
+      <li><a href="https://bidenwhitehouse.archives.gov/ostp/ai-bill-of-rights/">Archived White House OSTP — Blueprint for an AI Bill of Rights</a></li>
+      <li><a href="https://unesdoc.unesco.org/ark:/48223/pf0000386693">UNESCO — Guidance for generative AI in education and research</a></li>
+      <li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai">European Commission — AI Act overview</a></li>
+    </ul>
+    <p class="note">This guide is public education, not legal advice. Consent, notice, automated decision, privacy, accessibility, labor, education, consumer-protection, and civil-rights duties vary by jurisdiction and setting. For binding obligations, consult the relevant authority and qualified counsel.</p>
+  </section>
+</main>
+</body>
+</html>
