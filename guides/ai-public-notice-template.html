@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Public Notice Template | Civic AI Field Guide</title>
+  <meta name="description" content="Starter language for telling people when AI is used in a service or workflow, what it affects, who owns it, and how to reach human review or accessibility support.">
+  <style>
+    :root { color-scheme: light dark; --bg:#f7f3ea; --ink:#1d2430; --muted:#5d6675; --card:#fffaf0; --line:#ded2bd; --accent:#2454ff; --mark:#fff1a8; --warn:#8a3d00; --ok:#116b59; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#10131a; --ink:#f4efe4; --muted:#b8b0a2; --card:#181d27; --line:#303746; --accent:#8ea2ff; --mark:#514600; --warn:#ffb86b; --ok:#77dfc8; } }
+    body { margin:0; font:18px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:960px; margin:0 auto; padding:48px 24px 72px; }
+    nav { font-size:16px; margin-bottom:32px; }
+    h1 { font-size:clamp(38px,6vw,68px); line-height:1; letter-spacing:-.045em; margin:.2em 0 .35em; }
+    h2 { margin-top:44px; font-size:30px; line-height:1.15; }
+    h3 { margin-top:28px; }
+    p.lead { font-size:22px; color:var(--muted); max-width:70ch; }
+    .card, .checklist, figure, .template { border:1px solid var(--line); background:var(--card); border-radius:20px; padding:24px; margin:24px 0; }
+    figure { overflow:hidden; }
+    figcaption { color:var(--muted); font-size:16px; margin-top:12px; }
+    img { max-width:100%; height:auto; display:block; border-radius:16px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; color:var(--muted); font-weight:700; }
+    a { color:var(--accent); }
+    li { margin:.45em 0; }
+    code, mark { background:var(--mark); color:inherit; padding:.1em .3em; border-radius:.3em; }
+    .note { color:var(--muted); }
+    .ok { color:var(--ok); font-weight:800; }
+    .warn { color:var(--warn); font-weight:800; }
+    .grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .box { border:1px dashed var(--line); border-radius:14px; padding:14px; background:rgba(255,255,255,.32); }
+    .box h3 { margin:0 0 8px; font-size:20px; }
+    .template p { margin:.65em 0; }
+    blockquote { border-left:5px solid var(--accent); margin:18px 0; padding:8px 0 8px 18px; color:var(--ink); }
+    table { width:100%; border-collapse:collapse; margin:18px 0; font-size:16px; }
+    th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+    th { background:rgba(36,84,255,.08); }
+    @media (max-width: 760px) { .grid { grid-template-columns:1fr; } table { font-size:14px; } }
+    @media print {
+      body { background:white; color:#111; font-size:13px; }
+      main { max-width:none; padding:16px; }
+      nav, figure, .sources { display:none; }
+      .card, .checklist, .template { border:1px solid #999; background:white; break-inside:avoid; margin:12px 0; padding:12px; }
+      h1 { font-size:34px; }
+      h2 { margin-top:18px; font-size:22px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Public Notice Template",
+    "description": "Starter language for telling people when AI is used in a service or workflow, what it affects, who owns it, and how to reach human review or accessibility support.",
+    "author": {"@type": "Organization", "name": "Lantern / Civic AI Field Guide"},
+    "datePublished": "2026-07-10",
+    "dateModified": "2026-07-10",
+    "image": "../assets/ai-public-notice-template.svg"
+  }
+  </script>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">← Civic AI Field Guide</a></nav>
+
+  <p class="eyebrow">AI transparency</p>
+  <h1>AI public notice template.</h1>
+  <p class="lead">Use this when people may be affected by an AI-assisted service, workflow, classroom practice, workplace process, public benefit, complaint system, translation, summary, screening step, or decision support tool.</p>
+
+  <section class="card" aria-labelledby="short-answer">
+    <h2 id="short-answer">The short answer</h2>
+    <p>A useful AI notice tells people five things in plain language: <mark>AI is involved, what it is used for, what it can affect, who is responsible, and how to reach a human for review, appeal, language access, disability access, or correction.</mark></p>
+    <p>Notice is not a magic compliance shield. It is a practical trust and safety tool. People should not need to guess that AI shaped a message, score, summary, recommendation, eligibility step, or record about them.</p>
+  </section>
+
+  <figure>
+    <img src="../assets/ai-public-notice-template.svg" alt="A diagram showing an AI public notice connected to purpose, AI role, owner, human review, appeal contact, language access, disability access, and correction path.">
+    <figcaption>A good notice connects disclosure to usable choices: review, appeal, accessibility support, language access, and correction.</figcaption>
+  </figure>
+
+  <section class="card" aria-labelledby="why">
+    <h2 id="why">Why notice matters</h2>
+    <p>The NIST AI Risk Management Framework emphasizes governance, mapping context, measuring risks, managing harms, documentation, accountability, transparency, and communication. A notice helps turn those ideas into something affected people can actually use.</p>
+    <p>OMB Memorandum M-24-10 directs U.S. federal agencies to strengthen governance, risk management, transparency, inventories, and safeguards for agency AI use, especially where rights or safety may be affected. The European Commission’s AI Act overview describes transparency obligations for some AI uses and stronger obligations for high-risk systems. The UK Information Commissioner’s Office guidance emphasizes transparency, accountability, and data protection duties when AI uses personal data.</p>
+    <p>Use this as public-interest guidance, not legal advice. Real notice duties vary by jurisdiction, sector, public-records law, labor rules, disability law, civil-rights law, privacy law, contract, and whether the AI use is high-risk.</p>
+  </section>
+
+  <section class="checklist" aria-labelledby="when">
+    <h2 id="when">When to provide an AI notice</h2>
+    <ul>
+      <li>AI output may shape a person’s access to education, employment, housing, health, credit, benefits, services, safety, discipline, moderation, legal status, or public participation.</li>
+      <li>AI is used to summarize, translate, score, flag, classify, prioritize, recommend, draft, personalize, or route information about people.</li>
+      <li>People may reasonably think they are interacting only with a human, or that a record was created only by a human.</li>
+      <li>A vendor tool quietly adds AI features to a workflow that already affects people.</li>
+      <li>People need a clear path to ask for human review, correction, accommodation, translation, or a non-AI alternative.</li>
+    </ul>
+  </section>
+
+  <section class="template" aria-labelledby="starter-template">
+    <h2 id="starter-template">Starter notice language</h2>
+    <blockquote>
+      <p><strong>AI use notice:</strong> We use [AI tool or AI-assisted process] to help with [specific task]. It may affect [what it may influence], but it may not be used for [off-limits use]. A human [reviews/checks/approves] [what part] before it affects you. The responsible owner is [role/team]. If you have questions, need language or disability access, want a human review, or believe something is wrong, contact [human contact/path] by [methods]. You can ask for [review/appeal/correction/non-AI option] without retaliation or loss of service.</p>
+    </blockquote>
+    <p class="note">Replace every bracket with local details. If a bracket cannot be filled, the workflow probably needs more governance before it goes live.</p>
+  </section>
+
+  <section aria-labelledby="field-table">
+    <h2 id="field-table">What the notice should say</h2>
+    <table>
+      <thead><tr><th>Field</th><th>Plain-language prompt</th><th>Why it matters</th></tr></thead>
+      <tbody>
+        <tr><td>AI role</td><td>What is AI doing: drafting, summarizing, translating, scoring, flagging, recommending, routing, or deciding?</td><td>People need to know whether AI is peripheral or influential.</td></tr>
+        <tr><td>Purpose</td><td>What specific service or workflow uses it?</td><td>Prevents vague disclosure such as “we use AI to improve services.”</td></tr>
+        <tr><td>Effect</td><td>What could it change for a person: message, wait time, eligibility, review, record, recommendation, or next step?</td><td>Notice is useful only when people can understand the stakes.</td></tr>
+        <tr><td>Human review</td><td>Who checks the output before it affects people, and can they override it?</td><td>“Human in the loop” is weak if the human cannot change the result.</td></tr>
+        <tr><td>Owner</td><td>Which role or team is accountable for the workflow?</td><td>Questions and corrections need somewhere to land.</td></tr>
+        <tr><td>Contact path</td><td>How can people reach a person by phone, email, web form, office, or other accessible route?</td><td>A notice without a usable contact path is mostly decoration.</td></tr>
+        <tr><td>Review or appeal</td><td>How can someone ask for human review, correction, appeal, or a non-AI alternative?</td><td>High-stakes workflows need a meaningful way to challenge errors.</td></tr>
+        <tr><td>Data basics</td><td>What personal data is used, retained, shared, or avoided?</td><td>People need to understand privacy exposure without reading vendor jargon.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="checklist" aria-labelledby="accessible">
+    <h2 id="accessible">Make the notice accessible</h2>
+    <div class="grid">
+      <div class="box"><h3>Plain language</h3><p>Use short sentences, active voice, and examples. Avoid “algorithmic optimization,” “AI-powered intelligence,” or vendor slogans.</p></div>
+      <div class="box"><h3>Easy to find</h3><p>Place the notice before or at the point of use, not only inside a privacy policy, procurement file, or terms page.</p></div>
+      <div class="box"><h3>Language access</h3><p>Provide translated notice and human interpretation paths when the service reaches people with limited English proficiency or other language needs.</p></div>
+      <div class="box"><h3>Disability access</h3><p>Use readable text, headings, sufficient contrast, keyboard-accessible links/forms, captions for media, and non-AI contact options.</p></div>
+      <div class="box"><h3>Multiple routes</h3><p>Do not make the only review path a chatbot, an inaccessible form, or the same AI workflow someone is questioning.</p></div>
+      <div class="box"><h3>Update after change</h3><p>Revise the notice when the tool, vendor, model, data, purpose, owner, contact path, or stakes change.</p></div>
+    </div>
+  </section>
+
+  <section class="checklist" aria-labelledby="bad-signs">
+    <h2 id="bad-signs">Bad signs</h2>
+    <ul>
+      <li><span class="warn">Warning:</span> The notice says “AI may be used” but never says where, why, or what it affects.</li>
+      <li><span class="warn">Warning:</span> People are told a human can review the result, but no contact route, timeline, or authority is named.</li>
+      <li><span class="warn">Warning:</span> The notice uses vendor marketing language instead of explaining the local workflow.</li>
+      <li><span class="warn">Warning:</span> The only way to object, correct, or appeal is through an automated system.</li>
+      <li><span class="warn">Warning:</span> The notice exists in one language, one format, or one inaccessible webpage for a diverse public service.</li>
+      <li><span class="warn">Warning:</span> The workflow changed, but the public notice, owner, and appeal path did not.</li>
+    </ul>
+  </section>
+
+  <section class="checklist" aria-labelledby="starter-checklist">
+    <h2 id="starter-checklist">Starter checklist</h2>
+    <ul>
+      <li><span class="ok">□</span> Name the AI-assisted workflow and its specific purpose.</li>
+      <li><span class="ok">□</span> Say what the AI may affect and what it may not decide.</li>
+      <li><span class="ok">□</span> Name the accountable owner or team.</li>
+      <li><span class="ok">□</span> Explain what human review exists before impact.</li>
+      <li><span class="ok">□</span> Provide a human contact path for questions, review, correction, and appeal.</li>
+      <li><span class="ok">□</span> Provide language access and disability-access routes.</li>
+      <li><span class="ok">□</span> State how the notice will be updated after tool, data, purpose, or owner changes.</li>
+      <li><span class="ok">□</span> Test the notice with someone outside the project: can they explain what AI does and how to reach a human?</li>
+    </ul>
+  </section>
+
+  <section class="sources" aria-labelledby="sources">
+    <h2 id="sources">Sources and further reading</h2>
+    <ul>
+      <li>NIST — <a href="https://www.nist.gov/itl/ai-risk-management-framework">AI Risk Management Framework</a>.</li>
+      <li>NIST — <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf">Artificial Intelligence Risk Management Framework (AI RMF 1.0)</a>.</li>
+      <li>U.S. Office of Management and Budget — <a href="https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf">M-24-10: Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence</a>.</li>
+      <li>European Commission — <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai">AI Act overview</a>.</li>
+      <li>UK Information Commissioner’s Office — <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/">Guidance on AI and data protection</a>.</li>
+      <li>W3C — <a href="https://www.w3.org/TR/WCAG22/">Web Content Accessibility Guidelines (WCAG) 2.2</a>.</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

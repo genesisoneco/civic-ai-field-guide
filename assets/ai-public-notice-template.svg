@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">AI public notice map</title>
+  <desc id="desc">A central public notice card connects to purpose, AI role, owner, human review, appeal contact, language access, disability access, and correction path.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8f0d8"/>
+      <stop offset="1" stop-color="#dce8ff"/>
+    </linearGradient>
+    <linearGradient id="notice" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#2454ff"/>
+      <stop offset="1" stop-color="#116b59"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#1d2430" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="960" height="540" rx="34" fill="url(#bg)"/>
+  <g fill="none" stroke="#61708d" stroke-width="4" stroke-linecap="round">
+    <path d="M480 260 L220 120"/>
+    <path d="M480 260 L480 95"/>
+    <path d="M480 260 L740 120"/>
+    <path d="M480 260 L220 420"/>
+    <path d="M480 260 L480 445"/>
+    <path d="M480 260 L740 420"/>
+    <path d="M480 260 L150 270"/>
+    <path d="M480 260 L810 270"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="318" y="180" width="324" height="166" rx="28" fill="url(#notice)"/>
+    <text x="480" y="232" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="800" fill="#fff">AI notice</text>
+    <text x="480" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#eaf2ff">What is used?</text>
+    <text x="480" y="302" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#eaf2ff">Who reviews?</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-weight="700" font-size="20" fill="#1d2430">
+    <g>
+      <rect x="95" y="72" width="250" height="78" rx="20" fill="#fffaf0" stroke="#c9b98f"/>
+      <text x="220" y="108" text-anchor="middle">Purpose</text>
+      <text x="220" y="132" text-anchor="middle" font-size="14" font-weight="400">specific workflow</text>
+    </g>
+    <g>
+      <rect x="365" y="45" width="230" height="78" rx="20" fill="#fffaf0" stroke="#c9b98f"/>
+      <text x="480" y="81" text-anchor="middle">AI role</text>
+      <text x="480" y="105" text-anchor="middle" font-size="14" font-weight="400">draft, score, flag, aid</text>
+    </g>
+    <g>
+      <rect x="615" y="72" width="250" height="78" rx="20" fill="#fffaf0" stroke="#c9b98f"/>
+      <text x="740" y="108" text-anchor="middle">Owner</text>
+      <text x="740" y="132" text-anchor="middle" font-size="14" font-weight="400">named accountable role</text>
+    </g>
+    <g>
+      <rect x="38" y="231" width="224" height="78" rx="20" fill="#eef7ff" stroke="#9ab3d8"/>
+      <text x="150" y="267" text-anchor="middle">Human review</text>
+      <text x="150" y="291" text-anchor="middle" font-size="14" font-weight="400">before impact</text>
+    </g>
+    <g>
+      <rect x="698" y="231" width="224" height="78" rx="20" fill="#eef7ff" stroke="#9ab3d8"/>
+      <text x="810" y="267" text-anchor="middle">Contact / appeal</text>
+      <text x="810" y="291" text-anchor="middle" font-size="14" font-weight="400">reach a person</text>
+    </g>
+    <g>
+      <rect x="90" y="389" width="260" height="78" rx="20" fill="#f3fff9" stroke="#9acbbd"/>
+      <text x="220" y="425" text-anchor="middle">Language access</text>
+      <text x="220" y="449" text-anchor="middle" font-size="14" font-weight="400">plain and translated</text>
+    </g>
+    <g>
+      <rect x="355" y="407" width="250" height="78" rx="20" fill="#f3fff9" stroke="#9acbbd"/>
+      <text x="480" y="443" text-anchor="middle">Disability access</text>
+      <text x="480" y="467" text-anchor="middle" font-size="14" font-weight="400">WCAG-readable</text>
+    </g>
+    <g>
+      <rect x="610" y="389" width="260" height="78" rx="20" fill="#f3fff9" stroke="#9acbbd"/>
+      <text x="740" y="425" text-anchor="middle">Correction path</text>
+      <text x="740" y="449" text-anchor="middle" font-size="14" font-weight="400">fix and learn</text>
+    </g>
+  </g>
+</svg>
