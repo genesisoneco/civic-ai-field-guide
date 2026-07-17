@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 960 420">
+  <title>AI deletion request workflow</title>
+  <desc>A six-step workflow showing intake, verify scope, hold review, delete or restrict, vendor confirmation, and evidence logging.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="node" x1="0" x2="1">
+      <stop offset="0" stop-color="#8aa4ff"/>
+      <stop offset="1" stop-color="#66e3d4"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <rect width="960" height="420" rx="28" fill="url(#bg)"/>
+  <g opacity="0.16" stroke="#e2e8f0" stroke-width="1">
+    <path d="M0 70h960M0 140h960M0 210h960M0 280h960M0 350h960M120 0v420M240 0v420M360 0v420M480 0v420M600 0v420M720 0v420M840 0v420"/>
+  </g>
+  <text x="48" y="58" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800">Deletion is a controlled workflow, not a guess</text>
+  <text x="48" y="91" fill="#cbd5e1" font-family="Inter, system-ui, sans-serif" font-size="16">Find the records, check exceptions, remove what can be removed, and keep only minimal proof.</text>
+
+  <g font-family="Inter, system-ui, sans-serif" filter="url(#shadow)">
+    <g transform="translate(48 146)">
+      <rect width="126" height="110" rx="18" fill="url(#node)"/>
+      <text x="63" y="35" text-anchor="middle" fill="#06111f" font-size="14" font-weight="900">1. Intake</text>
+      <text x="63" y="61" text-anchor="middle" fill="#06111f" font-size="12">request ID</text>
+      <text x="63" y="80" text-anchor="middle" fill="#06111f" font-size="12">and deadline</text>
+    </g>
+    <g transform="translate(206 146)">
+      <rect width="126" height="110" rx="18" fill="#f8fafc"/>
+      <text x="63" y="35" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="900">2. Verify</text>
+      <text x="63" y="61" text-anchor="middle" fill="#334155" font-size="12">identity, scope,</text>
+      <text x="63" y="80" text-anchor="middle" fill="#334155" font-size="12">systems</text>
+    </g>
+    <g transform="translate(364 146)">
+      <rect width="126" height="110" rx="18" fill="#fff7ed"/>
+      <text x="63" y="35" text-anchor="middle" fill="#7c2d12" font-size="14" font-weight="900">3. Hold check</text>
+      <text x="63" y="61" text-anchor="middle" fill="#9a3412" font-size="12">legal, appeal,</text>
+      <text x="63" y="80" text-anchor="middle" fill="#9a3412" font-size="12">safety, audit</text>
+    </g>
+    <g transform="translate(522 146)">
+      <rect width="126" height="110" rx="18" fill="#ecfeff"/>
+      <text x="63" y="35" text-anchor="middle" fill="#164e63" font-size="14" font-weight="900">4. Remove</text>
+      <text x="63" y="61" text-anchor="middle" fill="#155e75" font-size="12">delete, restrict,</text>
+      <text x="63" y="80" text-anchor="middle" fill="#155e75" font-size="12">or anonymize</text>
+    </g>
+    <g transform="translate(680 146)">
+      <rect width="126" height="110" rx="18" fill="#eef2ff"/>
+      <text x="63" y="35" text-anchor="middle" fill="#3730a3" font-size="14" font-weight="900">5. Vendor</text>
+      <text x="63" y="61" text-anchor="middle" fill="#4338ca" font-size="12">request and</text>
+      <text x="63" y="80" text-anchor="middle" fill="#4338ca" font-size="12">confirm</text>
+    </g>
+    <g transform="translate(790 296)">
+      <rect width="126" height="78" rx="18" fill="#dcfce7"/>
+      <text x="63" y="31" text-anchor="middle" fill="#14532d" font-size="14" font-weight="900">6. Evidence</text>
+      <text x="63" y="55" text-anchor="middle" fill="#166534" font-size="12">metadata only</text>
+    </g>
+  </g>
+
+  <g fill="none" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M178 201h22"/><path d="M336 201h22"/><path d="M494 201h22"/><path d="M652 201h22"/>
+    <path d="M806 201c56 0 47 67 47 89"/>
+  </g>
+  <g fill="#cbd5e1">
+    <path d="M199 193l13 8-13 8z"/><path d="M357 193l13 8-13 8z"/><path d="M515 193l13 8-13 8z"/><path d="M673 193l13 8-13 8z"/><path d="M845 289l8 13 8-13z"/>
+  </g>
+
+  <g font-family="Inter, system-ui, sans-serif" font-size="13" fill="#e2e8f0">
+    <text x="48" y="328">Minimal proof should say what category was handled, where, when, by whom, and why exceptions remain.</text>
+    <text x="48" y="352">Do not copy the deleted prompt, upload, or sensitive fact into the deletion evidence record.</text>
+  </g>
+</svg>
