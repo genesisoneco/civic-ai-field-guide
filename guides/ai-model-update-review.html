@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Model Update Review Checklist | Civic AI Field Guide</title>
+  <meta name="description" content="A practical checklist for reviewing AI model changes, vendor feature rollouts, policy updates, and workflow changes before risk shifts unnoticed.">
+  <style>
+    :root { color-scheme: light dark; --bg:#f8f4ea; --ink:#1c2430; --muted:#5d6675; --card:#fffaf0; --line:#ded2bd; --accent:#2454ff; --mark:#fff1a8; --warn:#8a3d00; --ok:#116b59; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#10131a; --ink:#f4efe4; --muted:#b8b0a2; --card:#181d27; --line:#303746; --accent:#8ea2ff; --mark:#514600; --warn:#ffb86b; --ok:#77dfc8; } }
+    body { margin:0; font:18px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:980px; margin:0 auto; padding:48px 24px 72px; }
+    nav { font-size:16px; margin-bottom:32px; }
+    h1 { font-size:clamp(38px,6vw,68px); line-height:1; letter-spacing:-.045em; margin:.2em 0 .35em; }
+    h2 { margin-top:44px; font-size:30px; line-height:1.15; }
+    h3 { margin-top:28px; }
+    p.lead { font-size:22px; color:var(--muted); max-width:72ch; }
+    .card, .checklist, figure { border:1px solid var(--line); background:var(--card); border-radius:20px; padding:24px; margin:24px 0; }
+    figure { overflow:hidden; }
+    figcaption { color:var(--muted); font-size:16px; margin-top:12px; }
+    img { max-width:100%; height:auto; display:block; border-radius:16px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; color:var(--muted); font-weight:700; }
+    a { color:var(--accent); }
+    li { margin:.45em 0; }
+    code, mark { background:var(--mark); color:inherit; padding:.1em .3em; border-radius:.3em; }
+    .note { color:var(--muted); }
+    .ok { color:var(--ok); font-weight:800; }
+    .warn { color:var(--warn); font-weight:800; }
+    table { width:100%; border-collapse:collapse; margin:18px 0; font-size:16px; }
+    th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+    th { background:rgba(36,84,255,.08); }
+    .grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .box { border:1px dashed var(--line); border-radius:14px; padding:14px; background:rgba(255,255,255,.32); }
+    .box h3 { margin:0 0 8px; font-size:20px; }
+    @media (max-width: 760px) { .grid { grid-template-columns:1fr; } table { font-size:14px; } }
+    @media print {
+      body { background:white; color:#111; font-size:13px; }
+      main { max-width:none; padding:16px; }
+      nav, figure, .sources { display:none; }
+      .card, .checklist { border:1px solid #999; background:white; break-inside:avoid; margin:12px 0; padding:12px; }
+      h1 { font-size:34px; }
+      h2 { margin-top:18px; font-size:22px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Model Update Review Checklist",
+    "description": "A practical checklist for reviewing AI model changes, vendor feature rollouts, policy updates, and workflow changes before risk shifts unnoticed.",
+    "author": {"@type": "Organization", "name": "Lantern / Civic AI Field Guide"},
+    "datePublished": "2026-07-20",
+    "dateModified": "2026-07-20",
+    "image": "../assets/ai-model-update-review.svg"
+  }
+  </script>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">← Civic AI Field Guide</a></nav>
+
+  <p class="eyebrow">AI governance basics</p>
+  <h1>AI model update review checklist.</h1>
+  <p class="lead">A lightweight change-control checklist for checking whether a vendor model change, feature rollout, policy update, prompt change, or retention change affects risk, notices, testing, training, deletion, or monitoring.</p>
+
+  <section class="card" aria-labelledby="short-answer">
+    <h2 id="short-answer">The short answer</h2>
+    <p>An AI model update review is a practical checkpoint that asks: <mark>what changed, who depends on it, what can fail differently now, what evidence says it still works locally, and what must be updated before people rely on it again.</mark></p>
+    <p>It is not a full audit, a guarantee of safety, or a reason to delay every small patch. It is a way to keep AI risk from drifting silently when a model, vendor setting, prompt template, data connection, moderation rule, logging policy, or product feature changes.</p>
+  </section>
+
+  <figure>
+    <img src="../assets/ai-model-update-review.svg" alt="A loop diagram showing an AI update review moving through notice, comparison, testing, control updates, communication, and monitoring, with a decision gate to ship, hold, roll back, or limit scope.">
+    <figcaption>Review updates as a loop. A change notice should lead to comparison, local testing, control updates, communication, and post-rollout monitoring — not just a forwarded vendor email.</figcaption>
+  </figure>
+
+  <section class="card" aria-labelledby="why">
+    <h2 id="why">Why model updates need review</h2>
+    <p>AI systems are not only the model. They include data, prompts, tools, settings, people, vendor contracts, notices, safeguards, and the real-world workflow around the output. A model or feature update can improve quality while still changing error patterns, privacy exposure, accessibility, staff behavior, appeal needs, logging, cost, or public expectations.</p>
+    <p>NIST’s AI Risk Management Framework emphasizes governance, measurement, management, and lifecycle risk monitoring. NIST’s Generative AI Profile discusses risks such as confabulation, privacy exposure, data security, information integrity, and harmful output. OMB M-24-10 tells U.S. federal agencies to manage AI risks across use cases and governance processes. OWASP’s LLM guidance highlights application risks around prompts, outputs, supply chain, sensitive information, and agency/tool use. The ICO’s AI guidance links AI deployment to data protection duties, and CISA’s Secure by Design guidance encourages secure product and change practices.</p>
+  </section>
+
+  <section class="checklist" aria-labelledby="triggers">
+    <h2 id="triggers">1. Decide what triggers a review</h2>
+    <ul>
+      <li><span class="ok">□</span> Vendor changes the model name, model version, default behavior, safety filters, tool-use capability, data retention setting, logging setting, training opt-in, or terms.</li>
+      <li><span class="ok">□</span> Team changes the system prompt, retrieval source, approved use case, access group, integration, human review step, escalation path, or public notice.</li>
+      <li><span class="ok">□</span> AI output begins affecting a higher-stakes decision than before: eligibility, discipline, benefits, employment, housing, health, education, safety, law, finance, or public services.</li>
+      <li><span class="ok">□</span> Incident reports, appeals, user complaints, accessibility issues, hallucinated citations, privacy concerns, or bias concerns suggest the old review is stale.</li>
+    </ul>
+    <p class="note">Use a proportional review. A spelling fix in an internal prompt may need a quick log entry; a vendor model swap in a public-benefits workflow may need testing, notice updates, records review, and leadership approval.</p>
+  </section>
+
+  <section class="checklist" aria-labelledby="compare">
+    <h2 id="compare">2. Compare before and after</h2>
+    <table>
+      <thead><tr><th>Question</th><th>What to look for</th><th>Related field guide</th></tr></thead>
+      <tbody>
+        <tr><td>What exactly changed?</td><td>Model, setting, prompt, data source, UI, tool permission, logging, retention, vendor policy, or workflow step.</td><td><a href="vendor-disclosure-checklist.html">Vendor disclosure checklist</a></td></tr>
+        <tr><td>Who is affected?</td><td>Users, staff, students, applicants, clients, residents, non-English speakers, disabled people, minors, or people named in uploaded records.</td><td><a href="ai-accessibility-review.html">Accessibility review</a></td></tr>
+        <tr><td>What decisions could change?</td><td>Recommendations, rankings, flags, summaries, translations, eligibility cues, escalation paths, or staff confidence in output.</td><td><a href="ai-evaluation-evidence-checklist.html">Evaluation evidence checklist</a></td></tr>
+        <tr><td>What data exposure could change?</td><td>New uploads, prompt retention, vendor review, training use, logs, exports, embeddings, or support attachments.</td><td><a href="ai-data-minimization-checklist.html">Data minimization checklist</a></td></tr>
+        <tr><td>What public promise could become inaccurate?</td><td>Notice language, consent language, deletion promises, retention schedules, appeal paths, human-review claims, or opt-out routes.</td><td><a href="ai-public-notice-template.html">Public notice template</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="checklist" aria-labelledby="test">
+    <h2 id="test">3. Run local regression tests</h2>
+    <ul>
+      <li><span class="ok">□</span> Re-test real examples from the approved use case, including easy cases, edge cases, past failure cases, and examples from appeals or incidents.</li>
+      <li><span class="ok">□</span> Include examples that should trigger refusal, human review, citation checking, language-access review, accessibility accommodation, or stop rules.</li>
+      <li><span class="ok">□</span> Compare outputs against the previous version when possible: accuracy, omissions, tone, uncertainty, citations, privacy handling, and escalation behavior.</li>
+      <li><span class="ok">□</span> Record the test date, model or feature version, prompts/settings used, reviewer role, pass/fail criteria, and decision. Do not store unnecessary sensitive test data.</li>
+      <li><span class="ok">□</span> If a test fails in a way that could affect people, hold rollout, narrow scope, add review, roll back, or escalate through the <a href="ai-incident-response.html">AI incident response guide</a>.</li>
+    </ul>
+  </section>
+
+  <section class="checklist" aria-labelledby="controls">
+    <h2 id="controls">4. Update controls, notices, and records</h2>
+    <div class="grid">
+      <div class="box"><h3>Controls</h3><p>Update access, allowed uses, prompts, review gates, logging settings, approval roles, stop rules, and vendor settings.</p></div>
+      <div class="box"><h3>Public communication</h3><p>Refresh notices, consent language, user instructions, support scripts, appeal routes, and explanation text when promises changed.</p></div>
+      <div class="box"><h3>Records</h3><p>Check whether the <a href="ai-record-retention-schedule.html">retention schedule</a> and <a href="ai-deletion-request-workflow.html">deletion workflow</a> still match the system’s behavior.</p></div>
+      <div class="box"><h3>Training</h3><p>Tell staff what changed, what not to assume, when to pause use, and where to report unexpected output.</p></div>
+    </div>
+  </section>
+
+  <section class="checklist" aria-labelledby="monitor">
+    <h2 id="monitor">5. Watch the first days after rollout</h2>
+    <ul>
+      <li><span class="ok">□</span> Name an owner who checks early feedback, support tickets, appeals, incident reports, analytics, and staff questions.</li>
+      <li><span class="ok">□</span> Set a review date after rollout. For higher-impact uses, do not wait for the annual review cycle.</li>
+      <li><span class="ok">□</span> Track whether error types changed: more confident wrong answers, missing caveats, worse translations, inaccessible output, different refusals, or surprising tool actions.</li>
+      <li><span class="ok">□</span> Keep a rollback or scope-limiting option ready if the update performs worse in the local context.</li>
+    </ul>
+  </section>
+
+  <section class="checklist" aria-labelledby="bad-signs">
+    <h2 id="bad-signs">Bad signs</h2>
+    <ul>
+      <li><span class="warn">Warning:</span> The team learns about model changes only after users or staff report different behavior.</li>
+      <li><span class="warn">Warning:</span> Vendor release notes are treated as proof that the system remains safe for the local use case.</li>
+      <li><span class="warn">Warning:</span> Public notices, consent language, deletion promises, and staff training still describe the old system.</li>
+      <li><span class="warn">Warning:</span> The updated system has new tool permissions, data access, or memory features but no renewed access review.</li>
+      <li><span class="warn">Warning:</span> No one can name the version, test evidence, approval decision, rollback path, or monitoring owner.</li>
+    </ul>
+  </section>
+
+  <section class="checklist" aria-labelledby="starter-language">
+    <h2 id="starter-language">Starter review language</h2>
+    <p><strong>For an internal change log:</strong> “This AI workflow changed on [date]. The change affected [model / feature / prompt / data source / setting / policy]. We compared the previous and new behavior using [test set or examples], checked privacy, retention, accessibility, notice, appeal, and staff-training impacts, and decided to [ship / hold / limit scope / roll back]. The monitoring owner is [role], with first review on [date].”</p>
+    <p class="note">Adapt this to the organization’s risk tier, procurement terms, records policy, privacy duties, public-records obligations, security review, and human-review process.</p>
+  </section>
+
+  <section class="sources" aria-labelledby="sources">
+    <h2 id="sources">Sources and further reading</h2>
+    <ul>
+      <li>NIST — <a href="https://www.nist.gov/itl/ai-risk-management-framework">AI Risk Management Framework</a>.</li>
+      <li>NIST — <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf">Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile</a>.</li>
+      <li>U.S. Office of Management and Budget — <a href="https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf">M-24-10: Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence</a>.</li>
+      <li>OWASP — <a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">Top 10 for Large Language Model Applications</a>.</li>
+      <li>UK Information Commissioner’s Office — <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/">Artificial intelligence guidance</a>.</li>
+      <li>CISA — <a href="https://www.cisa.gov/resources-tools/resources/secure-by-design">Secure by Design</a>.</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
