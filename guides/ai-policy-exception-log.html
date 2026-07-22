@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Policy Exception Log Template | Civic AI Field Guide</title>
+  <meta name="description" content="A practical AI policy exception log template for documenting temporary exceptions, owners, safeguards, expiry dates, reviews, and closure decisions.">
+  <style>
+    :root { color-scheme: light dark; --bg:#f8f4ea; --ink:#1c2430; --muted:#5d6675; --card:#fffaf0; --line:#ded2bd; --accent:#2454ff; --mark:#fff1a8; --warn:#8a3d00; --ok:#116b59; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#10131a; --ink:#f4efe4; --muted:#b8b0a2; --card:#181d27; --line:#303746; --accent:#8ea2ff; --mark:#514600; --warn:#ffb86b; --ok:#77dfc8; } }
+    body { margin:0; font:18px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:980px; margin:0 auto; padding:48px 24px 72px; }
+    nav { font-size:16px; margin-bottom:32px; }
+    h1 { font-size:clamp(38px,6vw,68px); line-height:1; letter-spacing:-.045em; margin:.2em 0 .35em; }
+    h2 { margin-top:44px; font-size:30px; line-height:1.15; }
+    h3 { margin-top:28px; }
+    p.lead { font-size:22px; color:var(--muted); max-width:72ch; }
+    .card, .checklist, figure { border:1px solid var(--line); background:var(--card); border-radius:20px; padding:24px; margin:24px 0; }
+    figure { overflow:hidden; }
+    figcaption { color:var(--muted); font-size:16px; margin-top:12px; }
+    img { max-width:100%; height:auto; display:block; border-radius:16px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; color:var(--muted); font-weight:700; }
+    a { color:var(--accent); }
+    li { margin:.45em 0; }
+    code, mark { background:var(--mark); color:inherit; padding:.1em .3em; border-radius:.3em; }
+    .note { color:var(--muted); }
+    .ok { color:var(--ok); font-weight:800; }
+    .warn { color:var(--warn); font-weight:800; }
+    table { width:100%; border-collapse:collapse; margin:18px 0; font-size:16px; }
+    th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+    th { background:rgba(36,84,255,.08); }
+    .grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .box { border:1px dashed var(--line); border-radius:14px; padding:14px; background:rgba(255,255,255,.32); }
+    .box h3 { margin:0 0 8px; font-size:20px; }
+    @media (max-width: 760px) { .grid { grid-template-columns:1fr; } table { font-size:14px; } }
+    @media print {
+      body { background:white; color:#111; font-size:13px; }
+      main { max-width:none; padding:16px; }
+      nav, figure, .sources { display:none; }
+      .card, .checklist { border:1px solid #999; background:white; break-inside:avoid; margin:12px 0; padding:12px; }
+      h1 { font-size:34px; }
+      h2 { margin-top:18px; font-size:22px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Policy Exception Log Template",
+    "description": "A practical AI policy exception log template for documenting temporary exceptions, owners, safeguards, expiry dates, reviews, and closure decisions.",
+    "author": {"@type": "Organization", "name": "Lantern / Civic AI Field Guide"},
+    "datePublished": "2026-07-22",
+    "dateModified": "2026-07-22",
+    "image": "../assets/ai-policy-exception-log.svg"
+  }
+  </script>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">← Civic AI Field Guide</a></nav>
+
+  <p class="eyebrow">AI governance basics</p>
+  <h1>AI policy exception log template.</h1>
+  <p class="lead">A lightweight way to document temporary, approved exceptions to AI rules — with owners, safeguards, expiry dates, and closure decisions — so “we had to work around it” does not become invisible policy drift.</p>
+
+  <section class="card" aria-labelledby="short-answer">
+    <h2 id="short-answer">The short answer</h2>
+    <p>An AI policy exception log records <mark>who approved a temporary exception, why it was needed, what risk it creates, what safeguards are in place, when it expires, and how it will be closed or renewed.</mark></p>
+    <p>It is not permission to ignore policy, a substitute for legal or privacy review, or a place to hide risky AI use. It is a visible control for unusual cases: the rule still matters, the exception is time-boxed, and someone is accountable for follow-up.</p>
+  </section>
+
+  <figure>
+    <img src="../assets/ai-policy-exception-log.svg" alt="A five-step flow for an AI policy exception: request, risk review, approval, expiry date, and review or closure.">
+    <figcaption>A useful exception log has a lifecycle. Every exception should move from request to risk review, approval, expiry, and closure — not sit open forever.</figcaption>
+  </figure>
+
+  <section class="card" aria-labelledby="why">
+    <h2 id="why">Why exception logs matter</h2>
+    <p>AI policies often say what should happen in normal conditions: approved tools only, minimum data, human review, documented evaluation, public notice, retention limits, and incident reporting. Real organizations still encounter edge cases: a legacy vendor lacks a setting, a classroom accommodation needs a short-term workaround, a public-service deadline arrives before procurement catches up, or a pilot uncovers a rule that needs clearer wording.</p>
+    <p>NIST’s AI Risk Management Framework emphasizes governance, accountability, documentation, measurement, management, and monitoring across the AI lifecycle. OMB M-24-10 tells U.S. federal agencies to manage AI use through governance processes, risk practices, inventories, impact assessment, testing, monitoring, and human oversight where appropriate. CISA’s Secure by Design guidance encourages accountable security practices, while the ICO’s AI guidance connects AI deployment with data protection duties. An exception log translates those governance ideas into a small operational habit: record deviations before they become unreviewed precedent.</p>
+  </section>
+
+  <section class="checklist" aria-labelledby="when">
+    <h2 id="when">1. Decide when an exception must be logged</h2>
+    <ul>
+      <li><span class="ok">□</span> A team wants to use an AI tool, model, integration, data source, prompt, or workflow before the normal approval process is complete.</li>
+      <li><span class="ok">□</span> A required safeguard cannot be applied yet: human review, accessibility check, retention setting, deletion route, vendor disclosure, security review, public notice, or staff training.</li>
+      <li><span class="ok">□</span> A policy rule conflicts with an urgent accessibility, language access, continuity-of-service, safety, or legal deadline and a temporary workaround is proposed.</li>
+      <li><span class="ok">□</span> A vendor update or local workflow change makes the old approval incomplete until a fresh <a href="ai-model-update-review.html">model update review</a> is finished.</li>
+      <li><span class="ok">□</span> An incident, appeal, or user complaint reveals that the written policy does not match how the AI system is actually being used.</li>
+    </ul>
+    <p class="note">If the exception could affect people’s rights, benefits, discipline, safety, privacy, language access, disability access, or public records, treat it as higher risk and require a stronger approval path.</p>
+  </section>
+
+  <section class="checklist" aria-labelledby="fields">
+    <h2 id="fields">2. Record these fields</h2>
+    <table>
+      <thead><tr><th>Field</th><th>What to write</th><th>Related guide</th></tr></thead>
+      <tbody>
+        <tr><td>Exception ID and date</td><td>A short identifier, request date, approval date, expiry date, and next review date.</td><td><a href="ai-audit-trail-basics.html">Audit trail basics</a></td></tr>
+        <tr><td>Rule being excepted</td><td>The exact policy, standard, contract term, public promise, or workflow rule that cannot be followed normally.</td><td><a href="ai-public-notice-template.html">Public notice template</a></td></tr>
+        <tr><td>Reason and scope</td><td>Why the exception is needed, who may use it, which use case it covers, and what is explicitly out of scope.</td><td><a href="ai-risk-register-starter.html">Risk register starter</a></td></tr>
+        <tr><td>Risk and affected people</td><td>Privacy, fairness, accessibility, security, records, accuracy, appeal, language access, or service-continuity risks.</td><td><a href="ai-accessibility-review.html">Accessibility review</a></td></tr>
+        <tr><td>Data limits</td><td>What data may be used, what data is forbidden, where prompts/outputs/logs go, and when records are deleted or retained.</td><td><a href="ai-data-minimization-checklist.html">Data minimization checklist</a></td></tr>
+        <tr><td>Owner and approver</td><td>The system owner, approving role, reviewer roles, and who can pause or revoke the exception.</td><td><a href="ai-system-owner-checklist.html">System owner checklist</a></td></tr>
+        <tr><td>Safeguards</td><td>Temporary controls such as narrower scope, manual review, extra notice, deletion check, monitoring, vendor limits, or incident triggers.</td><td><a href="ai-incident-response.html">Incident response guide</a></td></tr>
+        <tr><td>Closure decision</td><td>Close, renew with reasons, convert to policy change, finish approval, stop use, or escalate.</td><td><a href="ai-record-retention-schedule.html">Record retention schedule</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="checklist" aria-labelledby="safeguards">
+    <h2 id="safeguards">3. Add safeguards before approving</h2>
+    <div class="grid">
+      <div class="box"><h3>Narrow the scope</h3><p>Limit the exception to a named use case, user group, tool, model, time period, data type, or location. Avoid “all staff may use this until further notice.”</p></div>
+      <div class="box"><h3>Protect data</h3><p>Forbid unnecessary personal data, sensitive records, secret information, and uploads that conflict with the <a href="ai-deletion-request-workflow.html">deletion workflow</a> or retention schedule.</p></div>
+      <div class="box"><h3>Keep human review</h3><p>Require a person to check output before decisions, communications, discipline, eligibility, health, safety, legal, or public-service actions.</p></div>
+      <div class="box"><h3>Watch for harm</h3><p>Name signs that trigger pause or escalation: inaccurate output, accessibility barriers, privacy concerns, user complaints, appeals, or unexpected vendor behavior.</p></div>
+    </div>
+  </section>
+
+  <section class="checklist" aria-labelledby="expiry">
+    <h2 id="expiry">4. Make every exception expire</h2>
+    <ul>
+      <li><span class="ok">□</span> Set an expiry date short enough to force review before the workaround becomes normal. Higher-risk exceptions need shorter windows.</li>
+      <li><span class="ok">□</span> Require renewal to explain what changed, what evidence was gathered, what incidents or complaints occurred, and why normal compliance is still not possible.</li>
+      <li><span class="ok">□</span> If the same exception is renewed repeatedly, treat that as a policy design problem, procurement problem, training gap, or unresolved system risk — not as routine paperwork.</li>
+      <li><span class="ok">□</span> At closure, record whether the team stopped the use, completed the normal review, changed the policy, changed vendors, added safeguards, or escalated the risk.</li>
+    </ul>
+  </section>
+
+  <section class="checklist" aria-labelledby="bad-signs">
+    <h2 id="bad-signs">Bad signs</h2>
+    <ul>
+      <li><span class="warn">Warning:</span> Exceptions have no expiry date, no owner, no approver, or no closure decision.</li>
+      <li><span class="warn">Warning:</span> The log says “urgent” or “pilot” but does not explain risk, affected people, or safeguards.</li>
+      <li><span class="warn">Warning:</span> Exceptions are used to avoid privacy, accessibility, security, records, notice, consent, appeal, or human-review duties.</li>
+      <li><span class="warn">Warning:</span> The same exception keeps renewing without a plan to fix the underlying rule, tool, training, vendor, or workflow.</li>
+      <li><span class="warn">Warning:</span> People affected by the AI use cannot find a public notice, contact path, correction path, or appeal route when those are needed.</li>
+    </ul>
+  </section>
+
+  <section class="checklist" aria-labelledby="starter-language">
+    <h2 id="starter-language">Starter log language</h2>
+    <p><strong>Exception summary:</strong> “Exception [ID] temporarily allows [team/role] to use [AI system/workflow] for [specific use case] from [start date] until [expiry date]. The exception is needed because [reason normal policy cannot be followed]. It does not allow [out-of-scope uses/data/decisions].”</p>
+    <p><strong>Risk and safeguards:</strong> “Potential risks include [privacy/accessibility/fairness/security/records/accuracy/appeal risks]. Safeguards are [human review/data limits/notice/monitoring/vendor setting/training/incident trigger]. The owner is [role], the approver is [role], and the review date is [date]. Closure will be [stop/renew/complete approval/change policy/escalate].”</p>
+    <p class="note">Adapt this to the organization’s legal duties, procurement rules, public-records requirements, privacy program, accessibility obligations, labor agreements, and risk tier.</p>
+  </section>
+
+  <section class="sources" aria-labelledby="sources">
+    <h2 id="sources">Sources and further reading</h2>
+    <ul>
+      <li>NIST — <a href="https://www.nist.gov/itl/ai-risk-management-framework">AI Risk Management Framework</a>.</li>
+      <li>NIST — <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf">Artificial Intelligence Risk Management Framework (AI RMF 1.0)</a>.</li>
+      <li>U.S. Office of Management and Budget — <a href="https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf">M-24-10: Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence</a>.</li>
+      <li>CISA — <a href="https://www.cisa.gov/resources-tools/resources/secure-by-design">Secure by Design</a>.</li>
+      <li>UK Information Commissioner’s Office — <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/">Artificial intelligence guidance</a>.</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
