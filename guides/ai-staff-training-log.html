@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Staff Training Log | Civic AI Field Guide</title>
+  <meta name="description" content="A practical log template for tracking who has been trained on AI policy, privacy, security, accessibility, human review, and stop rules.">
+  <style>
+    :root { color-scheme: light dark; --bg:#f8f4ea; --ink:#1c2430; --muted:#5d6675; --card:#fffaf0; --line:#ded2bd; --accent:#2454ff; --mark:#fff1a8; --warn:#8a3d00; --ok:#116b59; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#10131a; --ink:#f4efe4; --muted:#b8b0a2; --card:#181d27; --line:#303746; --accent:#8ea2ff; --mark:#514600; --warn:#ffb86b; --ok:#77dfc8; } }
+    body { margin:0; font:18px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:980px; margin:0 auto; padding:48px 24px 72px; }
+    nav { font-size:16px; margin-bottom:32px; }
+    h1 { font-size:clamp(38px,6vw,68px); line-height:1; letter-spacing:-.045em; margin:.2em 0 .35em; }
+    h2 { margin-top:44px; font-size:30px; line-height:1.15; }
+    h3 { margin-top:28px; }
+    p.lead { font-size:22px; color:var(--muted); max-width:72ch; }
+    .card, .checklist, figure { border:1px solid var(--line); background:var(--card); border-radius:20px; padding:24px; margin:24px 0; }
+    figure { overflow:hidden; }
+    figcaption { color:var(--muted); font-size:16px; margin-top:12px; }
+    img { max-width:100%; height:auto; display:block; border-radius:16px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; color:var(--muted); font-weight:700; }
+    a { color:var(--accent); }
+    li { margin:.45em 0; }
+    code, mark { background:var(--mark); color:inherit; padding:.1em .3em; border-radius:.3em; }
+    .note { color:var(--muted); }
+    .ok { color:var(--ok); font-weight:800; }
+    .warn { color:var(--warn); font-weight:800; }
+    table { width:100%; border-collapse:collapse; margin:18px 0; font-size:16px; }
+    th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+    th { background:rgba(36,84,255,.08); }
+    .grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .box { border:1px dashed var(--line); border-radius:14px; padding:14px; background:rgba(255,255,255,.32); }
+    .box h3 { margin:0 0 8px; font-size:20px; }
+    @media (max-width: 760px) { .grid { grid-template-columns:1fr; } table { font-size:14px; } }
+    @media print {
+      body { background:white; color:#111; font-size:13px; }
+      main { max-width:none; padding:16px; }
+      nav, figure, .sources { display:none; }
+      .card, .checklist { border:1px solid #999; background:white; break-inside:avoid; margin:12px 0; padding:12px; }
+      h1 { font-size:34px; }
+      h2 { margin-top:18px; font-size:22px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Staff Training Log",
+    "description": "A practical log template for tracking who has been trained on AI policy, privacy, security, accessibility, human review, and stop rules.",
+    "author": {"@type": "Organization", "name": "Lantern / Civic AI Field Guide"},
+    "datePublished": "2026-07-27",
+    "dateModified": "2026-07-27",
+    "image": "../assets/ai-staff-training-log.svg"
+  }
+  </script>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">← Civic AI Field Guide</a></nav>
+
+  <p class="eyebrow">AI governance and operations</p>
+  <h1>AI staff training log.</h1>
+  <p class="lead">A lightweight record for tracking who has been trained on AI policy, privacy, security, accessibility, human review, data intake, incident response, and stop rules.</p>
+
+  <section class="card" aria-labelledby="short-answer">
+    <h2 id="short-answer">The short answer</h2>
+    <p>If people are allowed to use AI in real work, somebody should be able to answer: <mark>who was trained, on what rules, for which tools, when, by whom, what changed afterward, and when retraining is due.</mark></p>
+    <p>A training log is not proof that AI use is safe, lawful, fair, or accessible. It is a practical accountability record. It helps teams notice gaps before an incident: a new hire never learned the upload rules, a supervisor missed the appeal path, or a vendor update changed the tool before staff were retrained.</p>
+  </section>
+
+  <figure>
+    <img src="../assets/ai-staff-training-log.svg" alt="A five-part AI staff training log flow: assign roles, teach rules, practice scenarios, record evidence, and refresh after changes.">
+    <figcaption>Training should be role-specific and refreshed after tool, policy, law, or workflow changes — not treated as a one-time checkbox.</figcaption>
+  </figure>
+
+  <section class="card" aria-labelledby="why">
+    <h2 id="why">Why a training log matters</h2>
+    <p>NIST’s AI Risk Management Framework emphasizes governance, mapping context, measuring risk, managing risk, documentation, monitoring, and accountable roles across the AI lifecycle. OMB guidance for U.S. federal agencies requires governance and risk-management practices for agency AI use, including workforce and oversight capacity. CISA’s Secure by Design guidance argues that security responsibilities should be built into normal practice rather than improvised after failures. The FTC’s personal-information guidance stresses knowing what information is collected, keeping only what is needed, protecting it, and disposing of it securely. WCAG 2.2 and DOJ web accessibility guidance remind teams that digital services and content need accessible design and operation.</p>
+    <p>Those sources do not all prescribe the same staff-training spreadsheet. The practical lesson is narrower: if AI policy depends on people making good decisions, the organization needs a visible way to train, refresh, and verify those decisions.</p>
+  </section>
+
+  <section class="checklist" aria-labelledby="what-record">
+    <h2 id="what-record">1. Record the minimum useful fields</h2>
+    <table>
+      <thead><tr><th>Field</th><th>What to write</th><th>Why it matters</th></tr></thead>
+      <tbody>
+        <tr><td>Person or role</td><td>Name or role group, team, and supervisor where appropriate.</td><td>Shows who can use which AI workflow and who still needs training.</td></tr>
+        <tr><td>AI workflow</td><td>Approved tool, task, department, data class, and whether the person can upload files, approve output, or only request help.</td><td>Prevents generic “AI trained” status from hiding real permission differences.</td></tr>
+        <tr><td>Training topics</td><td>Policy, data minimization, document intake, source checking, accessibility, security, incident response, appeals, deletion, retention, and disclosure.</td><td>Makes gaps visible when a workflow has specific risks.</td></tr>
+        <tr><td>Evidence</td><td>Date, trainer or source, scenario completed, quiz or acknowledgment if used, and materials version.</td><td>Creates a checkable record without collecting unnecessary private details.</td></tr>
+        <tr><td>Refresh trigger</td><td>Review date, model update, vendor policy change, incident, role change, new data category, or new legal/policy requirement.</td><td>Keeps training from going stale as tools and duties change.</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Avoid recording sensitive personnel notes in the log. Keep only what is needed to show training status, scope, and follow-up.</p>
+  </section>
+
+  <section class="checklist" aria-labelledby="topics">
+    <h2 id="topics">2. Cover the topics people actually need</h2>
+    <div class="grid">
+      <div class="box"><h3>Allowed and forbidden uses</h3><p>Which tools are approved, what tasks are allowed, which data must stay out, and who can approve exceptions.</p></div>
+      <div class="box"><h3>Privacy and records</h3><p>How to minimize data, classify documents, handle uploads, retain prompts and outputs, and respond to deletion requests.</p></div>
+      <div class="box"><h3>Human review</h3><p>When AI output must be checked, cited, corrected, appealed, escalated, or rejected before it affects people.</p></div>
+      <div class="box"><h3>Security and prompt injection</h3><p>How to treat files, links, pasted text, and unexpected tool instructions as untrusted input.</p></div>
+      <div class="box"><h3>Accessibility and language access</h3><p>How to avoid AI workflows that block disabled users, produce inaccessible content, or replace required language support.</p></div>
+      <div class="box"><h3>Incidents and stop rules</h3><p>When to pause use, preserve evidence, notify the right owner, repair harm, and update training materials.</p></div>
+    </div>
+  </section>
+
+  <section class="checklist" aria-labelledby="template">
+    <h2 id="template">3. Starter log template</h2>
+    <table>
+      <thead><tr><th>Date</th><th>Person / role</th><th>Workflow</th><th>Topics completed</th><th>Evidence</th><th>Refresh trigger</th><th>Owner</th></tr></thead>
+      <tbody>
+        <tr><td>YYYY-MM-DD</td><td>Role or name</td><td>Tool + task + data class</td><td>Policy; privacy; review; accessibility; incident response</td><td>Scenario completed; materials v1.2</td><td>90 days; model update; role change</td><td>System owner</td></tr>
+        <tr><td>YYYY-MM-DD</td><td>New staff cohort</td><td>No file uploads; drafting only</td><td>Allowed uses; source checking; disclosure</td><td>Orientation module; acknowledgment</td><td>Before upload permission</td><td>Team lead</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="checklist" aria-labelledby="scenarios">
+    <h2 id="scenarios">4. Use scenario checks, not only acknowledgments</h2>
+    <ul>
+      <li><span class="ok">□</span> Ask staff to decide whether a sample document can be uploaded, reduced, or kept out.</li>
+      <li><span class="ok">□</span> Ask staff to find an unsupported citation, invented quote, or wrong number in an AI draft.</li>
+      <li><span class="ok">□</span> Ask supervisors to walk through a correction, appeal, or incident response path.</li>
+      <li><span class="ok">□</span> Ask public-facing staff to explain when AI is being used and how a person can reach human review.</li>
+      <li><span class="ok">□</span> Ask content creators to check whether AI-assisted text, images, captions, forms, PDFs, and translations are accessible and reviewable.</li>
+    </ul>
+  </section>
+
+  <section class="checklist" aria-labelledby="bad-signs">
+    <h2 id="bad-signs">Bad signs</h2>
+    <ul>
+      <li><span class="warn">Warning:</span> The log says “AI training complete” without naming the tool, task, data class, or duties.</li>
+      <li><span class="warn">Warning:</span> Staff can upload documents before learning the <a href="ai-document-intake-checklist.html">document intake checklist</a>.</li>
+      <li><span class="warn">Warning:</span> Only technical staff are trained, even though managers, reviewers, procurement staff, teachers, case workers, or public communicators rely on the outputs.</li>
+      <li><span class="warn">Warning:</span> Model updates, vendor policy changes, incidents, and new laws do not trigger retraining.</li>
+      <li><span class="warn">Warning:</span> Training records collect more personal information than needed or become a blame file instead of an accountability and improvement tool.</li>
+    </ul>
+  </section>
+
+  <section class="checklist" aria-labelledby="starter-language">
+    <h2 id="starter-language">Starter training-log language</h2>
+    <p><strong>Training record:</strong> “On [date], [person/role] completed training for [AI workflow]. Covered topics: [policy/privacy/security/accessibility/source checking/human review/incident response/appeals/deletion/retention/disclosure]. Evidence: [scenario/module/materials version]. Scope: [allowed tasks and forbidden tasks]. Refresh required when [date/change/incident/role change]. Owner: [role].”</p>
+    <p><strong>Gap record:</strong> “This person or role should not use [workflow] for [task/data class] until training covers [missing topic] and [owner] records completion.”</p>
+  </section>
+
+  <section class="card" aria-labelledby="related">
+    <h2 id="related">Related Field Guide pages</h2>
+    <ul>
+      <li><a href="ai-document-intake-checklist.html">AI document intake checklist</a></li>
+      <li><a href="ai-data-minimization-checklist.html">AI data minimization checklist</a></li>
+      <li><a href="ai-source-check-worksheet.html">AI source-check worksheet</a></li>
+      <li><a href="ai-accessibility-review.html">AI accessibility review checklist</a></li>
+      <li><a href="ai-incident-response.html">AI incident response guide</a></li>
+      <li><a href="ai-model-update-review.html">AI model update review checklist</a></li>
+      <li><a href="ai-system-owner-checklist.html">AI system owner checklist</a></li>
+    </ul>
+  </section>
+
+  <section class="sources" aria-labelledby="sources">
+    <h2 id="sources">Sources and further reading</h2>
+    <ul>
+      <li>NIST — <a href="https://www.nist.gov/itl/ai-risk-management-framework">AI Risk Management Framework</a>.</li>
+      <li>NIST — <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf">Artificial Intelligence Risk Management Framework (AI RMF 1.0)</a>.</li>
+      <li>White House Office of Management and Budget — <a href="https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf">M-24-10: Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence</a>.</li>
+      <li>CISA — <a href="https://www.cisa.gov/resources-tools/resources/secure-by-design">Secure by Design</a>.</li>
+      <li>U.S. Federal Trade Commission — <a href="https://www.ftc.gov/business-guidance/resources/protecting-personal-information-guide-business">Protecting Personal Information: A Guide for Business</a>.</li>
+      <li>W3C — <a href="https://www.w3.org/TR/WCAG22/">Web Content Accessibility Guidelines (WCAG) 2.2</a>.</li>
+      <li>U.S. Department of Justice — <a href="https://www.ada.gov/resources/web-guidance/">Guidance on Web Accessibility and the ADA</a>.</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
