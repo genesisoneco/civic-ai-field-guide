@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Communication Review Checklist | Civic AI Field Guide</title>
+  <meta name="description" content="A pre-publication checklist for reviewing AI-assisted notices, emails, web pages, translations, captions, and public statements before they reach people.">
+  <style>
+    :root { color-scheme: light dark; --bg:#f8f4ea; --ink:#1c2430; --muted:#5d6675; --card:#fffaf0; --line:#ded2bd; --accent:#2454ff; --mark:#fff1a8; --warn:#8a3d00; --ok:#116b59; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#10131a; --ink:#f4efe4; --muted:#b8b0a2; --card:#181d27; --line:#303746; --accent:#8ea2ff; --mark:#514600; --warn:#ffb86b; --ok:#77dfc8; } }
+    body { margin:0; font:18px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:980px; margin:0 auto; padding:48px 24px 72px; }
+    nav { font-size:16px; margin-bottom:32px; }
+    h1 { font-size:clamp(38px,6vw,68px); line-height:1; letter-spacing:-.045em; margin:.2em 0 .35em; }
+    h2 { margin-top:44px; font-size:30px; line-height:1.15; }
+    h3 { margin-top:28px; }
+    p.lead { font-size:22px; color:var(--muted); max-width:72ch; }
+    .card, .checklist, figure { border:1px solid var(--line); background:var(--card); border-radius:20px; padding:24px; margin:24px 0; }
+    figure { overflow:hidden; }
+    figcaption { color:var(--muted); font-size:16px; margin-top:12px; }
+    img { max-width:100%; height:auto; display:block; border-radius:16px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; color:var(--muted); font-weight:700; }
+    a { color:var(--accent); }
+    li { margin:.45em 0; }
+    code, mark { background:var(--mark); color:inherit; padding:.1em .3em; border-radius:.3em; }
+    .note { color:var(--muted); }
+    .ok { color:var(--ok); font-weight:800; }
+    .warn { color:var(--warn); font-weight:800; }
+    table { width:100%; border-collapse:collapse; margin:18px 0; font-size:16px; }
+    th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+    th { background:rgba(36,84,255,.08); }
+    .grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .box { border:1px dashed var(--line); border-radius:14px; padding:14px; background:rgba(255,255,255,.32); }
+    .box h3 { margin:0 0 8px; font-size:20px; }
+    @media (max-width: 760px) { .grid { grid-template-columns:1fr; } table { font-size:14px; } }
+    @media print {
+      body { background:white; color:#111; font-size:13px; }
+      main { max-width:none; padding:16px; }
+      nav, figure, .sources { display:none; }
+      .card, .checklist { border:1px solid #999; background:white; break-inside:avoid; margin:12px 0; padding:12px; }
+      h1 { font-size:34px; }
+      h2 { margin-top:18px; font-size:22px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Communication Review Checklist",
+    "description": "A pre-publication checklist for reviewing AI-assisted notices, emails, web pages, translations, captions, and public statements before they reach people.",
+    "author": {"@type": "Organization", "name": "Lantern / Civic AI Field Guide"},
+    "datePublished": "2026-07-29",
+    "dateModified": "2026-07-29",
+    "image": "../assets/ai-communication-review-checklist.svg"
+  }
+  </script>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">← Civic AI Field Guide</a></nav>
+
+  <p class="eyebrow">AI governance and public communication</p>
+  <h1>AI communication review checklist.</h1>
+  <p class="lead">A pre-publication check for AI-assisted notices, emails, web pages, translations, captions, letters, scripts, social posts, and public statements.</p>
+
+  <section class="card" aria-labelledby="short-answer">
+    <h2 id="short-answer">The short answer</h2>
+    <p>AI can help draft, summarize, translate, or reformat public communication. It cannot replace accountable review. Before an AI-assisted message reaches people, someone should check <mark>purpose, facts, rights, accessibility, language access, privacy, tone, and ownership</mark>.</p>
+    <p>This is especially important when the message affects benefits, deadlines, eligibility, discipline, safety instructions, legal rights, health, school obligations, public services, or emergency response. A fluent draft can still be false, unclear, inaccessible, stigmatizing, privacy-invasive, or missing the human contact path people need.</p>
+  </section>
+
+  <figure>
+    <img src="../assets/ai-communication-review-checklist.svg" alt="A six-step review flow for AI-assisted communication: purpose, facts, people, access, privacy, and publish or pause.">
+    <figcaption>Use AI as a drafting aid only inside a review loop. Public copy needs a named human or organizational owner, source checks, access checks, and a pause path.</figcaption>
+  </figure>
+
+  <section class="card" aria-labelledby="why">
+    <h2 id="why">Why this review matters</h2>
+    <p>NIST’s AI Risk Management Framework emphasizes governance, context mapping, measurement, management, documentation, and accountable roles across AI use. OMB guidance for U.S. federal agencies requires risk-management practices for agency AI use, including public rights-impacting uses and governance. PlainLanguage.gov recommends writing so readers can find what they need, understand what they find, and use it to meet their needs. WCAG 2.2 and DOJ web-accessibility guidance point to accessible digital content and services. LEP.gov’s language-access planning materials describe meaningful access for people with limited English proficiency.</p>
+    <p>Those sources do not prescribe one AI communication checklist. The practical lesson is narrower: when a public message is partly made with AI, review must still be accountable, understandable, accessible, source-backed, and safe for the people who receive it.</p>
+  </section>
+
+  <section class="checklist" aria-labelledby="minimum-checks">
+    <h2 id="minimum-checks">1. Minimum checks before publication</h2>
+    <table>
+      <thead><tr><th>Check</th><th>Question to answer</th><th>Evidence to keep</th></tr></thead>
+      <tbody>
+        <tr><td>Purpose</td><td>Who is the message for, what must they do next, and what harm could confusion cause?</td><td>Audience, channel, owner, deadline, and review reason.</td></tr>
+        <tr><td>Facts and sources</td><td>Are dates, names, numbers, eligibility rules, citations, quotes, links, and instructions verified against authoritative sources?</td><td>Source links, reviewer initials or role, and date checked.</td></tr>
+        <tr><td>Rights and consequences</td><td>Could the message affect access to services, discipline, benefits, immigration, employment, health, housing, education, safety, or legal rights?</td><td>Escalation note showing legal, policy, program, or supervisor review where needed.</td></tr>
+        <tr><td>Accessibility</td><td>Is the content readable by people using screen readers, captions, keyboard navigation, sufficient contrast, clear headings, descriptive links, and accessible documents?</td><td>Accessibility checklist or content review note.</td></tr>
+        <tr><td>Language access</td><td>Does the message need translated versions, interpreter contact, plain-language rewrite, or review by a qualified language-access process?</td><td>Language-access decision and reviewer/source.</td></tr>
+        <tr><td>Privacy and records</td><td>Did the AI draft introduce, expose, infer, or preserve personal information that should not be in public copy or retained prompts?</td><td>Data-minimization and retention decision.</td></tr>
+        <tr><td>Disclosure and contact</td><td>Do people need to know AI helped prepare the message, and is there a human contact or correction path?</td><td>Disclosure decision and contact route.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="checklist" aria-labelledby="high-risk">
+    <h2 id="high-risk">2. Treat these messages as high-risk</h2>
+    <div class="grid">
+      <div class="box"><h3>Deadlines and eligibility</h3><p>Application windows, appeal deadlines, document requirements, benefit notices, fee waivers, school enrollment, or public-service instructions.</p></div>
+      <div class="box"><h3>Rights and obligations</h3><p>Messages about discipline, compliance, enforcement, consent, refusal, review, appeal, records, deletion, or complaint paths.</p></div>
+      <div class="box"><h3>Health, safety, or emergencies</h3><p>Any message people may use to decide whether to seek help, evacuate, report harm, follow safety instructions, or rely on a service.</p></div>
+      <div class="box"><h3>Translations and captions</h3><p>AI-assisted translations, subtitles, summaries, alt text, or captions that might change meaning or block meaningful access.</p></div>
+      <div class="box"><h3>Public trust moments</h3><p>Apologies, incident notices, correction statements, policy explanations, and responses to community concerns.</p></div>
+      <div class="box"><h3>Personal or sensitive context</h3><p>Drafts involving minors, health, disability, immigration, finances, education records, employment, benefits, complaints, or protected classes.</p></div>
+    </div>
+  </section>
+
+  <section class="checklist" aria-labelledby="workflow">
+    <h2 id="workflow">3. A simple review workflow</h2>
+    <ol>
+      <li><strong>Label the draft.</strong> Mark it as AI-assisted so reviewers do not mistake polish for verification.</li>
+      <li><strong>Attach source material.</strong> Include the policy, program page, law, meeting note, data source, or approved message the draft is based on.</li>
+      <li><strong>Review facts before style.</strong> Fix dates, names, links, numbers, conditions, exceptions, and contact paths before polishing wording.</li>
+      <li><strong>Check affected people.</strong> Ask who could misunderstand, be excluded, be stigmatized, miss a deadline, or lose an appeal path.</li>
+      <li><strong>Check access and privacy.</strong> Review accessibility, language access, document format, captions, alt text, and unnecessary personal data.</li>
+      <li><strong>Name the owner.</strong> Publish only when a role can answer questions, correct the message, and preserve review evidence.</li>
+    </ol>
+  </section>
+
+  <section class="checklist" aria-labelledby="signoff-log">
+    <h2 id="signoff-log">4. Starter sign-off log</h2>
+    <table>
+      <thead><tr><th>Date</th><th>Message / channel</th><th>AI use</th><th>Checks completed</th><th>Stop rules considered</th><th>Owner</th></tr></thead>
+      <tbody>
+        <tr><td>YYYY-MM-DD</td><td>Notice, email, web page, caption, translation, script, or social post</td><td>Drafted; summarized; translated; reformatted; none</td><td>Facts; rights; accessibility; language access; privacy; contact path</td><td>High-risk? legal/policy review? source gap? access gap?</td><td>Role or team</td></tr>
+        <tr><td>YYYY-MM-DD</td><td>Service deadline reminder</td><td>AI-assisted plain-language rewrite</td><td>Program source checked; deadline verified; human contact added</td><td>Paused if eligibility terms are uncertain</td><td>Program owner</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Keep the log lightweight. Do not store sensitive prompt text or personal details unless a records policy requires it and the storage location is approved.</p>
+  </section>
+
+  <section class="checklist" aria-labelledby="stop-rules">
+    <h2 id="stop-rules">5. Stop rules</h2>
+    <ul>
+      <li><span class="warn">Pause:</span> The message gives a deadline, requirement, or consequence that no reviewer has checked against the authoritative source.</li>
+      <li><span class="warn">Pause:</span> The AI draft invents a source, quote, phone number, web address, program rule, legal standard, or office name.</li>
+      <li><span class="warn">Pause:</span> The message affects rights, eligibility, discipline, benefits, safety, or access and no accountable owner has reviewed it.</li>
+      <li><span class="warn">Pause:</span> Translation, captions, alt text, or simplified wording could change meaning and no qualified review path exists.</li>
+      <li><span class="warn">Pause:</span> The draft includes personal, sensitive, stigmatizing, or unnecessary details that should not be public.</li>
+    </ul>
+  </section>
+
+  <section class="checklist" aria-labelledby="starter-language">
+    <h2 id="starter-language">Starter review language</h2>
+    <p><strong>Review note:</strong> “This message used AI for [drafting/summarizing/translating/reformatting]. [Role] checked facts against [source], reviewed accessibility and language-access needs, removed unnecessary personal data, confirmed the contact/correction path, and approved publication on [date].”</p>
+    <p><strong>Pause note:</strong> “Do not publish yet. The draft needs [source verification/accessibility review/language review/legal or policy review/privacy review/owner approval] because [risk].”</p>
+    <p><strong>Disclosure option:</strong> “AI helped prepare an early draft. A responsible reviewer checked the final message before publication.” Use only when it is true and when disclosure is helpful or required by policy.</p>
+  </section>
+
+  <section class="card" aria-labelledby="related">
+    <h2 id="related">Related Field Guide pages</h2>
+    <ul>
+      <li><a href="ai-source-check-worksheet.html">AI source-check worksheet</a></li>
+      <li><a href="ai-consent-disclosure.html">AI consent and disclosure</a></li>
+      <li><a href="ai-accessibility-review.html">AI accessibility review checklist</a></li>
+      <li><a href="ai-translation-language-access.html">AI translation and language access</a></li>
+      <li><a href="ai-public-notice-template.html">AI public notice template</a></li>
+      <li><a href="ai-incident-response.html">AI incident response guide</a></li>
+      <li><a href="ai-data-minimization-checklist.html">AI data minimization checklist</a></li>
+      <li><a href="ai-staff-training-log.html">AI staff training log</a></li>
+    </ul>
+  </section>
+
+  <section class="sources" aria-labelledby="sources">
+    <h2 id="sources">Sources and further reading</h2>
+    <ul>
+      <li>NIST — <a href="https://www.nist.gov/itl/ai-risk-management-framework">AI Risk Management Framework</a>.</li>
+      <li>NIST — <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf">Artificial Intelligence Risk Management Framework (AI RMF 1.0)</a>.</li>
+      <li>White House Office of Management and Budget — <a href="https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf">M-24-10: Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence</a>.</li>
+      <li>PlainLanguage.gov — <a href="https://www.plainlanguage.gov/guidelines/">Federal plain language guidelines</a>.</li>
+      <li>W3C — <a href="https://www.w3.org/TR/WCAG22/">Web Content Accessibility Guidelines (WCAG) 2.2</a>.</li>
+      <li>U.S. Department of Justice — <a href="https://www.ada.gov/resources/web-guidance/">Guidance on Web Accessibility and the ADA</a>.</li>
+      <li>LEP.gov — <a href="https://www.lep.gov/language-access-planning">Language access planning</a>.</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
