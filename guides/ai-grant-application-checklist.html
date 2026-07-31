@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Grant Application Checklist | Civic AI Field Guide</title>
+  <meta name="description" content="A source-backed checklist for reviewing AI-assisted grant applications before submitting budgets, evidence claims, partner promises, and compliance language.">
+  <style>
+    :root { color-scheme: light dark; --bg:#f8f4ea; --ink:#1c2430; --muted:#5d6675; --card:#fffaf0; --line:#ded2bd; --accent:#2454ff; --mark:#fff1a8; --warn:#8a3d00; --ok:#116b59; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#10131a; --ink:#f4efe4; --muted:#b8b0a2; --card:#181d27; --line:#303746; --accent:#8ea2ff; --mark:#514600; --warn:#ffb86b; --ok:#77dfc8; } }
+    body { margin:0; font:18px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:980px; margin:0 auto; padding:48px 24px 72px; }
+    nav { font-size:16px; margin-bottom:32px; }
+    h1 { font-size:clamp(38px,6vw,68px); line-height:1; letter-spacing:-.045em; margin:.2em 0 .35em; }
+    h2 { margin-top:44px; font-size:30px; line-height:1.15; }
+    h3 { margin-top:28px; }
+    p.lead { font-size:22px; color:var(--muted); max-width:72ch; }
+    .card, .checklist, figure { border:1px solid var(--line); background:var(--card); border-radius:20px; padding:24px; margin:24px 0; }
+    figure { overflow:hidden; }
+    figcaption { color:var(--muted); font-size:16px; margin-top:12px; }
+    img { max-width:100%; height:auto; display:block; border-radius:16px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; color:var(--muted); font-weight:700; }
+    a { color:var(--accent); }
+    li { margin:.45em 0; }
+    code, mark { background:var(--mark); color:inherit; padding:.1em .3em; border-radius:.3em; }
+    .note { color:var(--muted); }
+    .ok { color:var(--ok); font-weight:800; }
+    .warn { color:var(--warn); font-weight:800; }
+    table { width:100%; border-collapse:collapse; margin:18px 0; font-size:16px; }
+    th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+    th { background:rgba(36,84,255,.08); }
+    .grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .box { border:1px dashed var(--line); border-radius:14px; padding:14px; background:rgba(255,255,255,.32); }
+    .box h3 { margin:0 0 8px; font-size:20px; }
+    @media (max-width: 760px) { .grid { grid-template-columns:1fr; } table { font-size:14px; } }
+    @media print {
+      body { background:white; color:#111; font-size:13px; }
+      main { max-width:none; padding:16px; }
+      nav, figure, .sources { display:none; }
+      .card, .checklist { border:1px solid #999; background:white; break-inside:avoid; margin:12px 0; padding:12px; }
+      h1 { font-size:34px; }
+      h2 { margin-top:18px; font-size:22px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Grant Application Checklist",
+    "description": "A source-backed checklist for reviewing AI-assisted grant applications before submitting budgets, evidence claims, partner promises, and compliance language.",
+    "author": {"@type": "Organization", "name": "Lantern / Civic AI Field Guide"},
+    "datePublished": "2026-07-31",
+    "dateModified": "2026-07-31",
+    "image": "../assets/ai-grant-application-checklist.svg"
+  }
+  </script>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">← Civic AI Field Guide</a></nav>
+
+  <p class="eyebrow">AI governance and grant writing</p>
+  <h1>AI grant application checklist.</h1>
+  <p class="lead">A pre-submission review for AI-assisted grant narratives, budgets, work plans, needs statements, partner descriptions, evaluation plans, and compliance language.</p>
+
+  <section class="card" aria-labelledby="short-answer">
+    <h2 id="short-answer">The short answer</h2>
+    <p>AI can help organize a grant draft, summarize source material, make language clearer, or turn notes into a first-pass narrative. It should not invent need, inflate impact, smooth over uncertainty, create unsupported partner commitments, or make the budget look aligned when the numbers do not reconcile.</p>
+    <p>Before submission, a human or accountable team should check <mark>funder fit, evidence, budget, commitments, compliance, records, and final ownership</mark>. If a claim, number, partner role, or required attachment cannot be verified, pause the application instead of letting polished prose carry the risk forward.</p>
+  </section>
+
+  <figure>
+    <img src="../assets/ai-grant-application-checklist.svg" alt="A six-gate review flow for AI-assisted grant applications: funder fit, evidence, budget, promises, compliance, and submit or revise.">
+    <figcaption>Use AI as a drafting aid inside a grant-review loop. A proposal is not ready because it sounds persuasive; it is ready when the ask, evidence, budget, commitments, compliance language, and accountable owner are checkable.</figcaption>
+  </figure>
+
+  <section class="card" aria-labelledby="why">
+    <h2 id="why">Why this review matters</h2>
+    <p>Federal grant and cooperative-agreement recipients often work under administrative requirements in 2 CFR Part 200, including rules for financial management, internal controls, records, procurement, subawards, cost principles, and audit responsibilities. Grants.gov’s Workspace material describes a structured application process with forms, roles, checks, and submission steps. The U.S. Department of Justice describes the False Claims Act as a civil tool for addressing fraud involving federal funds and programs.</p>
+    <p>Those sources do not ban careful AI drafting, and this guide is not legal advice. The practical lesson is narrower: AI-assisted grant drafts need disciplined review because a fluent paragraph can hide an unsupported statistic, an impossible timeline, a partner commitment that was never approved, a budget mismatch, or compliance language copied into the wrong context. NIST’s AI Risk Management Framework also points toward governance, mapping, measurement, management, documentation, and accountable roles for AI use.</p>
+  </section>
+
+  <section class="checklist" aria-labelledby="minimum-checks">
+    <h2 id="minimum-checks">1. Minimum checks before submission</h2>
+    <table>
+      <thead><tr><th>Check</th><th>Question to answer</th><th>Evidence to keep</th></tr></thead>
+      <tbody>
+        <tr><td>Funder fit</td><td>Does the project match the notice, eligibility rules, allowed activities, period of performance, geography, population, and deadline?</td><td>Opportunity link, notice version, eligibility note, and submission calendar.</td></tr>
+        <tr><td>Source-backed need</td><td>Are problem statements, local data, citations, quotes, and community examples current, attributed, and not exaggerated?</td><td>Source links, data dates, citation notes, and reviewer role.</td></tr>
+        <tr><td>Budget alignment</td><td>Do the narrative, budget form, budget justification, match, indirect costs, staff time, subcontractor costs, and timeline agree?</td><td>Budget version, spreadsheet owner, reconciliation note, and approvals.</td></tr>
+        <tr><td>Partner commitments</td><td>Did each named partner approve its role, contribution, data-sharing obligation, letter, timeline, and public description?</td><td>Letters, emails, memorandum references, or signed approval notes.</td></tr>
+        <tr><td>Deliverables and evaluation</td><td>Are outputs, outcomes, metrics, reporting promises, and evaluation methods realistic for the team and budget?</td><td>Work plan, metric definitions, baseline sources, and evaluator review where applicable.</td></tr>
+        <tr><td>Compliance and records</td><td>Does the draft respect funder instructions, required forms, certifications, records duties, accessibility, privacy, procurement, subaward, and conflict rules?</td><td>Compliance checklist, attachment list, and policy/legal/finance review notes where needed.</td></tr>
+        <tr><td>AI-use sign-off</td><td>Who used AI, for what drafting tasks, what source material was supplied, what was independently verified, and who owns the final submission?</td><td>Short AI-use note, reviewer names or roles, final version hash or file name, and submission receipt.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="checklist" aria-labelledby="risky-sections">
+    <h2 id="risky-sections">2. Treat these grant sections as high-risk</h2>
+    <div class="grid">
+      <div class="box"><h3>Needs statements</h3><p>AI may blend real data with general claims. Check every statistic, location, date, quote, population description, and citation.</p></div>
+      <div class="box"><h3>Budgets and justifications</h3><p>AI is weak at preserving spreadsheet logic. Reconcile totals, categories, match, staffing assumptions, indirect costs, and narrative promises by hand.</p></div>
+      <div class="box"><h3>Partner narratives</h3><p>Do not let AI assign roles, data access, service volume, facilities, matching funds, or public commitments that partners have not approved.</p></div>
+      <div class="box"><h3>Evaluation plans</h3><p>Check that outcomes are measurable, baseline data exists, privacy is protected, and reporting can actually be done during the grant period.</p></div>
+      <div class="box"><h3>Compliance language</h3><p>Copied boilerplate can be wrong for the funding source. Verify required assurances, certifications, accessibility, procurement, subaward, records, and audit language against the notice and policies.</p></div>
+      <div class="box"><h3>Equity and community claims</h3><p>Review language with affected people where possible. Avoid deficit framing, unsupported representation claims, or promising community benefits without a credible plan.</p></div>
+    </div>
+  </section>
+
+  <section class="checklist" aria-labelledby="workflow">
+    <h2 id="workflow">3. A simple review workflow</h2>
+    <ol>
+      <li><strong>Lock the source packet.</strong> Save the funding notice, instructions, required forms, budget template, data sources, partner notes, and approved organizational language before drafting.</li>
+      <li><strong>Mark AI-assisted sections.</strong> Label which sections used AI for brainstorming, outlining, summarizing, rewriting, or formatting so reviewers know where extra verification is needed.</li>
+      <li><strong>Review eligibility and instructions first.</strong> Confirm the project is eligible and the draft follows the funder’s required order, page limits, attachments, formatting, and submission path.</li>
+      <li><strong>Check facts before persuasion.</strong> Verify citations, local numbers, quotations, community descriptions, organizational history, dates, and claims before polishing style.</li>
+      <li><strong>Reconcile the budget.</strong> Compare narrative activities, staffing, partner roles, budget forms, justifications, match, indirect costs, and timeline line by line.</li>
+      <li><strong>Confirm commitments.</strong> Ask each named owner, partner, finance reviewer, evaluator, and authorized signer to approve the exact commitments attributed to them.</li>
+      <li><strong>Keep a clean review record.</strong> Preserve the final version, source links, approval notes, submission receipt, and a short note describing how AI was used and checked.</li>
+    </ol>
+  </section>
+
+  <section class="checklist" aria-labelledby="signoff-log">
+    <h2 id="signoff-log">4. Lightweight sign-off log</h2>
+    <table>
+      <thead><tr><th>Field</th><th>What to record</th></tr></thead>
+      <tbody>
+        <tr><td>Opportunity</td><td>Funder, program, opportunity number or URL, deadline, and notice version.</td></tr>
+        <tr><td>AI use</td><td>Tool category if known, sections assisted, source material provided, and tasks performed. Do not preserve sensitive prompts unless policy requires it.</td></tr>
+        <tr><td>Verification</td><td>Reviewer roles for eligibility, facts, budget, partners, compliance, accessibility, privacy, and final authorization.</td></tr>
+        <tr><td>Open issues</td><td>Questions resolved, unresolved uncertainty, changes made after review, and reasons for any accepted risk.</td></tr>
+        <tr><td>Final record</td><td>Final file name or version, submission date, submission receipt, and storage location under the organization’s record policy.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card" aria-labelledby="stop-rules">
+    <h2 id="stop-rules">Stop rules</h2>
+    <ul>
+      <li><span class="warn">Pause</span> if the AI draft includes a statistic, law, citation, quote, community claim, or performance number that no one can source.</li>
+      <li><span class="warn">Pause</span> if the budget, narrative, attachments, and partner letters describe different work.</li>
+      <li><span class="warn">Pause</span> if a partner, evaluator, fiscal sponsor, or authorized signer has not approved the commitment attributed to them.</li>
+      <li><span class="warn">Pause</span> if the draft copies compliance language from another opportunity without checking the current notice and applicable policy.</li>
+      <li><span class="warn">Pause</span> if the team is using AI with personal, confidential, student, client, patient, donor, personnel, or protected data without an approved privacy basis.</li>
+      <li><span class="ok">Proceed</span> only when a named owner can explain what AI helped with, what was independently verified, what assumptions remain, and where the final submission record is kept.</li>
+    </ul>
+  </section>
+
+  <section class="card" aria-labelledby="starter-language">
+    <h2 id="starter-language">Starter language for internal review</h2>
+    <p>Use this inside the team record, not necessarily in the public proposal unless funder instructions require or allow it:</p>
+    <blockquote>
+      <p><strong>AI-assisted drafting note:</strong> AI was used to help organize and revise selected application text. The project team independently checked eligibility, factual claims, citations, partner commitments, budget alignment, compliance requirements, and final submission materials. The final application is owned by [role/team], not by the AI tool.</p>
+    </blockquote>
+  </section>
+
+  <section class="card" aria-labelledby="related">
+    <h2 id="related">Related field guide pages</h2>
+    <ul>
+      <li><a href="ai-source-check-worksheet.html">AI source-check worksheet</a></li>
+      <li><a href="ai-communication-review-checklist.html">AI communication review checklist</a></li>
+      <li><a href="ai-document-intake-checklist.html">AI document intake checklist</a></li>
+      <li><a href="ai-data-minimization-checklist.html">AI data minimization checklist</a></li>
+      <li><a href="ai-audit-trail-basics.html">AI audit trail basics</a></li>
+      <li><a href="ai-risk-register-starter.html">AI risk register starter</a></li>
+    </ul>
+  </section>
+
+  <section class="sources" aria-labelledby="sources">
+    <h2 id="sources">Sources</h2>
+    <ul>
+      <li>eCFR — 2 CFR Part 200, Uniform Administrative Requirements, Cost Principles, and Audit Requirements for Federal Awards: <a href="https://www.ecfr.gov/current/title-2/subtitle-A/chapter-II/part-200">https://www.ecfr.gov/current/title-2/subtitle-A/chapter-II/part-200</a></li>
+      <li>Grants.gov — Workspace Overview: <a href="https://www.grants.gov/applicants/workspace-overview">https://www.grants.gov/applicants/workspace-overview</a></li>
+      <li>U.S. Department of Justice — The False Claims Act: <a href="https://www.justice.gov/civil/false-claims-act">https://www.justice.gov/civil/false-claims-act</a></li>
+      <li>NIST — AI Risk Management Framework: <a href="https://www.nist.gov/itl/ai-risk-management-framework">https://www.nist.gov/itl/ai-risk-management-framework</a></li>
+      <li>NIST — Artificial Intelligence Risk Management Framework (AI RMF 1.0): <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf">https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf</a></li>
+      <li>PlainLanguage.gov — Federal plain language guidelines: <a href="https://www.plainlanguage.gov/guidelines/">https://www.plainlanguage.gov/guidelines/</a></li>
+    </ul>
+    <p class="note">This page is public education, not legal, accounting, grant-management, or compliance advice. Follow the funder notice, organizational policy, and qualified professional review where needed.</p>
+  </section>
+</main>
+</body>
+</html>
