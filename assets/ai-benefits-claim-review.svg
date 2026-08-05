@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 1200 720">
+  <title>AI benefits claim review loop</title>
+  <desc>A five-step diagram showing how to review an AI benefits claim: claim, baseline, evidence, tradeoffs, and decision.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff8e8"/>
+      <stop offset="1" stop-color="#eaf0ff"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2454ff"/>
+      <stop offset="1" stop-color="#16a394"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#172036" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="720" rx="44" fill="url(#bg)"/>
+  <circle cx="104" cy="98" r="62" fill="#ffe08a" opacity="0.8"/>
+  <circle cx="1090" cy="602" r="86" fill="#bfeee9" opacity="0.72"/>
+  <path d="M205 360 C275 190 451 114 607 162 C780 214 878 83 997 164" fill="none" stroke="#2454ff" stroke-width="16" stroke-linecap="round" opacity="0.18"/>
+  <path d="M203 360 C276 530 456 599 616 549 C789 496 899 634 1002 548" fill="none" stroke="#16a394" stroke-width="16" stroke-linecap="round" opacity="0.18"/>
+  <g font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif">
+    <text x="600" y="76" text-anchor="middle" font-size="42" font-weight="900" fill="#172036">Check the benefit before trusting the promise</text>
+    <text x="600" y="118" text-anchor="middle" font-size="21" fill="#526078">A fair AI benefit claim needs a baseline, evidence, tradeoff review, and accountable decision.</text>
+
+    <g filter="url(#shadow)">
+      <rect x="76" y="230" width="190" height="185" rx="28" fill="#ffffff" stroke="#d8deef"/>
+      <circle cx="171" cy="272" r="32" fill="url(#blue)"/>
+      <text x="171" y="283" text-anchor="middle" font-size="30" font-weight="900" fill="#fff">1</text>
+      <text x="171" y="330" text-anchor="middle" font-size="25" font-weight="900" fill="#172036">Claim</text>
+      <text x="171" y="362" text-anchor="middle" font-size="16" fill="#526078">What exactly is</text>
+      <text x="171" y="385" text-anchor="middle" font-size="16" fill="#526078">being promised?</text>
+    </g>
+
+    <path d="M276 323 H348" stroke="#2454ff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M336 300 L360 323 L336 346" fill="none" stroke="#2454ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <g filter="url(#shadow)">
+      <rect x="374" y="230" width="190" height="185" rx="28" fill="#ffffff" stroke="#d8deef"/>
+      <circle cx="469" cy="272" r="32" fill="url(#blue)"/>
+      <text x="469" y="283" text-anchor="middle" font-size="30" font-weight="900" fill="#fff">2</text>
+      <text x="469" y="330" text-anchor="middle" font-size="25" font-weight="900" fill="#172036">Baseline</text>
+      <text x="469" y="362" text-anchor="middle" font-size="16" fill="#526078">Compared with</text>
+      <text x="469" y="385" text-anchor="middle" font-size="16" fill="#526078">what current work?</text>
+    </g>
+
+    <path d="M574 323 H646" stroke="#2454ff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M634 300 L658 323 L634 346" fill="none" stroke="#2454ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <g filter="url(#shadow)">
+      <rect x="672" y="230" width="190" height="185" rx="28" fill="#ffffff" stroke="#d8deef"/>
+      <circle cx="767" cy="272" r="32" fill="url(#blue)"/>
+      <text x="767" y="283" text-anchor="middle" font-size="30" font-weight="900" fill="#fff">3</text>
+      <text x="767" y="330" text-anchor="middle" font-size="25" font-weight="900" fill="#172036">Evidence</text>
+      <text x="767" y="362" text-anchor="middle" font-size="16" fill="#526078">Was it measured</text>
+      <text x="767" y="385" text-anchor="middle" font-size="16" fill="#526078">fairly and locally?</text>
+    </g>
+
+    <path d="M872 323 H944" stroke="#2454ff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M932 300 L956 323 L932 346" fill="none" stroke="#2454ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <g filter="url(#shadow)">
+      <rect x="970" y="230" width="190" height="185" rx="28" fill="#ffffff" stroke="#d8deef"/>
+      <circle cx="1065" cy="272" r="32" fill="url(#blue)"/>
+      <text x="1065" y="283" text-anchor="middle" font-size="30" font-weight="900" fill="#fff">4</text>
+      <text x="1065" y="330" text-anchor="middle" font-size="25" font-weight="900" fill="#172036">Tradeoffs</text>
+      <text x="1065" y="362" text-anchor="middle" font-size="16" fill="#526078">What costs, risks,</text>
+      <text x="1065" y="385" text-anchor="middle" font-size="16" fill="#526078">and burdens changed?</text>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="406" y="492" width="388" height="118" rx="30" fill="#172036"/>
+      <circle cx="472" cy="551" r="34" fill="#ffe08a"/>
+      <text x="472" y="563" text-anchor="middle" font-size="31" font-weight="900" fill="#172036">5</text>
+      <text x="532" y="540" font-size="26" font-weight="900" fill="#ffffff">Decision</text>
+      <text x="532" y="574" font-size="17" fill="#dce7ff">Adopt, revise, pilot longer, or stop — with records.</text>
+    </g>
+    <path d="M1065 430 C1065 520 881 551 814 551" fill="none" stroke="#16a394" stroke-width="8" stroke-linecap="round"/>
+    <path d="M832 529 L804 551 L832 573" fill="none" stroke="#16a394" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
