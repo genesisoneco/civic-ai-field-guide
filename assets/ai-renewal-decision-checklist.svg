@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">AI renewal decision checklist</title>
+  <desc id="desc">A renewal review in the center branches to five possible decisions: renew, renegotiate, narrow, pause, or end.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8f4ea"/>
+      <stop offset="1" stop-color="#dfe8ff"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2454ff"/>
+      <stop offset="1" stop-color="#1b8f7a"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#1c2430" flood-opacity="0.18"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#465366"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" rx="32" fill="url(#bg)"/>
+  <g fill="none" stroke="#d1d8e5" stroke-width="2" opacity="0.7">
+    <path d="M80 94H880M80 180H880M80 266H880M80 352H880M80 438H880"/>
+    <path d="M150 62V478M310 62V478M470 62V478M630 62V478M790 62V478"/>
+  </g>
+  <g stroke="#465366" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M480 236 C360 168 260 128 170 118"/>
+    <path d="M480 252 C365 230 268 222 170 222"/>
+    <path d="M480 270 C364 305 270 326 170 334"/>
+    <path d="M480 288 C604 320 696 334 790 334"/>
+    <path d="M480 304 C610 393 704 430 790 430"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="330" y="178" width="300" height="184" rx="30" fill="url(#core)"/>
+    <text x="480" y="224" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="18" font-weight="800" fill="#ffffff" letter-spacing="1.5">RENEWAL REVIEW</text>
+    <text x="480" y="262" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="25" font-weight="900" fill="#ffffff">Evidence before</text>
+    <text x="480" y="294" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="25" font-weight="900" fill="#ffffff">automatic rollover</text>
+    <text x="480" y="328" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="15" fill="#eaf5ff">performance • incidents • costs • changes • exit</text>
+  </g>
+  <g font-family="system-ui, -apple-system, Segoe UI, sans-serif" filter="url(#shadow)">
+    <rect x="58" y="70" width="222" height="92" rx="20" fill="#ffffff" stroke="#b9c4d6"/>
+    <text x="169" y="111" text-anchor="middle" font-size="24" font-weight="900" fill="#116b59">Renew</text>
+    <text x="169" y="138" text-anchor="middle" font-size="14" fill="#4c596b">Benefits proven; controls working</text>
+    <rect x="58" y="176" width="222" height="92" rx="20" fill="#ffffff" stroke="#b9c4d6"/>
+    <text x="169" y="217" text-anchor="middle" font-size="24" font-weight="900" fill="#2454ff">Renegotiate</text>
+    <text x="169" y="244" text-anchor="middle" font-size="14" fill="#4c596b">Terms, data, cost, or safeguards need repair</text>
+    <rect x="58" y="288" width="222" height="92" rx="20" fill="#ffffff" stroke="#b9c4d6"/>
+    <text x="169" y="329" text-anchor="middle" font-size="24" font-weight="900" fill="#7a4b00">Narrow</text>
+    <text x="169" y="356" text-anchor="middle" font-size="14" fill="#4c596b">Keep only low-risk, proven use cases</text>
+    <rect x="680" y="288" width="222" height="92" rx="20" fill="#ffffff" stroke="#b9c4d6"/>
+    <text x="791" y="329" text-anchor="middle" font-size="24" font-weight="900" fill="#8a3d00">Pause</text>
+    <text x="791" y="356" text-anchor="middle" font-size="14" fill="#4c596b">Evidence incomplete or changed</text>
+    <rect x="680" y="384" width="222" height="92" rx="20" fill="#ffffff" stroke="#b9c4d6"/>
+    <text x="791" y="425" text-anchor="middle" font-size="24" font-weight="900" fill="#a71930">End</text>
+    <text x="791" y="452" text-anchor="middle" font-size="14" fill="#4c596b">Harms, failures, or no justified value</text>
+  </g>
+  <text x="480" y="502" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="16" fill="#5d6675">Do not let renewal timing make the decision. Let local evidence choose the next gate.</text>
+</svg>
