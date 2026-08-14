@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Handoff Packet | Civic AI Field Guide</title>
+  <meta name="description" content="A practical packet for transferring AI ownership when a staff role, vendor, department, or project lead changes, with records, credentials, risks, monitoring, and stop authority.">
+  <style>
+    :root { color-scheme: light dark; --bg:#f8f4ea; --ink:#1c2430; --muted:#5d6675; --card:#fffaf0; --line:#ded2bd; --accent:#2454ff; --mark:#fff1a8; --warn:#8a3d00; --ok:#116b59; --bad:#a71930; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#10131a; --ink:#f4efe4; --muted:#b8b0a2; --card:#181d27; --line:#303746; --accent:#8ea2ff; --mark:#514600; --warn:#ffb86b; --ok:#77dfc8; --bad:#ff8fa3; } }
+    body { margin:0; font:18px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:980px; margin:0 auto; padding:48px 24px 72px; }
+    nav { font-size:16px; margin-bottom:32px; }
+    h1 { font-size:clamp(38px,6vw,68px); line-height:1; letter-spacing:-.045em; margin:.2em 0 .35em; }
+    h2 { margin-top:44px; font-size:30px; line-height:1.15; }
+    h3 { margin-top:28px; }
+    p.lead { font-size:22px; color:var(--muted); max-width:72ch; }
+    .card, .checklist, figure { border:1px solid var(--line); background:var(--card); border-radius:20px; padding:24px; margin:24px 0; }
+    figure { overflow:hidden; }
+    figcaption { color:var(--muted); font-size:16px; margin-top:12px; }
+    img { max-width:100%; height:auto; display:block; border-radius:16px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; color:var(--muted); font-weight:700; }
+    a { color:var(--accent); }
+    li { margin:.45em 0; }
+    code, mark { background:var(--mark); color:inherit; padding:.1em .3em; border-radius:.3em; }
+    .note { color:var(--muted); }
+    .ok { color:var(--ok); font-weight:800; }
+    .warn { color:var(--warn); font-weight:800; }
+    .bad { color:var(--bad); font-weight:800; }
+    table { width:100%; border-collapse:collapse; margin:18px 0; font-size:16px; }
+    th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+    th { background:rgba(36,84,255,.08); }
+    .grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .box { border:1px dashed var(--line); border-radius:14px; padding:14px; background:rgba(255,255,255,.32); }
+    .box h3 { margin:0 0 8px; font-size:20px; }
+    .template { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; white-space:pre-wrap; font-size:15px; line-height:1.55; background:rgba(0,0,0,.06); border:1px solid var(--line); border-radius:14px; padding:16px; overflow:auto; }
+    @media (max-width: 760px) { .grid { grid-template-columns:1fr; } table { font-size:14px; } }
+    @media print {
+      body { background:white; color:#111; font-size:13px; }
+      main { max-width:none; padding:16px; }
+      nav, figure, .sources { display:none; }
+      .card, .checklist { border:1px solid #999; background:white; break-inside:avoid; margin:12px 0; padding:12px; }
+      h1 { font-size:34px; }
+      h2 { margin-top:18px; font-size:22px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Handoff Packet",
+    "description": "A practical packet for transferring AI ownership when a staff role, vendor, department, or project lead changes, with records, credentials, risks, monitoring, and stop authority.",
+    "author": {"@type": "Organization", "name": "Lantern / Civic AI Field Guide"},
+    "datePublished": "2026-08-14",
+    "dateModified": "2026-08-14",
+    "image": "../assets/ai-handoff-packet.svg"
+  }
+  </script>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">← Civic AI Field Guide</a></nav>
+
+  <p class="eyebrow">AI governance and continuity</p>
+  <h1>AI handoff packet.</h1>
+  <p class="lead">A practical packet for transferring AI ownership when a staff role, vendor, department, or project lead changes — without losing risk context, records, credentials, monitoring, or stop authority.</p>
+
+  <section class="card" aria-labelledby="short-answer">
+    <h2 id="short-answer">The short answer</h2>
+    <p>An AI handoff packet is the minimum context a new owner needs before they inherit an AI workflow. It should name <mark>what the system is for, what it must not do, who can pause it, what records exist, which data and credentials need control, which risks are still open, and what monitoring or incident work is due next</mark>.</p>
+    <p>Handoffs matter because many AI failures are not single dramatic model mistakes. They are ordinary continuity failures: the person who knew the caveats leaves, a vendor setting changes, a monitoring dashboard goes unread, a public notice becomes stale, or no one knows who has authority to stop the tool.</p>
+  </section>
+
+  <figure>
+    <img src="../assets/ai-handoff-packet.svg" alt="A central AI handoff packet connected to purpose and scope, owner roles, risk status, records and data, credentials, monitoring, and stop authority.">
+    <figcaption>A good handoff moves context before responsibility changes. The packet should make day-one ownership clear, not ceremonial.</figcaption>
+  </figure>
+
+  <section class="card" aria-labelledby="why">
+    <h2 id="why">Why handoff planning matters</h2>
+    <p>NIST’s AI Risk Management Framework treats AI risk management as an ongoing lifecycle practice: organizations govern, map, measure, and manage risks over time, with documentation and accountability. OMB Memorandum M-24-10 directs U.S. federal agencies to maintain AI governance, risk management, testing, monitoring, and safeguards for rights- and safety-impacting AI uses. Those responsibilities do not disappear when a manager, vendor contact, or project lead changes.</p>
+    <p>CISA’s Secure by Design guidance emphasizes accountability across the technology lifecycle, and the U.S. National Archives and Records Administration explains that records must be managed according to approved schedules. The practical civic lesson is simple: ownership transfer is a risk event. Treat it like one.</p>
+  </section>
+
+  <section class="checklist" aria-labelledby="when">
+    <h2 id="when">When to create or refresh the packet</h2>
+    <div class="grid">
+      <div class="box"><h3>Role change</h3><p>A system owner, approver, reviewer, data steward, security contact, or escalation lead leaves or changes jobs.</p></div>
+      <div class="box"><h3>Vendor change</h3><p>The vendor contact, contract, model version, hosting arrangement, data term, subprocessor list, or support path changes.</p></div>
+      <div class="box"><h3>Department move</h3><p>The workflow moves to another office, school, program, contractor, grant, or shared-service team.</p></div>
+      <div class="box"><h3>Risk event</h3><p>An incident, appeal, audit finding, public complaint, accessibility issue, or privacy concern reveals missing context.</p></div>
+      <div class="box"><h3>Renewal or sunset</h3><p>A pilot is expanding, a contract is renewing, or a system is being narrowed, paused, replaced, or archived.</p></div>
+      <div class="box"><h3>Annual review</h3><p>Even without a dramatic change, the packet should be checked on a regular schedule so it stays useful.</p></div>
+    </div>
+  </section>
+
+  <section class="checklist" aria-labelledby="contents">
+    <h2 id="contents">What the packet should include</h2>
+    <table>
+      <thead><tr><th>Packet section</th><th>What to capture</th><th>Why it matters</th></tr></thead>
+      <tbody>
+        <tr><td><span class="ok">Purpose and scope</span></td><td>Plain-language purpose, approved uses, forbidden uses, populations affected, decision points, and current status.</td><td>Prevents silent expansion and helps the new owner notice scope drift.</td></tr>
+        <tr><td><span class="ok">Owner roles</span></td><td>Business owner, technical owner, data steward, security contact, legal or policy contact, human reviewer, public contact, and backup roles.</td><td>Makes responsibility real even when individual people move on.</td></tr>
+        <tr><td><span class="warn">Risk status</span></td><td>Known failure modes, unresolved incidents, appeals, bias or accessibility concerns, privacy/security issues, risk rating, and accepted exceptions.</td><td>Stops the new owner from inheriting a polished story while missing live risks.</td></tr>
+        <tr><td><span class="ok">Evidence and monitoring</span></td><td>Evaluations, local test results, monitoring metrics, alert thresholds, review cadence, open review dates, and dashboard owners.</td><td>Shows whether the system is actually being checked, not merely deployed.</td></tr>
+        <tr><td><span class="ok">Records and data</span></td><td>Records schedule references, data sources, prompts/uploads/outputs/logs, retention decisions, deletion requests, exports, and legal holds.</td><td>Keeps continuity from becoming accidental over-retention or accidental deletion.</td></tr>
+        <tr><td><span class="warn">Credentials and vendors</span></td><td>Account inventory, API keys, OAuth grants, service accounts, integrations, vendor portal roles, contracts, renewal dates, support contacts, and incident notice terms.</td><td>Reduces dormant access, broken automation, and vendor obligations that no one owns.</td></tr>
+        <tr><td><span class="ok">Public and staff communication</span></td><td>Public notices, consent or disclosure language, staff scripts, training materials, help-desk answers, and appeal/correction instructions.</td><td>Keeps people from relying on stale instructions after ownership changes.</td></tr>
+        <tr><td><span class="warn">Stop authority</span></td><td>Who can pause, narrow, rollback, or shut down the system; what triggers escalation; and how affected people keep receiving service.</td><td>Prevents “everyone assumed someone else could stop it.”</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="checklist" aria-labelledby="meeting">
+    <h2 id="meeting">Run a 45-minute transfer meeting</h2>
+    <ol>
+      <li><strong>First 5 minutes:</strong> state the workflow purpose, current status, affected people, and what must not change without approval.</li>
+      <li><strong>Next 10 minutes:</strong> walk through open risks, incidents, appeals, accessibility concerns, privacy/security issues, and accepted exceptions.</li>
+      <li><strong>Next 10 minutes:</strong> confirm records, data locations, retention rules, deletion requests, exports, legal holds, and vendor-held data obligations.</li>
+      <li><strong>Next 10 minutes:</strong> confirm accounts, keys, service accounts, vendor roles, monitoring dashboards, alerts, and backup contacts.</li>
+      <li><strong>Final 10 minutes:</strong> name the new owner, backup owner, next review date, stop authority, and unresolved questions with deadlines.</li>
+    </ol>
+  </section>
+
+  <section class="card" aria-labelledby="template">
+    <h2 id="template">Copy-paste starter packet</h2>
+    <p>Use role names rather than personal email addresses in public or broadly shared versions. Store private credential details in the approved secrets system, not in this packet.</p>
+    <div class="template">AI HANDOFF PACKET — [system/workflow name]
+
+Status: [pilot / active / paused / renewing / sunsetting]
+Purpose: [plain-language purpose]
+Approved uses: [what it may support]
+Forbidden uses: [what it must not do]
+Affected people/services: [population, office, forms, decisions, queues]
+Current owner role: [role]
+New owner role: [role]
+Backup owner role: [role]
+Stop authority: [role and trigger]
+Human review path: [who reviews, when, and how]
+Appeal/correction path: [how affected people ask questions or challenge outputs]
+Known risks/failures: [failure modes, incidents, complaints, accessibility/privacy/security concerns]
+Open exceptions: [exception, safeguard, expiry date, owner]
+Monitoring: [metrics, dashboard, alert threshold, review cadence]
+Records: [schedule reference, export location, legal hold status]
+Data: [sources, retention, deletion requests, vendor-held data]
+Credentials: [where account/key inventory is stored; do not paste secrets]
+Vendor/contract: [vendor, renewal date, support path, incident notice path]
+Public/staff notices to update: [pages, scripts, forms, training]
+Next required review: [date]
+Unresolved questions: [owner and deadline]</div>
+  </section>
+
+  <section class="checklist" aria-labelledby="stop-rules">
+    <h2 id="stop-rules">Stop rules for unsafe handoffs</h2>
+    <ul>
+      <li><span class="bad">Do not</span> transfer ownership if no one can identify who has authority to pause a rights-, safety-, health-, benefits-, or service-impacting AI workflow.</li>
+      <li><span class="bad">Do not</span> paste API keys, passwords, tokens, private logs, personal data, or vendor secrets into a handoff document.</li>
+      <li><span class="warn">Pause</span> expansion when the new owner cannot access evaluation evidence, monitoring results, incident history, or appeal/correction records.</li>
+      <li><span class="warn">Pause</span> vendor renewal if the handoff reveals unresolved data return, deletion, audit access, subprocessor, or incident notice questions.</li>
+      <li><span class="ok">Do</span> keep a redacted, shareable version for governance and a restricted operational inventory for credentials and sensitive details.</li>
+    </ul>
+  </section>
+
+  <section class="card" aria-labelledby="related">
+    <h2 id="related">Related field-guide pages</h2>
+    <ul>
+      <li><a href="ai-system-owner-checklist.html">AI system owner checklist</a></li>
+      <li><a href="ai-audit-trail-basics.html">AI audit trail basics</a></li>
+      <li><a href="ai-risk-register-starter.html">AI risk register starter</a></li>
+      <li><a href="ai-model-update-review.html">AI model update review checklist</a></li>
+      <li><a href="ai-renewal-decision-checklist.html">AI renewal decision checklist</a></li>
+      <li><a href="ai-sunset-plan-starter.html">AI sunset plan starter</a></li>
+      <li><a href="ai-record-retention-schedule.html">AI record retention schedule</a></li>
+    </ul>
+  </section>
+
+  <section class="sources" aria-labelledby="sources">
+    <h2 id="sources">Sources</h2>
+    <ul>
+      <li>NIST — <a href="https://www.nist.gov/itl/ai-risk-management-framework">AI Risk Management Framework</a>.</li>
+      <li>Office of Management and Budget — <a href="https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf">Memorandum M-24-10, Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence</a>.</li>
+      <li>CISA — <a href="https://www.cisa.gov/resources-tools/resources/secure-by-design">Secure by Design</a>.</li>
+      <li>U.S. National Archives and Records Administration — <a href="https://www.archives.gov/records-mgmt/scheduling">Records scheduling</a>.</li>
+      <li>Federal Trade Commission — <a href="https://www.ftc.gov/business-guidance/resources/data-breach-response-guide-business">Data Breach Response: A Guide for Business</a> (used here for practical incident and data-handling caution, not as legal advice).</li>
+    </ul>
+    <p class="note">This guide is public education, not legal advice. Local records, procurement, labor, privacy, cybersecurity, accessibility, and public-records rules may impose additional handoff requirements.</p>
+  </section>
+</main>
+</body>
+</html>
