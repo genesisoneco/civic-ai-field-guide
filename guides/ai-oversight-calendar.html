@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Oversight Calendar | Civic AI Field Guide</title>
+  <meta name="description" content="A practical AI oversight calendar for monthly, quarterly, semiannual, annual, and event-triggered reviews after an AI workflow goes live.">
+  <style>
+    :root { color-scheme: light dark; --bg:#f8f4ea; --ink:#1c2430; --muted:#5d6675; --card:#fffaf0; --line:#ded2bd; --accent:#2454ff; --mark:#fff1a8; --warn:#8a3d00; --ok:#116b59; --bad:#a71930; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#10131a; --ink:#f4efe4; --muted:#b8b0a2; --card:#181d27; --line:#303746; --accent:#8ea2ff; --mark:#514600; --warn:#ffb86b; --ok:#77dfc8; --bad:#ff8fa3; } }
+    body { margin:0; font:18px/1.65 system-ui,-apple-system,Segoe UI,sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:980px; margin:0 auto; padding:48px 24px 72px; }
+    nav { font-size:16px; margin-bottom:32px; }
+    h1 { font-size:clamp(38px,6vw,68px); line-height:1; letter-spacing:-.045em; margin:.2em 0 .35em; }
+    h2 { margin-top:44px; font-size:30px; line-height:1.15; }
+    h3 { margin-top:28px; }
+    p.lead { font-size:22px; color:var(--muted); max-width:72ch; }
+    .card, .checklist, figure { border:1px solid var(--line); background:var(--card); border-radius:20px; padding:24px; margin:24px 0; }
+    figure { overflow:hidden; }
+    figcaption { color:var(--muted); font-size:16px; margin-top:12px; }
+    img { max-width:100%; height:auto; display:block; border-radius:16px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; color:var(--muted); font-weight:700; }
+    a { color:var(--accent); }
+    li { margin:.45em 0; }
+    code, mark { background:var(--mark); color:inherit; padding:.1em .3em; border-radius:.3em; }
+    .note { color:var(--muted); }
+    .ok { color:var(--ok); font-weight:800; }
+    .warn { color:var(--warn); font-weight:800; }
+    .bad { color:var(--bad); font-weight:800; }
+    table { width:100%; border-collapse:collapse; margin:18px 0; font-size:16px; }
+    th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
+    th { background:rgba(36,84,255,.08); }
+    .grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .box { border:1px dashed var(--line); border-radius:14px; padding:14px; background:rgba(255,255,255,.32); }
+    .box h3 { margin:0 0 8px; font-size:20px; }
+    .template { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; white-space:pre-wrap; font-size:15px; line-height:1.55; background:rgba(0,0,0,.06); border:1px solid var(--line); border-radius:14px; padding:16px; overflow:auto; }
+    @media (max-width: 760px) { .grid { grid-template-columns:1fr; } table { font-size:14px; } }
+    @media print {
+      body { background:white; color:#111; font-size:13px; }
+      main { max-width:none; padding:16px; }
+      nav, figure, .sources { display:none; }
+      .card, .checklist { border:1px solid #999; background:white; break-inside:avoid; margin:12px 0; padding:12px; }
+      h1 { font-size:34px; }
+      h2 { margin-top:18px; font-size:22px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Oversight Calendar",
+    "description": "A practical AI oversight calendar for monthly, quarterly, semiannual, annual, and event-triggered reviews after an AI workflow goes live.",
+    "author": {"@type": "Organization", "name": "Lantern / Civic AI Field Guide"},
+    "datePublished": "2026-08-19",
+    "dateModified": "2026-08-19",
+    "image": "../assets/ai-oversight-calendar.svg"
+  }
+  </script>
+</head>
+<body>
+<main>
+  <nav><a href="../index.html">← Civic AI Field Guide</a></nav>
+
+  <p class="eyebrow">AI governance after launch</p>
+  <h1>AI oversight calendar.</h1>
+  <p class="lead">A practical schedule for recurring AI reviews, notice checks, records cleanup, incident drills, training refreshes, vendor checks, and renewal decisions so oversight does not depend on memory.</p>
+
+  <section class="card" aria-labelledby="short-answer">
+    <h2 id="short-answer">The short answer</h2>
+    <p>An AI oversight calendar turns “we should keep an eye on it” into dated work: <mark>monthly checks, quarterly drills, semiannual evidence refreshes, annual renewal or sunset decisions, and immediate review after major changes or incidents</mark>.</p>
+    <p>The calendar should be proportionate. A low-risk internal drafting aid may need a short monthly log check and an annual owner review. A public-facing or high-impact workflow needs tighter monitoring, clearer pause authority, stronger documentation, and more frequent evidence review.</p>
+  </section>
+
+  <figure>
+    <img src="../assets/ai-oversight-calendar.svg" alt="A circular AI oversight calendar showing monthly checks, quarterly drills, semiannual evidence review, annual renewal or sunset decisions, and event-triggered reviews for incidents or major changes.">
+    <figcaption>Post-launch oversight works best as a rhythm. The goal is not paperwork for its own sake; it is catching stale notices, model changes, access drift, weak evidence, training gaps, and unresolved incidents before people are harmed.</figcaption>
+  </figure>
+
+  <section class="card" aria-labelledby="why">
+    <h2 id="why">Why a calendar matters</h2>
+    <p>NIST’s AI Risk Management Framework presents AI risk management as ongoing work across governance, mapping, measurement, and management. OMB Memorandum M-24-10 similarly emphasizes governance, testing, monitoring, risk management, and public inventories for federal agency AI uses. NIST SP 800-53 treats monitoring, configuration management, access control, audit, contingency, and incident response as recurring control families, not one-time launch tasks.</p>
+    <p>For civic teams, the practical lesson is simple: the AI workflow people are using in month nine may not be the same risk that was approved in month one. Vendors update models and policies, staff create workarounds, access lists drift, notices go stale, local data changes, and new failure patterns appear. A calendar makes those changes visible.</p>
+  </section>
+
+  <section class="checklist" aria-labelledby="cadence">
+    <h2 id="cadence">Use a cadence people can actually keep</h2>
+    <table>
+      <thead><tr><th>When</th><th>What to check</th><th>Minimum evidence to keep</th></tr></thead>
+      <tbody>
+        <tr><td><span class="ok">Monthly</span></td><td>Open incidents, appeals, complaints, help-desk themes, access lists, public notices, vendor alerts, deletion requests, and whether monitoring signals are being checked.</td><td>Short status note, unresolved issue list, owner initials or role, and any pause or escalation decision.</td></tr>
+        <tr><td><span class="ok">Quarterly</span></td><td>Known failure examples, incident drill, staff refresher, accessibility and language-access feedback, high-risk prompts or templates, and whether stop rules still work in practice.</td><td>Drill notes, updated test cases, training log update, and changes sent to owners.</td></tr>
+        <tr><td><span class="warn">Every 6 months</span></td><td>Risk register, local evaluation evidence, bias and quality checks, records retention, data minimization, audit trail completeness, vendor settings, and affected-population changes.</td><td>Evidence refresh summary, risk-rating changes, records decision notes, and public-notice updates.</td></tr>
+        <tr><td><span class="warn">Annually</span></td><td>Whether to renew, narrow, pause, replace, or sunset the workflow; whether benefits claims are still supported; whether safeguards cost more than the value delivered.</td><td>Renewal decision, sunset or continuation rationale, budget or contract implications, and next review date.</td></tr>
+        <tr><td><span class="bad">Immediately after triggers</span></td><td>Incidents, vendor model changes, new data sources, new integrations, workflow expansion, public launch, policy changes, or changed rights/safety impact.</td><td>Change-control entry, retest results, approval or pause decision, communication record, and rollback path.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="checklist" aria-labelledby="monthly">
+    <h2 id="monthly">Monthly check: keep the basics from drifting</h2>
+    <div class="grid">
+      <div class="box"><h3>Incidents and appeals</h3><p>Review unresolved complaints, corrections, escalations, appeal outcomes, and near misses. Look for repeat failure patterns, not just dramatic incidents.</p></div>
+      <div class="box"><h3>Notices and scripts</h3><p>Check whether public notices, staff scripts, consent language, and help pages still describe the actual workflow, data use, human review, and appeal path.</p></div>
+      <div class="box"><h3>Access and logs</h3><p>Confirm that access still matches roles. Check whether audit logs, deletion evidence, and retention actions are being captured as planned.</p></div>
+      <div class="box"><h3>Vendor changes</h3><p>Review vendor release notes or notices for model, policy, subprocessor, data-use, security, or feature changes that require change control.</p></div>
+    </div>
+  </section>
+
+  <section class="checklist" aria-labelledby="quarterly">
+    <h2 id="quarterly">Quarterly check: rehearse and retest</h2>
+    <ol>
+      <li>Run a short incident drill: who can pause the tool, who notifies affected people, who preserves records, and who approves restart?</li>
+      <li>Retest known failure examples, edge cases, accessibility issues, language-access issues, and cases where the AI previously overreached or gave misleading confidence.</li>
+      <li>Refresh staff training on allowed uses, prohibited uses, privacy rules, security rules, human review, and stop rules.</li>
+      <li>Check whether people have created shadow workflows outside the approved process because the official one is confusing, slow, or poorly supported.</li>
+      <li>Update the risk register if monitoring shows new harms, reduced benefit, higher workload, or wider use than expected.</li>
+    </ol>
+  </section>
+
+  <section class="checklist" aria-labelledby="semiannual">
+    <h2 id="semiannual">Every six months: refresh the evidence</h2>
+    <ul>
+      <li>Compare current benefits claims with measured results. Do not keep repeating claims that are no longer supported by local evidence.</li>
+      <li>Review privacy, data minimization, retention, deletion, audit trail, and records schedules against actual use.</li>
+      <li>Check accessibility, language access, bias, security, and human-review safeguards with current examples, not only launch assumptions.</li>
+      <li>Confirm the owner, backup owner, vendor contact path, pause authority, and escalation route are still accurate.</li>
+      <li>Decide whether any risk has grown enough to require public notice updates, governance review, narrowing, or a temporary pause.</li>
+    </ul>
+  </section>
+
+  <section class="checklist" aria-labelledby="annual">
+    <h2 id="annual">Annual decision: continue, narrow, replace, or sunset</h2>
+    <p>At least once a year, turn oversight into a decision. Do not let an AI workflow continue only because it is already there.</p>
+    <ul>
+      <li><span class="ok">Continue</span> when evidence, safeguards, ownership, notices, and monitoring remain adequate for the current use.</li>
+      <li><span class="warn">Narrow</span> when the tool is useful in some contexts but too risky, inaccurate, burdensome, or poorly supported in others.</li>
+      <li><span class="warn">Replace or renegotiate</span> when the vendor, workflow, contract, or support model no longer fits public needs.</li>
+      <li><span class="bad">Sunset</span> when harms, unresolved incidents, stale evidence, low value, records problems, or loss of trust outweigh the benefit.</li>
+    </ul>
+  </section>
+
+  <section class="card" aria-labelledby="template">
+    <h2 id="template">Copy-paste oversight calendar</h2>
+    <p>Keep public copies free of secrets, personal data, private logs, credentials, vendor-confidential details, and sensitive case facts. Link to restricted evidence repositories when needed.</p>
+    <div class="template">AI OVERSIGHT CALENDAR — [system/workflow]
+
+Owner role: [role]
+Backup owner role: [role]
+Pause authority: [role and trigger]
+Risk level: [low / moderate / high / rights- or safety-impacting]
+Public notice location: [URL or internal owner]
+Risk register location: [redacted link or record ID]
+Incident log location: [redacted link or record ID]
+
+Monthly check date: [date]
+- Incidents / appeals / complaints reviewed: [yes/no + notes]
+- Access list reviewed: [yes/no]
+- Public notice and staff script still accurate: [yes/no]
+- Vendor alerts checked: [yes/no]
+- Records, retention, deletion, and audit logs checked: [yes/no]
+- Escalations or pauses: [decision]
+
+Quarterly review date: [date]
+- Incident drill completed: [yes/no]
+- Known failure tests refreshed: [yes/no]
+- Staff training refreshed: [yes/no]
+- Accessibility and language-access feedback reviewed: [yes/no]
+- Risk register updated: [yes/no]
+
+Six-month evidence review date: [date]
+- Benefits claims still supported: [yes/no/uncertain]
+- Privacy, security, bias, accessibility, and records review complete: [yes/no]
+- Change-control updates needed: [yes/no]
+- Public notice updates needed: [yes/no]
+
+Annual decision date: [date]
+Decision: [continue / narrow / renegotiate / replace / sunset / pause]
+Reason: [plain-language rationale]
+Next review date: [date]
+Notes and restricted evidence links: [redacted links only]</div>
+  </section>
+
+  <section class="checklist" aria-labelledby="stop-rules">
+    <h2 id="stop-rules">Stop rules</h2>
+    <ul>
+      <li><span class="bad">Do not</span> continue an AI workflow when no current owner can pause it, explain it, or answer affected people’s questions.</li>
+      <li><span class="bad">Do not</span> ignore incidents, appeals, access drift, or vendor model changes until the annual review. Trigger review immediately.</li>
+      <li><span class="warn">Pause</span> expansion when public notices, staff scripts, risk registers, or evidence are stale.</li>
+      <li><span class="warn">Pause</span> use in higher-impact settings when local testing, accessibility review, language-access review, or human-review safeguards have not been refreshed.</li>
+      <li><span class="ok">Do</span> keep the calendar small enough to use. A neglected 40-step review is weaker than a five-step review that happens on time.</li>
+    </ul>
+  </section>
+
+  <section class="card" aria-labelledby="related">
+    <h2 id="related">Related field-guide pages</h2>
+    <ul>
+      <li><a href="ai-change-control-checklist.html">AI change control checklist</a></li>
+      <li><a href="ai-risk-register-starter.html">AI risk register starter</a></li>
+      <li><a href="ai-incident-response.html">AI incident response guide</a></li>
+      <li><a href="ai-staff-training-log.html">AI staff training log</a></li>
+      <li><a href="ai-record-retention-schedule.html">AI record retention schedule</a></li>
+      <li><a href="ai-benefits-claim-review.html">AI benefits-claim review</a></li>
+      <li><a href="ai-renewal-decision-checklist.html">AI renewal decision checklist</a></li>
+      <li><a href="ai-sunset-plan-starter.html">AI sunset plan starter</a></li>
+    </ul>
+  </section>
+
+  <section class="sources" aria-labelledby="sources">
+    <h2 id="sources">Sources</h2>
+    <ul>
+      <li>NIST — <a href="https://www.nist.gov/itl/ai-risk-management-framework">AI Risk Management Framework</a>.</li>
+      <li>NIST — <a href="https://www.nist.gov/itl/ai-risk-management-framework/ai-rmf-development">AI RMF development and supporting resources</a>.</li>
+      <li>NIST — <a href="https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final">Security and Privacy Controls for Information Systems and Organizations, SP 800-53 Rev. 5</a>, used here for general recurring-control concepts such as monitoring, access control, audit, incident response, contingency, and configuration management.</li>
+      <li>Office of Management and Budget — <a href="https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10-Advancing-Governance-Innovation-and-Risk-Management-for-Agency-Use-of-Artificial-Intelligence.pdf">Memorandum M-24-10, Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence</a>.</li>
+      <li>CISA — <a href="https://www.cisa.gov/resources-tools/resources/secure-by-design">Secure by Design</a>, used here for the operational habit of designing systems with ongoing safety and accountability rather than treating safeguards as optional add-ons.</li>
+    </ul>
+    <p class="note">This guide is public education, not legal, security, procurement, or compliance advice. Local rules may require stronger approvals, documentation, public notice, accessibility review, retention schedules, or records handling.</p>
+  </section>
+</main>
+</body>
+</html>
